@@ -4,8 +4,6 @@ on:
   push:
     branches:
     - main
-    # DEBUG ONLY
-    - feature/gh-pages
 
 jobs:
   deploy:
