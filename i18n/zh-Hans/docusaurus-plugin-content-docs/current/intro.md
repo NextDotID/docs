@@ -10,16 +10,16 @@ NextID 是下一代属于用户的去中心化网络。目前在 NextID 生态�
 
 ## [ProofService](proof-service/intro.md)
 
-连接两个身份 / 社交服务的双向、密码学绑定的平台。
+一个 DID 服务，旨在连接两个身份 / 社交服务，创建双向、公开、可验证、防篡改的密码学绑定关系。
 
-## KVService
+## [KVService](kv-service/intro.md)
 
-基于 ProofService 记录的简单结构存储服务，无限存储空间，有鉴权和历史，适合分布式搭建。
+以 ProofService 绑定记录为名字空间的简单结构存储服务，有鉴权、历史记录、防篡改、可验证。
 
-## RelationService
+## [RelationService](relation-service/intro.md)
 
 :::caution TBD
-尚未定型，敬请期待。
+Work in progress.
 :::
 
-聚合市面上众多 DID / 身份查询服务，并提供一个统一的搜索接口。
+聚合市面上众多 DID / 身份绑定 / 身份查询服务，并提供一个统一的搜索接口。

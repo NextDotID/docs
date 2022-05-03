@@ -4,4 +4,4 @@ title: Introduction
 sidebar_position: 1
 ---
 
-# ProofService Introduction
+# KVService Introduction

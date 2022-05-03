@@ -23,15 +23,13 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          remarkPlugins: [require('mdx-mermaid')],
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl: 'https://github.com/nextdotid/docs',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/nextdotid/docs',
+          editUrl: 'https://github.com/nextdotid/docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
