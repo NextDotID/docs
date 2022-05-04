@@ -67,7 +67,7 @@ Facebook、Ethereum 等。
 <details>
 <summary>Link 的结构定义 </summary>
 
-> 此代码仅作为 Link 概念的感性认知，不代表 ProofService 内部实现或 API 结构。
+> 仅作为 Link 概念的感性认知，不代表 ProofService 内部实现或 API 结构。
 
 ```typescript title="link.d.ts"
 // assert(signature.match(/0x[a-f0-9]{144}/))
@@ -108,7 +108,7 @@ interface Link {
 
 </details>
 
-## 证明链 Link {#glossary-proof-chain}
+## 证明链 Proof Chain {#glossary-proof-chain}
 
 每个 [Persona](#glossary-persona) 在 ProofService 服务端里的绑定更改记录被体现为一个签名链：
 
@@ -117,16 +117,18 @@ interface Link {
 
 由此机制保证 ProofService 服务端无法修改链中任何一条记录。
 
-每个 Persona 的证明链都是公开的，可以通过一个 API 向 ProofService 索取。
-
 > 目前的存储方式不影响证明效力。未来为减少单点故障的可能，会将证明链在 Arweave 或 IPFS 上做备份。
+
+:::caution TBD
+未来可以通过一个 API 向 ProofService 索取任一 Persona 的完整的 Proof chain。
+:::
 
 <details>
 <summary>Proof Chain 的结构定义</summary>
 
-> 此代码仅作为 Proof Chain 概念的感性认知，不代表 ProofService 内部实现或 API 结构。
+> 仅作为 Proof Chain 概念的感性认知，不代表 ProofService 内部实现或 API 结构。
 
-```typescript
+```typescript title="chain.d.ts"
 const VERSION = "1";
 
 // assert(public_key.match(/^0x[a-f0-9]{130}$/))
@@ -156,10 +158,10 @@ interface Chain {
 
 服务端会定期检查 [Proof post](#glossary-proof-post) 的有效性。
 
-若在某次检查时 [Proof post](#glossary-proof-post) 无效了（获取不到 / 签名错误等），该证明会在查询 API 中被标记为 `"is_valid": false` 并附上当时检查器的错误原因。
+若在某次检查时 [Proof post](#glossary-proof-post) 无效了（获取不到 / 签名错误等），该证明会在[查询 API](api#proof-query) 中被标记为 `"is_valid": false` 并附上当时检查器的错误原因。
 
 > 例如，用户在绑定了 Twitter 账号后的某一天把证明推删除了，但没有告知 ProofService 解绑此关系。
 
-> 即使降级了，ProofService 依然不会（也无法）对[证明链](#glossary-proof-chain)作任何改动，仅在查询 API 中返回 `"is_valid": false` 。
+> 即使降级了，ProofService 依然不会（也无法）对[证明链](#glossary-proof-chain)作任何改动，仅在[查询 API](api#proof-query) 中返回 `"is_valid": false` 。
 
 如何处理降级的绑定查询结果由使用者决定。

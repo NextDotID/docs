@@ -41,6 +41,9 @@ sequenceDiagram
 <details>
 <summary>补充</summary>
 
+- [POST /v1/proof/payload](api#proof-payload)
+- [POST /v1/proof](api#proof-add)
+
 </details>
 
 ### 创建（以太坊） {#ethereum}
@@ -72,6 +75,8 @@ sequenceDiagram
 
 <details><summary>补充</summary>
 
+- [POST /v1/proof/payload](api#proof-payload)
+- [POST /v1/proof](api#proof-add)
 - `identity` 固定是钱包地址 `0x[0-9a-f]{40}`。
 - 不需要将签名发表到什么公开平台上，因为
   - 服务器无法伪造它
@@ -111,4 +116,4 @@ sequenceDiagram
 
 ## 查询
 
-请直接查看 [API 文档](api)。
+请直接查看 [GET /v1/proof](api#proof-query) 文档。

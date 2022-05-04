@@ -8,6 +8,13 @@ sidebar_position: 10
 
 ## General
 
+### Entrypoint {#entrypoint}
+
+| Online | Environment | Entrypoint                        | Healthcheck                               |
+|--------|-------------|-----------------------------------|-------------------------------------------|
+| ✅     | Staging     | https://proof-service.nextnext.id | https://proof-service.nextnext.id/healthz |
+| ✅     | Production  | https://proof-service.next.id     | https://proof-service.next.id/healthz     |
+
 ### Structure
 
 All requests and responses should be `Content-Type: application/json`.
@@ -93,7 +100,7 @@ See [Platform supported](ps-platform-supported)
           "created_at": "1647332405"
         }
 
-### Add a proof modification into Proof chain [POST /v1/proof] {#add-proof}
+### Add a proof modification into Proof chain [POST /v1/proof] {#proof-add}
 
 + Request (application/json)
 
@@ -141,7 +148,7 @@ Request failed.
            "message": "Tweet author is not the same as given identity."
         }
 
-### Query an existed binding [GET /v1/proof] {#query-proof}
+### Query an existed binding [GET /v1/proof] {#proof-query}
 
 + Request
 
@@ -215,7 +222,7 @@ Request failed.
           }]
         }
 
-### Check if a proof exists [GET /v1/proof/exists] {#query-proof-exists}
+### Check if a proof exists [GET /v1/proof/exists] {#proof-query-exists}
 
 + Request
 
