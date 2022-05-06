@@ -46,7 +46,7 @@ sequenceDiagram
 
 </details>
 
-### 创建（以太坊） {#ethereum}
+### 创建以太坊绑定 {#ethereum}
 
 > 当 `platform == "ethereum"` 时使用此流程。
 

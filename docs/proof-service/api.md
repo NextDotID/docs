@@ -112,8 +112,8 @@ See [Platform supported](ps-platform-supported)
     + proof_location (string, optional) - Location where public-accessable proof post is set. See [Platform supported](ps-platforms-supported).
     + public_key (string, required) - Public key of NextID Persona to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`).
     + extra (object, optional) - Extra info for specific platform needed. See [Flow](ps-flow#ethereum) for more info.
-      + wallet_signature (string, optional) - (needed for `platform: ethereum`) Signature signed by ETH wallet (w/ same sign payload), BASE64-ed.
-      + signature (string, optional) - (needed for `platform: ethereum`) Signature signed by Persona private key (w/ same sign payload), BASE64-ed.
+      + wallet_signature (string, optional) - (required when `platform: ethereum`) Signature signed by ETH wallet (w/ same sign payload), BASE64-ed.
+      + signature (string, optional) - (required when `platform: ethereum` or `action: delete`) Signature signed by Persona private key (w/ same sign payload), BASE64-ed.
     + uuid (string, required) - UUID of this chain link. Use the exact value from `POST /v1/proof/payload`.
     + created_at (string, required) - Creation time of this chain link (UNIX timestamp, unit: second). Use the exact value from `POST /v1/proof/payload`.
 
