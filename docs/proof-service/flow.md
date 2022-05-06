@@ -116,6 +116,6 @@ sequenceDiagram
 
 </details>
 
-## 查询
+## Query
 
-请直接查看 [GET /v1/proof](api#proof-query) 文档。
+Check [GET /v1/proof](api#proof-query).
