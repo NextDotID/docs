@@ -21,7 +21,7 @@ All requests and responses should be `Content-Type: application/json`.
 
 ### Supported platforms for proofing
 
-See [Platform supported](ps-platform-supported)
+See [Platform supported](ps-platforms-supported)
 
 ### Post struct placeholders
 
