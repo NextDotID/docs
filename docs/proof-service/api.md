@@ -109,7 +109,7 @@ See [Platform supported](ps-platforms-supported)
     + action (string, required) - Action (`create` / `delete`)
     + platform (string, required) - Target platform. See table above for all available platforms. See table above for all available values.
     + identity (string, required) - Identity in target platform to proof. Usually a "username" or "screen name". See [Platform supported](ps-platforms-supported).
-    + proof_location (string, optional) - Location where public-accessable proof post is set. See [Platform supported](ps-platforms-supported).
+    + proof_location (string, optional) - Location where public-accessible proof post is set. See [Platform supported](ps-platforms-supported).
     + public_key (string, required) - Public key of NextID Persona to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`).
     + extra (object, optional) - Extra info for specific platform needed. See [Flow](ps-flow#ethereum) for more info.
       + wallet_signature (string, optional) - (required when `platform: ethereum`) Signature signed by ETH wallet (w/ same sign payload), BASE64-ed.

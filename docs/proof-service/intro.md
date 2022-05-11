@@ -19,7 +19,7 @@ Missing proof material will make this binding status
 ### Publicly verifiable
 
 [Proof post](ps-glossary#glossary-proof-post) should be anonymously
-accessable. Any user / service / program can verify this binding
+accessible. Any user / service / program can verify this binding
 without much cost.
 
 ## Design goal
