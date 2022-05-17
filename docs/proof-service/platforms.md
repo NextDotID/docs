@@ -5,7 +5,7 @@ title: Platform supported
 
 > Check [Glossary](ps-glossary) first.
 
-# `Platform`s
+# `Platforms`
 
 ## Twitter
 
@@ -46,7 +46,7 @@ so no `proof_location` needed.
 
 Two-way signatures are created from persona sk and wallet sk, so no proof post needed.
 
-## Github
+## GitHub
 
 :::success ONLINE
 - Staging

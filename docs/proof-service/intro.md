@@ -11,7 +11,7 @@ etc).
 
 ## Feature
 
-### Two-way bidning
+### Two-way binding
 
 Missing proof material will make this binding status
 [downgraded](ps-glossary#glossary-downgrade).

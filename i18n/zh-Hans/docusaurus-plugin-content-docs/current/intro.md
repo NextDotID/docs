@@ -1,12 +1,12 @@
 ---
 id: intro
-title: NextID
+title: Next.ID
 sidebar_position: 1
 ---
 
 # 简介
 
-NextID 是下一代属于用户的去中心化网络。目前在 NextID 生态系统中实现了三个组件：
+Next.ID 是下一代属于用户的去中心化网络。目前在 Next.ID 生态系统中实现了三个组件：
 
 ## [ProofService](proof-service/intro.md)
 

@@ -12,7 +12,7 @@ sidebar_position: 2
 
 Persona 为 ProofService 系统内用户身份网络的中心。
 
-其它 [Identity](#glossary-identity)（web2.0 身份、区块链钱包等）**只**
+其它 [Identity](#glossary-identity)（Web2.0 身份、区块链钱包等）**只**
 与 Persona 产生绑定关系。
 
 > 目前 Persona 的形态为使用 `secp256k1` 椭圆曲线的公私钥对，并主要使用其签名 / 验签的功能。
@@ -22,7 +22,7 @@ flowchart LR
 
 Twitter <-->|Proof Tweet|Persona
 Persona <-->|Sign|EthereumWallet
-Github <-->|Public Gist|Persona
+GitHub <-->|Public Gist|Persona
 Persona <-->|Public Message|Discord
 ```
 

@@ -92,7 +92,7 @@ See [Platform supported](ps-platforms-supported)
 
         {
           "post_content": {
-            "default": "Prove myself: I'm 0x028c3cda474361179d653c41a62f6bbb07265d535121e19aedf660da2924d0b1e3 on NextID. Signature: %SIG_BASE64%"
+            "default": "Prove myself: I'm 0x028c3cda474361179d653c41a62f6bbb07265d535121e19aedf660da2924d0b1e3 on Next.ID. Signature: %SIG_BASE64%"
             "zh_CN": "验证推特账号 @my_twitter_screen_name 的 Next.ID 身份 @NextDotID 。\nSig: %SIG_BASE64%\n\n请下载安装 mask.io 去使用您 Web 3.0 的去中心化身份。\n"
           },
           "sign_payload": "{\"action\":\"add\",\"identity\":\"my_twitter_screen_name\",\"platform\":\"twitter\",\"prev\":null}"
@@ -110,7 +110,7 @@ See [Platform supported](ps-platforms-supported)
     + platform (string, required) - Target platform. See table above for all available platforms. See table above for all available values.
     + identity (string, required) - Identity in target platform to proof. Usually a "username" or "screen name". See [Platform supported](ps-platforms-supported).
     + proof_location (string, optional) - Location where public-accessible proof post is set. See [Platform supported](ps-platforms-supported).
-    + public_key (string, required) - Public key of NextID Persona to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`).
+    + public_key (string, required) - Public key of Next.ID Persona to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`).
     + extra (object, optional) - Extra info for specific platform needed. See [Flow](ps-flow#ethereum) for more info.
       + wallet_signature (string, optional) - (required when `platform: ethereum`) Signature signed by ETH wallet (w/ same sign payload), BASE64-ed.
       + signature (string, optional) - (required when `platform: ethereum` or `action: delete`) Signature signed by Persona private key (w/ same sign payload), BASE64-ed.
@@ -230,7 +230,7 @@ Request failed.
 
     + platform (string, required) - Proof platform.
     + identity (string, required) - Identity on target platform.
-    + public_key (string, required) - Public key of NextID Persona to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`)
+    + public_key (string, required) - Public key of Next.ID Persona to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`)
 
   + Example
 

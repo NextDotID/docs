@@ -1,14 +1,23 @@
 ---
 id: intro
-title: NextID
+slug: /
+title: Next.ID Overview
 sidebar_position: 1
 ---
 
 # Introduction
 
-`NextID` is next-gen decentralised network, for the users.
+Next.ID is an open-sourced protocol that synergises your Web2 and Web3 profiles. Next.ID connects and authenticates your digital footprints, all while giving you full ownership of your identities.
 
-Currently, there're 3 components implemented in NextID ecosystem:
+With Next.ID, users are able to:
+
+- Consolidate your Web2 and Web3 identities in one accessible location.
+- Build a complete digital identity graph via verified on-chain and off-chain actions.
+- Create friend and/or business networks with a more responsible understanding of second and third degree effects.
+
+Next.ID protocol serves as the nerve center of Web2 and Web3 user identities. As a platform-agnostic identity infrastructure, Next.ID establishes the foundation for you to fully own your Digital Identities. 
+
+The 3 core Next.ID components are:
 
 ## [ProofService](proof-service/intro.md)
 

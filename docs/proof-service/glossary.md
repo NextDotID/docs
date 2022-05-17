@@ -10,7 +10,7 @@ sidebar_position: 2
 
 Persona is the core of user ID network in ProofService.
 
-All other [Identit](#glossary-identity)ies (web2.0 account, blockchain wallet etc.) are **only**
+All other [Identities](#glossary-identity) (Web2.0 account, blockchain wallet etc.) are **only**
 binded with Persona.
 
 ```mermaid

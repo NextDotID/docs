@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'NextID Docs',
-  tagline: 'Everyone\'s ID',
+  title: 'Next.ID Docs',
+  tagline: 'Your Digital Identities in One Place',
   url: 'https://docs.next.id',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -26,6 +26,7 @@ const config = {
           remarkPlugins: [require('mdx-mermaid')],
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/nextdotid/docs',
+          routeBasePath: '/',
         },
         blog: {
           showReadingTime: true,
@@ -41,11 +42,17 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: true,
+      },
       navbar: {
-        title: 'NextID Docs',
+        title: 'Next.ID Docs',
         logo: {
-          alt: 'NextID Logo',
-          src: 'img/logo.svg',
+          alt: 'Next.ID Logo',
+          src: 'img/nextid-logo.svg',
+          width: 40,
+          height: 32,
         },
         items: [
           {
@@ -105,7 +112,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} NextID. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Next.ID. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
