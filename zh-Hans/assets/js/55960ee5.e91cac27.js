@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknext_i_doc=self.webpackChunknext_i_doc||[]).push([[4121],{88070:function(e){e.exports=JSON.parse('[{"label":"proof_service","permalink":"/zh-Hans/docs/tags/proof-service","count":4}]')}}]);

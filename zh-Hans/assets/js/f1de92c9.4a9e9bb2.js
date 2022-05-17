@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknext_i_doc=self.webpackChunknext_i_doc||[]).push([[9551],{62439:function(e){e.exports=JSON.parse('{"label":"hello","permalink":"/zh-Hans/blog/tags/hello","allTagsPath":"/zh-Hans/blog/tags","count":2}')}}]);
