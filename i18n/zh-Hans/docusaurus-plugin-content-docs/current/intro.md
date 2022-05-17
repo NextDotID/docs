@@ -1,10 +1,11 @@
 ---
 id: intro
-title: Next.ID
+slug: /
+title: Next.ID 简介
 sidebar_position: 1
 ---
 
-# 简介
+# Next.ID 简介
 
 Next.ID 是下一代属于用户的去中心化网络。目前在 Next.ID 生态系统中实现了三个组件：
 
