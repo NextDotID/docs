@@ -10,7 +10,7 @@ See [ProofService FAQ](../proof-service/faq.md#bad-signature).
 
 > Double check `dataToSign.length` part.
 
-## Does KVService rely on an existed Persona / binding on [ProofService](../proof-service/intro.md) ?
+## Does KVService rely on an existed Persona / binding on ProofService?
 
 Not really! You can use this as a storage for every secp256k1 keypair
 (`platform == nextid && identity == "0xPUBLIC_KEY"`) without even
