@@ -19,7 +19,8 @@ sidebar_position: 5
        length in some language), not UTF-8 [code
        point](https://en.wikipedia.org/wiki/Code_point) length.
        ```go
-       assert.Equal(3, len("🐎")) // Not 1
+       assert.Equal(4, len("🐎")) // Not 1
+       assert.Equal(4, len([]byte("🐎"))) // Not 1
        ```
      - Signature should be 64-bytes long.
 
