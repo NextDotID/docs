@@ -4,9 +4,9 @@ title: FAQ
 sidebar_position: 5
 ---
 
-## How do I generate a [Persona](glossary.md#glossary-persona)?
+## How do I generate a [Persona](ps-glossary#glossary-persona)?
 
-As in [glossary](glossary.md#glossary-persona), technically, persona
+As in [glossary](ps-glossary#glossary-persona), technically, persona
 is the same as Ethereum wallet: they're both `secp256k1` elliptic
 curve asymmetric keypair.
 
@@ -23,9 +23,9 @@ Basiclly,
   - compressed(33-bytes, started with `0x02` or `0x03`, in most case `0x02`)
 :::
 
-## I got `"bad signature"` error in [`POST /v1/proof`](api.md#proof-add) {#bad-signature}
+## I got `"bad signature"` error in [`POST /v1/proof`](api#proof-add) {#bad-signature}
 
-1. Check if `created_at` and `uuid` is the same as [`POST /v1/proof/payload`](api.md#proof-payload) result.
+1. Check if `created_at` and `uuid` is the same as [`POST /v1/proof/payload`](api#proof-payload) result.
 2. Check if you're using [Ethereum Personal Sign](https://github.com/ChainSafe/web3.js/blob/1.x/docs/web3-eth-personal.rst#sign).
    - If your DApp is using wallet SDK (e.g. MetaMask), make sure
      you're using correct signature RPC method.
