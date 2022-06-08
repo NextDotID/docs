@@ -68,3 +68,27 @@ Two-way signatures are created from persona sk and wallet sk, so no proof post n
 | `platform` | `identity`      | `proof_location`                                                   |
 |------------|-----------------|--------------------------------------------------------------------|
 | `discord`  | `UserName#0000` | message link (`https://discord.com/channels/DIGITS/DIGITS/DIGITS`) |
+
+## DotBit
+
+:::caution STAGING
+- Staging
+:::
+
+| `platform` | `identity`      | `proof_location`                                                   |
+|------------|-----------------|--------------------------------------------------------------------|
+| `dotbit`   | `address.bit`   | N/A                                                                |
+
+Create a Profile record with key `nextid` and value `${COMPRESSED_PERSONA_PUBKEY_IN_HEX}:${SIGNATURE_IN_BASE64}`.
+
+## Solana
+
+:::caution STAGING
+- Staging
+:::
+
+| `platform` | `identity`                   | `proof_location` |
+|------------|------------------------------|------------------|
+| `solana`   | Wallet address `AbCdEfG12...`| N/A              |
+
+Two-way signatures are created from persona sk and wallet sk, so no proof post needed.
