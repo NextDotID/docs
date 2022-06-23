@@ -1,0 +1,17 @@
+{
+    "sidebar.docs.category.Core Concepts": {
+        "message": "核心概念"
+    },
+    "sidebar.docs.category.Getting Started": {
+        "message": "快速开始"
+    },
+    "sidebar.docs.category.Developer Guide": {
+        "message": "开发者指南"
+    },
+    "sidebar.docs.FAQ": {
+        "message": "常见问题"
+    },
+    "sidebar.docs.Roadmap": {
+        "message": "路线图"
+    }
+}
