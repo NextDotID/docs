@@ -1,6 +1,5 @@
 ---
 id: intro
-slug: /
 title: Next.ID 简介
 sidebar_position: 1
 ---
