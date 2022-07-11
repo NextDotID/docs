@@ -2,8 +2,6 @@
 title: Liftoff, Hello Space!
 ---
 
-Next.ID enables you to manage all of your accounts, wallets, etc, in one Persona yet which is completely controlled by yourself. ONLY you.
-
 To get you started, let's take one example and walk through a binding process with the most frequently used platform: the Twitter account. Hold tight, let's go!
 
 ## Prerequisite
@@ -13,7 +11,7 @@ To get you started, let's take one example and walk through a binding process wi
 - Or Using any programming language and required libraries you preferred
 - Knowing nothing but still, want to learn? Don't panic, it's okay! In about a few hours you'll get to know it all!
 
-## Set up your first Persona
+## Set up your first Avatar
 
 In the Crypto world, a cryptographic key pair is what stands as one of your AVATARs. Next.ID uses by far the most secure algorithm to protect your sovereignty: curve secp256k1.
 
@@ -37,7 +35,7 @@ python -m secp256k1 privkey -p
 Public key: 03bce884894fdc4fb45475733be317dd3c289f003bceebb097ac79a6b95e6edc56
 ```
 
-Having this one key pair, you now can get to create a Persona backed by unbreakable cryptography.
+Having this one key pair, you now can get to create an Avatar backed by unbreakable cryptography.
 
 ## Binding Twitter account
 
@@ -89,7 +87,7 @@ async function personalSign(message: Buffer, privateKey: Buffer): Promise<Buffer
 
 async function main() {
     // this message come from the return attribute "sign_payload" of everytime calling API: v1/proof/payload
-    const message = Buffer.from('{\"action\":\"create\",\"created_at\":\"1655456062\",\"identity\":\"your_twitter_handle\",\"platform\":\"twitter\",\"prev\":\"+2uzlxoVZbIHneWjJH4mG+oTpza0eOQgOdyS3qHXqExI8O3hi4BUi1LEDNFUDqhvoZ2KCHY8VRyF6SSwwW4jrgA=\",\"uuid\":\"353449e6-3a6f-4ac8-ae65-ba14bf466baf\"}', 'utf8');
+    const message = Buffer.from('{\"action\":\"create\",\"created_at\":\"1656843378\",\"identity\":\"your_twitter_handle\",\"platform\":\"twitter\",\"prev\":\"KNyNFtvhlRVJh/oU6RryK2n+C2dja9aLQPjlv5VHMsQErZROojEmMAgmeEQVC094EOuHIYcv3lCYXf8d3zqDCQE=\",\"uuid\":\"353449e6-3a6f-4ac8-ae65-ba14bf466baf\"}', 'utf8');
     // ATTENTION! RUN THIS LOCALLY! NEVER SHARE YOUR PRIVATE KEY WITH ANY OTHERS OR PUBLIC!
     // replace XXX with your own Private Key for generating a signature
     const secretKey = Buffer.from('XXX', 'hex');
@@ -121,18 +119,18 @@ Go to the `/disc` directory to get it running:
 
 We will get two console.log outputs. One is the Signature(base64) that we're going to use for proof posting on Twitter.
 
-### Post a proof Twitter
+### Post a proof Tweet
 
-Follow the format we get in calling `/proof/payload`, replace the `Sig` with Signature(base64) we just get and visit twitter.com to post one as below:
+Follow the format we get in calling `/proof/payload`, replace the `Sig` with Signature(base64) we just get and visit twitter.com to tweet as below:
 
 ```
 🎭 Verifying my Twitter ID @your_twitter_handle for @NextDotID.
-Sig: 6vrSKrM1lZXyjLd2E9AO88DuUkq/A3HnEjHeeSjK/jUeMuuWu3hPHAwlyierYvaZxWDlR4trVpI2JTSZefqGERw=
+Sig: 9y/msAvkEb1w/+G5vzIvGFKeoQ6VWd0muhA4dUSEn8htcScJ37cJ78PcwKAbb2ucqYvUj+eA1Ykh9JJsbywLhxs=
 
-Install http://Mask.io to enhance your Web3 experience.
+Next.ID YOUR DIGITAL IDENTITIES IN ONE PLACE
 ```
 
-Then go to the detail page of this Twitter, get its ID at the end of the URL like `1543541274254639104``:
+Then go to the detail page of this tweet, get its ID at the end of the URL like `1543541274254639104``:
 
 ```
 https://twitter.com/your_twitter_handle/status/1543541274254639104
@@ -152,9 +150,9 @@ It will return a code of `201` Created` and empty curly brackets :
 {}
 ```
 
-### Check the status of Persona
+### Check the status of Avatar
 
-All set! Let's go to have a look at our newly created Persona.
+All set! Let's go to have a look at our newly created Avatar.
 
 Calling REST API `/proof` in `GET` method and with two fields of `platform` and `identity`:
 
@@ -174,7 +172,7 @@ We will get as below:
     },
     "ids": [
         {
-            "persona": "0x03bce884894fdc4fb45475733be317dd3c289f003bceebb097ac79a6b95e6edc56",
+            "avatar": "0x03bce884894fdc4fb45475733be317dd3c289f003bceebb097ac79a6b95e6edc56",
             "proofs": [
                 {
                     "platform": "twitter",
@@ -190,4 +188,8 @@ We will get as below:
 }
 ```
 
+Now you successfully created an Avatar on-chain as who you're. Go exploring cyberspace ahead!
+## Next Step
 
+- View the [architecture] of Next.ID framework(../core-concepts/architecture.md)
+- Understand [how it works in detail](../core-concepts/how-it-works.md)
