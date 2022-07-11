@@ -4,7 +4,7 @@ module.exports = {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: ['introduction','getting-started/quick-start'],
+      items: ['getting-started/introduction','getting-started/quick-start'],
     },
     {
       type: 'category',
@@ -18,8 +18,13 @@ module.exports = {
       collapsed: false,
       items: ['developer-guide/go','developer-guide/rust','developer-guide/typescript'],
     },
+    'glossary',
     'faq',
-    'rest-api',
+    {
+      type: 'category',
+      label: 'Rest API',
+      items: ['rest-api/proofservice-api','rest-api/kvserivce-api'],
+    },
     'roadmap',
   ],
 };
