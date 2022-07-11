@@ -6,6 +6,16 @@ title: How does Next.ID work
 
 Next.ID has a simple workflow on the backend. In this page, we go through the core system design concept of Next.ID. This is also a guide to creating your first application with Next.ID. 
 
+## Avatar
+
+Avatars can perform actions via Next.ID (eg. sign a follow action) and on-chain & off-chain activities. Next.ID's relation aggregation can map all of these actions:
+
+![](../../static/img/core-concept/avatar-diagram.svg)
+
+How two users' Avatars interact:
+
+![](../../static/img/core-concept/avatar-interaction.svg)
+
 ## ProofService
 
 ### Platform Binding

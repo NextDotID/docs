@@ -23,7 +23,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Rest API',
-      items: ['rest-api/proofservice-api','rest-api/kvserivce-api'],
+      items: ['rest-api/proofservice-api','rest-api/kvserivce-api','rest-api/platforms'],
     },
     'roadmap',
   ],

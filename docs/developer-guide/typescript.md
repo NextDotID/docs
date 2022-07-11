@@ -4,11 +4,19 @@ title: TypeScript
 
 ## Proof Service
 
-> You could git clone and run this [TypeScript open demo]((https://github.com/nextdotid/Generating-Signature-TypeScript)) as a help
+> You could git clone and run this [TypeScript open demo](https://github.com/nextdotid/Generating-Signature-TypeScript) as a help
 
 The core example of codes:
 
+```js title="package.json"
+{
+  "dependencies": {
+    "ethereumjs-util": "^7.1.4"
+  }
+}
 ```
+
+```typescript title="index.ts"
 import { ecsign, toRpcSig, keccakFromString, BN } from 'ethereumjs-util';
 
 async function personalSign(message: Buffer, privateKey: Buffer): Promise<Buffer> {
