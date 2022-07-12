@@ -2,14 +2,14 @@
 title: Liftoff, Hello Space!
 ---
 
-To get you started, let's take one example and walk through a binding process with the most frequently used platform: the Twitter account. Hold tight, let's go!
+To get started, let's walk through a binding process with the most frequently used platform: Twitter. Hold tight, let's go!
 
-## Prerequisite
-- Basic in Cryptography
-- Basic in Python, TypeScript and Node.js
-- Basic in Postman or cURL
-- Or Using any programming language and required libraries you preferred
-- Knowing nothing but still, want to learn? Don't panic, it's okay! In about a few hours you'll get to know it all!
+## Prerequisites
+- Basics in Cryptography
+- Basics in Python, TypeScript and Node.js
+- Basics in Postman or cURL
+- Or any programming languages and required libraries you prefer
+- Knowing nothing but keen on learning? Don't panic, it's okay! You can learn it all in just a few hours!
 
 ## Set up your first Avatar
 
