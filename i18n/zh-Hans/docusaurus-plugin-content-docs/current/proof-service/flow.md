@@ -1,16 +1,16 @@
 ---
 id: ps-flow
-title: 流程
+title: Flow
 tags:
 - proof_service
 sidebar_position: 2.5
 ---
 
-# 流程
+# Flow of typical scenario
 
-> 请搭配 [名词表](ps-glossary)
+> Use this with [Glossary](ps-glossary)
 
-## 创建绑定 {#create}
+## Create a [Link](ps-glossary#glossary-link) {#create}
 
 ```mermaid
 sequenceDiagram
@@ -20,35 +20,35 @@ sequenceDiagram
     participant PS as ProofService
     participant P as Platform
 
-    U ->>+ A : 指定 Platform 和 Identity 发起创建绑定
+    U ->>+ A : Start a binding with platform, identity
     A ->>+ PS : POST /v1/proof/payload
-    PS -->>- A : sign_payload 和 post_content
+    PS -->>- A : sign_payload, post_content
     A ->>- U : persona.eth_personalSign(sign_payload)
-    U -->> A : 签名结果 Sp
-    A -->> A : 将 Sp 注入 post_content
-    A -->>+ U : 向用户展示 post_content 和 Proof post 发布流程
-    U ->>+ P : 发布 Proof post
-    P -->>- U : Proof post 的链接 / ID 等
-    U ->>- A : Proof post 的链接 / ID 等
+    U -->> A : Signature Sp
+    A -->> A : Inject Sp into post_content
+    A -->>+ U : Show to user how to do proof post with post_content
+    U ->>+ P : Publish proof post
+    P -->>- U : Link / ID of Proof post
+    U ->>- A : Link / ID of Proof post
     A ->>+ PS : POST /v1/proof
-    note right of A : 带上 ③ 的 uuid 和 created_at
-    PS ->>+ P : 请求 proof post 内容
-    P -->>- PS : 返回 Proof post 内容
-    PS -->> PS : 验证 Proof post 内容是否匹配本请求
-    PS -->>- A : 成功创建绑定
-    A -->> U : 成功
+    note right of A : With uuid and created_at from ③
+    PS ->>+ P : Request for proof post
+    P -->>- PS : Returns content of Proof post
+    PS -->> PS : Validate Proof post content
+    PS -->>- A : Link created successfully
+    A -->> U : Success
 ```
 <details>
-<summary>补充</summary>
+<summary>See also</summary>
 
 - [POST /v1/proof/payload](api#proof-payload)
 - [POST /v1/proof](api#proof-add)
 
 </details>
 
-### 创建以太坊绑定 {#ethereum}
+### Create an Ethereum Link {#ethereum}
 
-> 当 `platform == "ethereum"` 时使用此流程。
+> This procedure is for `platform == "ethereum"`.
 
 ```mermaid
 sequenceDiagram
@@ -58,33 +58,35 @@ sequenceDiagram
     participant A as Application
     participant PS as ProofService
 
-    U ->>+ A : platform: ethereum, identity: 钱包地址
+    U ->>+ A : platform: ethereum, identity: 0xWALLET_ADDRESS
     A ->> PS : POST /v1/proof/payload
     PS -->> A : sign_payload
     A ->> U : persona.eth_personalSign(sign_payload)
-    U -->> A : 签名结果 Sp
+    U -->> A : Signature Sp
     A ->> W : wallet.eth_personalSign(sign_payload)
-    W -->> A : 签名结果 Sw
+    W -->> A : Signature Sw
     A ->> PS : POST /v1/proof
-    note right of A : extra: Sp 和 Sw
-    note right of A : 带上 ③ 的 uuid 和 created_at
-    PS -->> PS : 检查两个签名
-    PS -->> A : 成功
-    A -->>- U : 成功
+    note right of A : extra: Sp and Sw
+    note right of A : With uuid and created_at from ③
+    PS -->> PS : Verify Sp and Sw
+    PS -->> A : Link created successfully
+    A -->>- U : Success
 ```
 
-<details><summary>补充</summary>
+<details><summary>See also</summary>
 
 - [POST /v1/proof/payload](api#proof-payload)
 - [POST /v1/proof](api#proof-add)
-- `identity` 固定是钱包地址 `0x[0-9a-f]{40}`。
-- 不需要将签名发表到什么公开平台上，因为
-  - 服务器无法伪造它
-  - 用户能生成签名，也就意味着用户拥有这个私钥
+- `identity` wallet address matches `0x[0-9a-f]{40}`。
+- No need to publish this sigature somewhere, because:
+  - The ability of generating this sig is equals to the ownership of secret key.
+  - No one can falsify it, except the secret key owner.
 
 </details>
 
-## 删除身份绑定
+## Delete a link
+
+Link deletion is also a link.
 
 ```mermaid
 sequenceDiagram
@@ -93,27 +95,27 @@ sequenceDiagram
     participant A as Application
     participant PS as ProofService
 
-    U ->> A : 指定 Platform 和 Identity 发起删除绑定
+    U ->> A : Platform and Identity to perform deletion
     A ->>+ PS : POST /v1/proof/payload
     note right of A: action: delete
     PS -->>- A : sign_payload
     A ->> U : persona.eth_personalSign(sign_payload)
-    U -->> A : 签名结果 Sp
+    U -->> A : Signature Sp
     A ->>+ PS : POST /v1/proof
     note right of A: action: delete
     note right of A: extra: Sp
-    PS -->> PS : 检查签名
+    PS -->> PS : Verify Sp
     PS -->>- A : Success
     A -->> U : Success
 
 ```
 
-<details><summary>补充</summary>
+<details><summary>See also</summary>
 
-- Application 可事后引导用户在对应 platform 里删除 proof post。
+- Application can guide user to delete [Proof post](ps-glossary#glossary-proof-post) on specific platform (if any) later.
 
 </details>
 
-## 查询
+## Query
 
-请直接查看 [GET /v1/proof](api#proof-query) 文档。
+Check [GET /v1/proof](api#proof-query).

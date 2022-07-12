@@ -26,7 +26,7 @@ Then, application requests user’s Avatar Private Key to generate a signature b
 
 After `ProofService`validate the Proof Post existence and verify the Private Key, it will return the successful binding notification back to Application and User.
 
-![](../../static/img/how-it-works/Platform-Binding.svg)
+![](../../static/img/how-it-works/platform-binding.png)
 
 ### Ethereum Binding
 
@@ -36,7 +36,7 @@ Then, application requests user’s Avatar Private Key to generate a signature b
 
 After `ProofService`validate with `uuid` and `created_at` from `sign_payload` , then verify the Avatar and Wallet Signature. After all it will return the successful binding notification back to Application and User.
 
-![](../../static/img/how-it-works/Ethereum-Binding.svg)
+![](../../static/img/how-it-works/ethereum-binding.png)
 
 ### Revoke Binding
 
@@ -46,7 +46,7 @@ Then, application requests user’s Avatar Private Key to generate a signature b
 
 After `ProofService`validate with `uuid` and `created_at` from `sign_payload` , then verify the Avatar and Wallet Signature for Revoke action. After all it will return the successful Revoke notification back to Application and User. 
 
-![](../../static/img/how-it-works/Revoke-Binding.svg)
+![](../../static/img/how-it-works/revoke-binding.png)
 
 ## KVService
 
@@ -58,4 +58,4 @@ Then, application requests user’s Avatar Private Key to generate a signature b
 
 After `KVService`validate with `uuid` and `created_at` from `sign_payload` , then verify the Avatar Signature for Write Data action. After all it will return the successful notification back to Application and User. 
 
-![](../../static/img/how-it-works/Write-Data.svg)
+![](../../static/img/how-it-works/write-data.png)

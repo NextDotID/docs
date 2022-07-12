@@ -8,11 +8,11 @@ This page describes the Next.ID product and system architecture. This is also a 
 
 ## ProofService Product Structure
 
-![](../../static/img/architecture/ProofService-Product-Structure.svg)
+![](../../static/img/architecture/proofService-product-structure.png)
 
 ## ProofService Tech Structure
 
-![](../../static/img/architecture/ProofService-Tech-Structure.svg)
+![](../../static/img/architecture/proofService-tech-structure.png)
 
 *The whole backup of ProofChain is stored in Arweave separately. 
 

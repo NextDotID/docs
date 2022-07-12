@@ -1,73 +1,87 @@
 ---
 id: ps-glossary
-title: 名词表
-tags:
-- proof_service
+title: Glossary
 sidebar_position: 2
 ---
 
-# 名词表
+# Glossary
 
 ## Persona {#glossary-persona}
 
-Persona 为 ProofService 系统内用户身份网络的中心。
+Persona is the core of user ID network in ProofService.
 
-其它 [Identity](#glossary-identity)（Web2.0 身份、区块链钱包等）**只**
-与 Persona 产生绑定关系。
-
-> 目前 Persona 的形态为使用 `secp256k1` 椭圆曲线的公私钥对，并主要使用其签名 / 验签的功能。
+All other [Identities](#glossary-identity) (Web2.0 account, blockchain wallet etc.) are **only**
+binded with Persona.
 
 ```mermaid
 flowchart LR
 
 Twitter <-->|Proof Tweet|Persona
 Persona <-->|Sign|EthereumWallet
-GitHub <-->|Public Gist|Persona
+Github <-->|Public Gist|Persona
 Persona <-->|Public Message|Discord
 ```
 
+> For now, Persona is elliptic curve keypair using `secp256k1` curve.
+
 ## Identity {#glossary-identity}
 
-和 [Persona](#glossary-persona) 产生绑定关系的其它
-[Platform](#glossary-platform) 上的身份。
+Accounts / Identities on other [Platform](#glossary-platform) which is
+binded with [Persona](#glossary-persona).
 
-如 Twitter 为形如 `@my_twitter` 的账号，GitHub 为 `my_github` 用户等。
+For example, `@my_twitter` on `twitter` platform, `my_github` on `github` platform.
 
-> 详请参阅 [目前支持的 Platform 列表](ps-platforms-supported)
+> See [Supported platforms](ps-platforms-supported) for more info.
 
 ## Platform {#glossary-platform}
 
-[Identity](#glossary-identity) 所处的身份提供商，如 Twitter、GitHub、
-Facebook、Ethereum 等。
+[Identity](#glossary-identity) provider.
 
-> 详请参阅 [目前支持的 Platform 列表](ps-platforms-supported)
+> e.g. Twitter, GitHub, Facebook, Ethereum, etc.
+
+> See [Supported platforms](ps-platforms-supported) for more info.
 
 ## Proof post {#glossary-proof-post}
 
-为证明 “我拥有此 [Identity](#glossary-identity)” ，需要让用户做出一个行为：用此 [Identity](#glossary-identity) 发布一条公开可见的指定内容。该“指定内容”即为 Proof post。
+To prove "I have this [identity](#glossary-identity)", user needs to
+takes an action: use this [identity](#glossary-identity) to post an
+accessible, specified content, which is called *Proof post*.
 
-比如 Platform 为 Twitter 时就是一条公开可见的推文，Platform 为 Github 时则是一个公开可见的 Gist。
+For `platform: "twitter"`, proof post should be a public visible tweet.
 
-> Proof post 在不同平台上的型态不同。详请参阅 [目前支持的 Platform 列表](ps-platforms-supported)。
+For `platform: "github"`, a public visible `Gist`.
 
-:::tip 如果 [Identity](#glossary-identity) 为密码学身份
-密码学身份（如区块链钱包）的绑定不需要 proof post。因为生成签名这个动作已足以证明用户拥有钱包。
+> Proof post shapes different on different [platform](#glossary-platform).
+>
+> See [Supported platforms](ps-platforms-supported) for more info.
+
+:::tip If [Identity](#glossary-identity) is cryptography ID
+Cryptography ID (e.g. blockchain wallet) don't need to put a proof
+post somewhere, since sigature generating itself can already prove
+that user owns its private key.
+
 :::
 
-:::caution 如果 Proof post 事后被用户删除
-参阅 [降级](#glossary-downgrade)。
+:::caution If Proof post is deleted by user
+See [Downgrade](#glossary-downgrade)。
 :::
 
-## 绑定关系 Link {#glossary-link}
+## Binding (Link) {#glossary-link}
 
-当 ProofService 服务端验证了 [Proof post](#glossary-proof-post) 的有效性后，一条 “[Persona](#glossary-persona) <->
-[Identity](#glossary-identity) ” 的绑定关系便会被固化在
-[Proof Chain](#glossary-proof-chain) 里。
+After ProofService validates [Proof post](#glossary-proof-post) on
+server side, a binding record of "[Persona](#glossary-persona) <->
+[Identity](#glossary-identity)" will be saved into [Proof
+Chain](#glossary-proof-chain).
 
 <details>
-<summary>Link 的结构定义 </summary>
+<summary>Struct of Link</summary>
 
-> 仅作为 Link 概念的感性认知，不代表 ProofService 内部实现或 API 结构。
+:::caution Note
+
+Code below is only a reference of Link, not specific
+implementation in ProofService or API structure.
+
+:::
 
 ```typescript title="link.d.ts"
 // assert(signature.match(/0x[a-f0-9]{144}/))
@@ -108,25 +122,35 @@ interface Link {
 
 </details>
 
-## 证明链 Proof Chain {#glossary-proof-chain}
+## Proof Chain {#glossary-proof-chain}
 
-每个 [Persona](#glossary-persona) 在 ProofService 服务端里的绑定更改记录被体现为一个签名链：
+Each [Link](#glossary-link) under the same [Persona](#glossary-persona) is chained into a link:
 
-- 每一个 [Link](#glossary-link) 都有 [Persona](#glossary-persona) 的签名。
-- 除第一个 [Link](#glossary-link) （创世 Link）外，每一个 [Link](#glossary-link) 签名所用的 payload 都包含上一条 [Link](#glossary-link) 的签名。
+- Each [Link](#glossary-link) has a signature of
+  [Persona](#glossary-persona).
+- Every [Link](#glossary-link) (except the first one under this
+  [Persona](#glossary-persona)) has its previous
+  [Link](#glossary-link)'s signature.
 
-由此机制保证 ProofService 服务端无法修改链中任何一条记录。
+So to ensure that ProofService server cannot falsify any of the record
+in the chain without Persona-provided signature.
 
-> 目前的存储方式不影响证明效力。未来为减少单点故障的可能，会将证明链在 Arweave 或 IPFS 上做备份。
+> Proof Chain mechanism is not picky of storage media. But we will put
+> it in Arweave / IPFS in the future, anyway.
 
 :::caution TBD
-未来可以通过一个 API 向 ProofService 索取任一 Persona 的完整的 Proof chain。
+There will be an API to export the whole Proof Chain of a Persona.
 :::
 
 <details>
-<summary>Proof Chain 的结构定义</summary>
+<summary>Struct of Proof Chain</summary>
 
-> 仅作为 Proof Chain 概念的感性认知，不代表 ProofService 内部实现或 API 结构。
+:::caution Note
+
+Code below is only a reference of Proof Chain, not specific
+implementation in ProofService or API structure.
+
+:::
 
 ```typescript title="chain.d.ts"
 const VERSION = "1";
@@ -150,18 +174,28 @@ interface Chain {
 </details>
 
 
-## 降级 {#glossary-downgrade}
+## Downgrade {#glossary-downgrade}
 
 :::caution WIP
-👷‍♀️👷 此功能正在施工中，尚未上线。
+👷‍♀️👷 Work in progress, will be ready SOON™️.
 :::
 
-服务端会定期检查 [Proof post](#glossary-proof-post) 的有效性。
+ProofService server will periodically check the validity of [Proof post](#glossary-proof-post).
 
-若在某次检查时 [Proof post](#glossary-proof-post) 无效了（获取不到 / 签名错误等），该证明会在[查询 API](api#proof-query) 中被标记为 `"is_valid": false` 并附上当时检查器的错误原因。
+If [Proof post](#glossary-proof-post) becomes invalid, this binding
+record will be marked as `"is_valid": false` (with reason) in
+[Query API](api#proof-query).
 
-> 例如，用户在绑定了 Twitter 账号后的某一天把证明推删除了，但没有告知 ProofService 解绑此关系。
+> e.g. User deletes [Proof tweet](#glossary-proof-post) after creating
+> a [Link](#glossary-link), but doesn't [inform](api#proof-add)
+> ProofService to delete this link (aka unbind).
 
-> 即使降级了，ProofService 依然不会（也无法）对[证明链](#glossary-proof-chain)作任何改动，仅在[查询 API](api#proof-query) 中返回 `"is_valid": false` 。
+> ProofService still won't (and can't) do anything to [Proof
+> Chain](#glossary-proof-chain) even downgraded.
+>
+> All ProofService can do is to return `"is_valid": false` in [Query
+> API](api#proof-query).
 
-如何处理降级的绑定查询结果由使用者决定。
+How to handle this downgraded relationship is entirely up to applications which use ProofService.
+
+> e.g. show a ⚠️ to user, low priority when presenting, or just omit it.

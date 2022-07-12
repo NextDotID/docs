@@ -1,25 +1,34 @@
 ---
 id: intro
-title: Next.ID 简介
+title: Next.ID Overview
 sidebar_position: 1
 ---
 
-# Next.ID 简介
+# Introduction
 
-Next.ID 是下一代属于用户的去中心化网络。目前在 Next.ID 生态系统中实现了三个组件：
+Next.ID is an open-sourced protocol that synergises your Web2 and Web3 profiles. Next.ID connects and authenticates your digital footprints, all while giving you full ownership of your identities.
+
+With Next.ID, users are able to:
+
+- Consolidate your Web2 and Web3 identities in one accessible location.
+- Build a complete digital identity graph via verified on-chain and off-chain actions.
+- Create friend and/or business networks with a more responsible understanding of second and third degree effects.
+
+Next.ID protocol serves as the nerve center of Web2 and Web3 user identities. As a platform-agnostic identity infrastructure, Next.ID establishes the foundation for you to fully own your Digital Identities. 
+
+The 3 core Next.ID components are:
 
 ## [ProofService](proof-service/intro.md)
 
-一个 DID 服务，旨在连接两个身份 / 社交服务，创建双向、公开、可验证、防篡改的密码学绑定关系。
+A DID service to connect 2 identity / social network service by
+creating a two-way, public, verifiable, falsify-proof,
+cryptography-based binding.
 
 ## [KVService](kv-service/intro.md)
 
-以 ProofService 绑定记录为名字空间的简单结构存储服务，有鉴权、历史记录、防篡改、可验证。
+A simple KV-based data preserve / query service, which uses ProofService binding record as namespaces
 
-## [RelationService](relation-service/intro.md)
-
-:::caution TBD
-Work in progress.
-:::
-
-聚合市面上众多 DID / 身份绑定 / 身份查询服务，并提供一个统一的搜索接口。
+- Authorized before merging modification
+- History
+- Falsify-proof
+- Verifyable
