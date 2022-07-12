@@ -70,7 +70,7 @@ Replace the fields of `identity` and `public_key` to be your own, then it will r
 
 ### Generate the signature
 
-With the payload returned, now we can go ahead to sign it. Git clones our [open-source Demo in TypeScript](https://github.com/nextdotid/Generating-Signature-TypeScript) to accomplish it.
+With the payload returned, now we can go ahead to sign it. Git clones our [open-source Demo in TypeScript](https://github.com/nextdotid/Signature-Generating-Sample) to accomplish it.
 
 Notice that, you need to set up Node.js and TypeScript before downloading, then go to install the required libs as `ethereumjs-util`.
 
