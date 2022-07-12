@@ -6,7 +6,7 @@ slug: /
 
 Next.ID, the world’s first protocol offering Decentralized-Identity-As-A-Service (DIaaS), is a decentralized identity aggregation protocol that integrates all Web2 and Web3 digital identities, offering a comprehensive and verifiable identity database for open-source developers and projects to innovate and build dApps on.
 
-Next.ID creates an identity infrastructure that securely aggregates users’ identities into Avatars, making it the primary touch point for interfacing with any app or dApp:
+Next.ID creates an identity infrastructure that securely aggregates users’ identities into Avatars, making it the primary touch point for interfacing with any app or dApp, for example in social:
 
 ![](../../static/img/hyper-multi-graph.png)
 
