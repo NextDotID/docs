@@ -6,7 +6,7 @@ slug: /
 
 Next.ID, the world’s first protocol offering Decentralized-Identity-As-A-Service (DIaaS), is a decentralized identity aggregation protocol that integrates all Web2 and Web3 digital identities, offering a comprehensive and verifiable identity database for open-source developers and projects to innovate and build dApps on.
 
-Next.ID creates an identity infrastructure that securely aggregates users’ identities into Avatars, making it the primary touch point for interfacing with any app or dApp, for example in social:
+Next.ID creates an identity infrastructure that securely aggregates users’ identities into Avatars, making it the primary touch point for interfacing with any app or dApp. For example, this is how it can look like on a decentralized social network:
 
 ![](../../static/img/hyper-multi-graph.png)
 
@@ -14,9 +14,9 @@ Next.ID’s Avatars exist independently from Web2 and Web3, using a blockchain-l
 
 Welcome to the future of Digital Identity.
 
-## User Cases
+## Current real world use cases
 
-The list of protocols and dApps using Next.ID is growing weekly. Here are just some of them:
+The list of protocols and dApps using Next.ID is growing weekly. Here are a few of the early adopters:
 
 | Developers | Purpose | 
 |---|---|
@@ -41,7 +41,7 @@ RelationService is an aggregation of existing IDs, ID queries, and IDs bound to 
 
 > Note: RelationService is currently WIP and will be released soon. We included it here for a more coherent picture of how Next.ID will function.
 
-## Next Step
+## What next?
 
-- Simply [try it out](./quick-start.md)!
+- Try it out [for yourself](./quick-start.md)!
 - Understand [how it works in detail](../core-concepts/how-it-works.md)
