@@ -1,0 +1,17 @@
+{
+    "sidebar.docs.category.Core Concepts": {
+        "message": "Core Concepts"
+    },
+    "sidebar.docs.category.Getting Started": {
+        "message": "Getting Started"
+    },
+    "sidebar.docs.category.Developer Guide": {
+        "message": "Developer Guide"
+    },
+    "sidebar.docs.FAQ": {
+        "message": "FAQ"
+    },
+    "sidebar.docs.Roadmap": {
+        "message": "Roadmap"
+    }
+}

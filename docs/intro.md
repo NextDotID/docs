@@ -1,6 +1,5 @@
 ---
 id: intro
-slug: /
 title: Next.ID Overview
 sidebar_position: 1
 ---
@@ -33,12 +32,3 @@ A simple KV-based data preserve / query service, which uses ProofService binding
 - History
 - Falsify-proof
 - Verifyable
-
-## [RelationService](relation-service/intro.md)
-
-:::caution TBD
-Work in progress.
-:::
-
-Provides a database which is an aggression of existed DID / ID binding
-/ ID query services.

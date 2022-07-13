@@ -1,69 +1,78 @@
 ---
 id: kv-intro
-title: 简介
+title: Introduction
 sidebar_position: 1
 ---
 
-KVService 旨在可追溯、去中心化地保存 / 读取用户数据。
+KVService is designed to save/read user data in a traceable and
+decentralized way.
 
-## 特色
+## Feature
 
-### 数据结构自由
+### Free data structure
 
-可存储任何合法的 `JSON` `object` 结构。
+KVService can store any valid `JSON` `object` data.
 
-### 可验证的记录
+### Verifiable records
 
-KVService 使用与 [ProofService](/proof-service/intro.md)
-相同的[签名链](/proof-service/glossary.md#glossary-proof-chain)设计，以保证：
+KVService use the same design of
+[ProofService](/proof-service/intro.md)'s [signature
+chain](/proof-service/glossary.md#glossary-proof-chain) to ensure:
 
-- 可追溯：改动记录均被用户批准，无法被第三方伪造
-- 去中心化：用户拥有数据的完整处置权
+- Traceable: all changes are approved by user and cannot be falsified
+  by third parties.
+- Decentralized: The user has the full right to dispose the data.
 
 :::caution WIP
-未来会公开签名链导出的 API，所有使用者都可验证每一次改动的合法性，并自己还原最终存储状态。
+
+KVService will provide API for signature chain export. Anyone can
+verify each changes, and restore the final data status.
+
 :::
 
-## 设计简述
+## Brief of design
 
-- 每个用户拥有 N + 1 个名字空间：
-  - [Persona](/proof-service/glossary.md#glossary-persona) 自己有一个名字空间（`platform == "nextid" && identity == "0xPERSONA_PUBLIC_KEY"`）
-    - 不限定该 [Persona](/proof-service/glossary.md#glossary-persona) 在 [ProofService](/proof-service/intro.md) 中有过使用记录。
-  - 该 [Persona](/proof-service/glossary.md#glossary-persona) 在 [ProofService](/proof-service/intro.md) 下绑定的每条记录均有一个名字空间（`platform` 与 `identity` 定义与 ProofService [对应](/proof-service/platforms.md)）
-- [读数据](kv-api#query)：完全公开，只要指定对方的 `persona` 。
-- [写数据](kv-api#payload)：遵守 [RFC 7396](https://www.rfc-editor.org/rfc/rfc7396) 标准的 Patch。
+- Every user has `N + 1` namespaces：
+  - [Persona](/proof-service/glossary.md#glossary-persona) itself has a namespace (`platform == "nextid" && identity == "0xPERSONA_PUBLIC_KEY"`)
+    - There's no limitation that [Persona](/proof-service/glossary.md#glossary-persona) should be used in [ProofService](/proof-service/intro.md) once.
+  - Each [binding record](/proof-service/glossary.md#glossary-link) (in [ProofService](/proof-service/intro.md)) of each [Persona](/proof-service/glossary.md#glossary-persona) has a namespace.
+    - Value of `platform` and `identity` are the same as [definition](/proof-service/platforms.md) in ProofService.
+- [Query data](kv-api#query): public, only need to specify `persona`.
+- [Write data](kv-api#payload): A patch followed [RFC 7396](https://www.rfc-editor.org/rfc/rfc7396) standard.
 
   <details>
-  <summary>一个简单的例子</summary>
+  <summary>A glimpse of RFC7396</summary>
 
   ```js
-  // 假设已有的数据为
+  // Assume data is:
   {
     "a": {
       "b": [2, 3, 4, "test"]
     },
     "c": "Hello"
   }
-  // 若提交如下更改请求
+  // If this patch is submitted:
   { "a": { "b": null, "new_key": true }, "c": "KVService" }
-  // 那么数据会变成
+  // Then data will become:
   {
     "a": {
       "new_key": true
     },
     "c": "KVService"
   }
-  // 注意：不支持 Nested 地修改 Array 内部，只支持替换
+  // Notice: nedted modification of Array value is not supported.
+  //         Replace the whole Array with new value instead.
   ```
   </details>
 
-## 典型使用场景
+## Use case
 
-- Web3 的 App 需要保存用户的自定义设置，如个人资料、NFT 的展示顺序、钱包优先级等。
+- Web3 apps need to save user configurations
+  > e.g. profile (name, avatar link, bio, etc.), NFT showcase (hide/show, order, etc.) or wallet address priority.
 
-## 使用流程
+## Workflow
 
-### 写数据
+### Write data
 
 ```mermaid
 sequenceDiagram
@@ -72,30 +81,32 @@ sequenceDiagram
     participant A as Application
     participant KS as KVService
 
-    U ->> A : 发起数据更改
+    U ->> A : (Start a modification request)
     A ->> KS : POST /v1/kv/payload
     KS -->> A : sign_payload
     A ->> U : persona.eth_personalSign(sign_payload)
-    U -->> A : 签名结果 Sp
+    U -->> A : Signature Sp
     A ->> KS : POST /v1/kv
-    note right of A : 带上 ③ 的 uuid 和 created_at
-    KS -->> A : 成功
-    A -->> U : 成功
+    note right of A : With uuid and created_at from ③
+    KS -->> A : Success
+    A -->> U : Success
 ```
 
-> 使用的 API：
+> APIs mentioned:
 >
 > - [POST /v1/kv/payload](kv-api#payload)
 > - [POST /v1/kv](kv-api#patch)
 
-### 读数据
+### Query data
 
-参照 [GET /v1/kv](kv-api#query)
+See [GET /v1/kv](kv-api#query).
 
-## 约定
+## Conventions
 
-- 每个 App 使用自己的“包名”来当作自己的名字空间，以此保证你的 App 的数据不会影响其它 App 的数据。
-  > 比如我开发的 App 是 `io.mask.web3-profile-plugin`，
+- Each app should use their "package name" as their own namespace, to ensure other apps are not infected by your modification.
+  > For example, my app is `io.mask.web3-profile-plugin`,
   >
-  > 那么我应保证我只使用 `{ "io.mask.web3-profile-plugin": .... }`
-- 原则上，数据大小不设限制。请合理使用。若有存储大型数据的需求，请考虑 [Arweave](https://www.arweave.org)。
+  > Then I should make all my modification under `{ "io.mask.web3-profile-plugin": .... }` key.
+
+- Theoretically, there is no size limitation for data. FairUse™️, please.
+  > If you want to store data bigger than string, consider [Arweave](https://www.arweave.org).
