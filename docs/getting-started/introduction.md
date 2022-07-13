@@ -16,7 +16,7 @@ Welcome to the future of Digital Identity.
 
 ## User Cases
 
-The list of protocols and dApps using Next.ID is growing weekly. Here are just some of them:
+The list of protocols and dApps using Next.ID is growing weekly. Here are just some of ,kc,sscsd:
 
 | Developers | Purpose | 
 |---|---|
