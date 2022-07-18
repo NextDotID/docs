@@ -2,22 +2,23 @@
 title: Liftoff, Hello Space!
 ---
 
-To get started, let's walk through a binding process with the most frequently used platform: Twitter. Hold tight, let's go!
+To get started, let's walk through a binding process with the most frequently used platform: Twitter. 
+Hold tight, let's go!
 
 ## Prerequisites
 - Basics in Cryptography
 - Basics in Python, TypeScript and Node.js
 - Basics in Postman or cURL
-- Or any programming languages and required libraries you prefer
-- Knowing nothing but keen on learning? Don't panic, it's okay! You can learn it all in just a few hours!
+- Basics in any other programming languages 
+New to this but keen on learning? Don't panic, you can learn it all in just a few hours!
 
-## Set up your first Avatar
+## Step-by-step: Setting up your first Avatar
 
-In the Crypto world, a cryptographic key pair is what stands as one of your AVATARs. Next.ID uses by far the most secure algorithm to protect your sovereignty: curve secp256k1.
+In the Crypto world, a cryptographic key pair is what stands as one of your Avatars. Next.ID uses by far the most secure algorithm to protect your sovereignty: curve secp256k1.
 
 We're showing it by using Python's [secp256k1-py](https://pypi.org/project/secp256k1/).
 
-First to install secp256k1-py lib:
+First, install secp256k1-py lib:
 
 ```
 // get PIP installed in advance or use your own way
@@ -29,29 +30,29 @@ Then generate your own private and public key pair:
 ```
 python -m secp256k1 privkey -p
 
-// ATTENTION! We intently replaced the last three digit of private key to be xxx.
-// Private key is everything and NEVER expose it to others or publicly
+// ATTENTION! We intentionally replaced the last three digits of private key to be xxx.
+// Your private key is EVERYTHING. NEVER expose it to others or reveal it anywhere publicly.
 43c25fecc20e6b2a0d86c81a0202d125c0181deb9975d1170d80378c7e05bxxx
 Public key: 03bce884894fdc4fb45475733be317dd3c289f003bceebb097ac79a6b95e6edc56
 ```
 
-Having this one key pair, you now can get to create an Avatar backed by unbreakable cryptography.
+With this one key pair, you now create an Avatar secured by unbreakable cryptography.
 
-## Binding Twitter account
+## Binding your Twitter account
 
-From now on, we're demonstrating the whole process by using a Twitter Handle and key-pair generated as above. Replace all fields to be your own as you go on, you'll get acknowledged when and where you should do it.
+From here, we're demonstrating the whole process by using a Twitter handle and key-pair as generated above. Replace all fields with your own information -- you'll be prompted to do so accordingly.
 
-Especially `your_twitter_handle` is where you'll be replacing it with your own.
+Please take note especially to replace `your_twitter_handle`.
 
 ### Get a payload
 
-If We're heading into space, there'll be a Rocket carrying us as a payload. Joining Cyberspace each time is quite similar.
+If we're heading into space, there'll be a Rocket carrying us as a payload. Entering Cyberspace each time is similar.
 
 First, let's get the payload needed to represent us. Calling REST API `/proof/payload` by using POSTMAN or using cURL in the command line:
 
 ![](../../static/img/get-payload.png)
 
-Replace the fields of `identity` and `public_key` to be your own, then it will return like:
+Replace the `identity` and `public_key` fields with your own information, and it will return like:
 
 ```
 {
@@ -70,11 +71,11 @@ Replace the fields of `identity` and `public_key` to be your own, then it will r
 
 ### Generate the signature
 
-With the payload returned, now we can go ahead to sign it. Git clones our [open-source Demo in TypeScript](https://github.com/nextdotid/Signature-Generating-Sample) to accomplish it.
+With the payload returned, we can go ahead to sign it. Git clones our [open-source Demo in TypeScript](https://github.com/nextdotid/Signature-Generating-Sample) to accomplish this.
 
-Notice that, you need to set up Node.js and TypeScript before downloading, then go to install the required libs as `ethereumjs-util`.
+Note: you'll need to set up Node.js and TypeScript before downloading, then go to install the required libs as `ethereumjs-util`.
 
-Let's open up the `index.ts` file under `/src`, and replace the `const message` with the string `sign_payload` in the former step:
+Open the `index.ts` file under `/src` and replace the `const message` with the string `sign_payload` in the former step:
 
 ```
 import { ecsign, toRpcSig, keccakFromString, BN } from 'ethereumjs-util';
@@ -136,11 +137,11 @@ Then go to the detail page of this tweet, get its ID at the end of the URL like 
 https://twitter.com/your_twitter_handle/status/1543541274254639104
 ```
 
-This ID will be the `proof_location` we needed for verifying.
+This ID will be the `proof_location` we need for verification.
 
 ### Verify the proof
 
-We're getting close! Calling REST API `/proof` by using POSTMAN or using cURL in the command line:
+We're getting close! Call the REST API `/proof` by using POSTMAN or using cURL in the command line:
 
 ![](../../static/img/verify-post.png)
 
@@ -150,11 +151,11 @@ It will return a code of `201` Created` and empty curly brackets :
 {}
 ```
 
-### Check the status of Avatar
+### Check your Avatar's status
 
 All set! Let's go to have a look at our newly created Avatar.
 
-Calling REST API `/proof` in `GET` method and with two fields of `platform` and `identity`:
+Call REST API `/proof`with `GET` method and with two fields of `platform` and `identity`:
 
 ```
 https://proof-service.next.id/v1/proof?platform=twitter&identity=your_twitter_handle
@@ -188,8 +189,8 @@ We will get as below:
 }
 ```
 
-Now you successfully created an Avatar on-chain as who you're. Go exploring cyberspace ahead!
-## Next Step
+Congrats! You have successfully created an Avatar on-chain. Go explore cyberspace with your new digital identity!
+## What's Next? 
 
 - View the [architecture] of Next.ID framework(../core-concepts/architecture.md)
 - Understand [how it works in detail](../core-concepts/how-it-works.md)
