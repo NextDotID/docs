@@ -25,12 +25,12 @@ const config = {
         docs: {
           remarkPlugins: [require('mdx-mermaid')],
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/nextdotid/docs',
+          editUrl: 'https://github.com/nextdotid/docs/edit/main/',
           routeBasePath: '/',
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/nextdotid/docs',
+          editUrl: 'https://github.com/nextdotid/docs/blob/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
