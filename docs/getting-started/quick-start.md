@@ -9,7 +9,8 @@ Hold tight, let's go!
 - Basics in Cryptography
 - Basics in Python, TypeScript and Node.js
 - Basics in Postman or cURL
-- Basics in any other programming languages 
+- Basics in any other programming languages
+
 New to this but keen on learning? Don't panic, you can learn it all in just a few hours!
 
 ## Step-by-step: Setting up your first Avatar
