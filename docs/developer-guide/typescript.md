@@ -4,7 +4,7 @@ title: TypeScript
 
 ## Proof Service
 
-> You could git clone and run this [TypeScript open demo](https://github.com/nextdotid/Signature-Generating-Sample/tree/main/typescript) as a help
+> You could git clone and run [TypeScript open demo](https://github.com/nextdotid/Signature-Generating-Sample/tree/main/typescript) for help.
 
 The core example of codes:
 
