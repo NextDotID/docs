@@ -1,10 +1,10 @@
 ---
-title: Architecture
+title: Product & System Architecture
 ---
 
-# Architecture 
+# Product & System Architecture
 
-This page describes the Next.ID product and system architecture. This is also a guide to better understand what Next.ID wants to deliver and the core value. 
+This page visualises Next.ID's product and system architecture. This will help you understand what Next.ID wants to deliver and its core values. 
 
 ## ProofService Product Structure
 
@@ -14,6 +14,6 @@ This page describes the Next.ID product and system architecture. This is also a 
 
 ![](../../static/img/architecture/proof-service-tech-structure.png)
 
-*The whole backup of ProofChain is stored in Arweave separately. 
+*The whole backup of ProofChain is stored independently on Arweave. 
 
-**Crypto identity can be validated internally, no provider requirements.
+**Crypto identity can be validated internally, with no provider requirements.
