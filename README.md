@@ -15,7 +15,7 @@ $ pnpm
 $ pnpm start
 ```
 
-Or
+Or use [just](https://github.com/casey/just)
 
 ```sh
 $ just start zh-Hans
