@@ -4,7 +4,7 @@ title: Rust
 
 ## Proof Service
 
-> You could git clone and run this [Rust open demo](https://github.com/nextdotid/Signature-Generating-Sample/tree/main/rust) as a help
+> You can git clone and run [Rust open demo](https://github.com/nextdotid/Signature-Generating-Sample/tree/main/rust) for help.
 
 The core example of codes:
 
