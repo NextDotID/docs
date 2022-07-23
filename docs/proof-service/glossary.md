@@ -6,28 +6,28 @@ sidebar_position: 2
 
 # Glossary
 
-## Persona {#glossary-persona}
+## Avatar {#glossary-avatar}
 
-Persona is the core of user ID network in ProofService.
+Avatar is the core of user ID network in ProofService.
 
 All other [Identities](#glossary-identity) (Web2.0 account, blockchain wallet etc.) are **only**
-binded with Persona.
+binded with Avatar.
 
 ```mermaid
 flowchart LR
 
-Twitter <-->|Proof Tweet|Persona
-Persona <-->|Sign|EthereumWallet
-Github <-->|Public Gist|Persona
-Persona <-->|Public Message|Discord
+Twitter <-->|Proof Tweet|Avatar
+Avatar <-->|Sign|EthereumWallet
+Github <-->|Public Gist|Avatar
+Avatar <-->|Public Message|Discord
 ```
 
-> For now, Persona is elliptic curve keypair using `secp256k1` curve.
+> For now, Avatar is elliptic curve keypair using `secp256k1` curve.
 
 ## Identity {#glossary-identity}
 
 Accounts / Identities on other [Platform](#glossary-platform) which is
-binded with [Persona](#glossary-persona).
+binded with [Avatar](#glossary-avatar).
 
 For example, `@my_twitter` on `twitter` platform, `my_github` on `github` platform.
 
@@ -69,7 +69,7 @@ See [Downgrade](#glossary-downgrade)。
 ## Binding (Link) {#glossary-link}
 
 After ProofService validates [Proof post](#glossary-proof-post) on
-server side, a binding record of "[Persona](#glossary-persona) <->
+server side, a binding record of "[Avatar](#glossary-avatar) <->
 [Identity](#glossary-identity)" will be saved into [Proof
 Chain](#glossary-proof-chain).
 
@@ -115,7 +115,7 @@ interface Link {
     created_at: number;
     // An UUID of this link, works as a global identifier.
     uuid: string;
-    // Signature of this link made by persona.
+    // Signature of this link made by avatar.
     signature: Signature;
 }
 ```
@@ -124,22 +124,22 @@ interface Link {
 
 ## Proof Chain {#glossary-proof-chain}
 
-Each [Link](#glossary-link) under the same [Persona](#glossary-persona) is chained into a link:
+Each [Link](#glossary-link) under the same [Avatar](#glossary-avatar) is chained into a link:
 
 - Each [Link](#glossary-link) has a signature of
-  [Persona](#glossary-persona).
+  [Avatar](#glossary-avatar).
 - Every [Link](#glossary-link) (except the first one under this
-  [Persona](#glossary-persona)) has its previous
+  [Avatar](#glossary-avatar)) has its previous
   [Link](#glossary-link)'s signature.
 
 So to ensure that ProofService server cannot falsify any of the record
-in the chain without Persona-provided signature.
+in the chain without Avatar-provided signature.
 
 > Proof Chain mechanism is not picky of storage media. But we will put
 > it in Arweave / IPFS in the future, anyway.
 
 :::caution TBD
-There will be an API to export the whole Proof Chain of a Persona.
+There will be an API to export the whole Proof Chain of a Avatar.
 :::
 
 <details>
@@ -162,7 +162,7 @@ type PublicKey = string;
 
 interface Chain {
     version: VERSION;
-    persona: {
+    avatar: {
         public_key: PublicKey,
         curve: "secp256k1",
     };

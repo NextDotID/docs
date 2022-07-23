@@ -26,7 +26,7 @@ without much cost.
 
 ProofService is designed to prove "An
 [Identity](ps-glossary#glossary-identity) and a
-[Persona](ps-glossary#glossary-persona) is held by same person".
+[Avatar](ps-glossary#glossary-avatar) is held by same person".
 
 Let's take this assertion into 2 parts:
 

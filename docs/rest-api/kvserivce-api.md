@@ -20,24 +20,24 @@ for Rust.
 
 ## Group KV
 
-### Get current KV of a persona [GET /v1/kv] {#query}
+### Get current KV of a avatar [GET /v1/kv] {#query}
 
 + Request (application/json)
 
     + Parameters
 
-        - persona (string, required) - Persona public key (hexstring started with `0x`).
+        - avatar (string, required) - Avatar public key (hexstring started with `0x`).
 
     + Example
 
-        `GET /v1/kv?persona=0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575`
+        `GET /v1/kv?avatar=0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575`
 
 + Response 200 (application/json)
 
   + Attributes (object)
 
-     + persona (string, required) - Persona public key (uncompressed hexstring started with `0x`).
-     + proofs (array[object], required) - All proofs belong to this persona
+     + avatar (string, required) - Avatar public key (uncompressed hexstring started with `0x`).
+     + proofs (array[object], required) - All proofs belong to this avatar
           + platform (string, required) - Platform (incl. `nextid`, which means public key itself).
           + identity (string, required) - Identity.
           + content (object, required) - KV-pair of this entry.
@@ -45,7 +45,7 @@ for Rust.
   + Body
 
         {
-          "persona": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
+          "avatar": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
           "proofs": [{
             "platform": "nextid",
             "identity": "0x04c7cacde73.....",
@@ -75,7 +75,7 @@ Persona not found (no KV was ever created).
 
   + Attributes (object)
 
-    + persona (string, required) - Persona public key (both comressed / uncompressed and with/without `0x` are OK).
+    + avatar (string, required) - Avatar public key (both comressed / uncompressed and with/without `0x` are OK).
     + platform (string, required) - Platform (incl. `nextid`, which means public key itself).
     + identity (string, required) - Identity.
     + patch (object, required) - Patch to current data
@@ -83,7 +83,7 @@ Persona not found (no KV was ever created).
   + Body
 
         {
-          "persona": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
+          "avatar": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
           "platform": "nextid",
           "identity": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
           "patch": {
@@ -120,7 +120,7 @@ Persona not found (no KV was ever created).
 
   + Attributes (object)
 
-    + persona (string, required) - Persona public key (hexstring, both comressed / uncompressed are OK).
+    + avatar (string, required) - Avatar public key (hexstring, both comressed / uncompressed are OK).
     + platform (string, required) - Platform (incl. `nextid`, which means public key itself).
     + identity (string, required) - Identity.
     + uuid (string, required) - UUID given by `POST /v1/kv/payload`.
@@ -131,7 +131,7 @@ Persona not found (no KV was ever created).
   + Body
 
         {
-          "persona": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
+          "avatar": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
           "platform": "nextid",
           "identity": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
           "uuid": "40c13c92-31e5-40d1-aebb-143d8e5b9c5e",

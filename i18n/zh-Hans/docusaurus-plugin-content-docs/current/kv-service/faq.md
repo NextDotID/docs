@@ -21,4 +21,4 @@ encourage you to put it under precise `platform` and `identity`.
 
 A typical case is, your DApp allows user to set different NFT avatar
 on Twitter and Github. In this case, `platform` and `identity` should
-be specified (instead of being put under an ambiguous persona pubkey).
+be specified (instead of being put under an ambiguous avatar pubkey).

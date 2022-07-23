@@ -33,11 +33,11 @@ verify each changes, and restore the final data status.
 ## Brief of design
 
 - Every user has `N + 1` namespaces：
-  - [Persona](/proof-service/glossary.md#glossary-persona) itself has a namespace (`platform == "nextid" && identity == "0xPERSONA_PUBLIC_KEY"`)
-    - There's no limitation that [Persona](/proof-service/glossary.md#glossary-persona) should be used in [ProofService](/proof-service/intro.md) once.
-  - Each [binding record](/proof-service/glossary.md#glossary-link) (in [ProofService](/proof-service/intro.md)) of each [Persona](/proof-service/glossary.md#glossary-persona) has a namespace.
+  - [Avatar](/proof-service/glossary.md#glossary-avatar) itself has a namespace (`platform == "nextid" && identity == "0xAVATAR_PUBLIC_KEY"`)
+    - There's no limitation that [Avatar](/proof-service/glossary.md#glossary-avatar) should be used in [ProofService](/proof-service/intro.md) once.
+  - Each [binding record](/proof-service/glossary.md#glossary-link) (in [ProofService](/proof-service/intro.md)) of each [Avatar](/proof-service/glossary.md#glossary-avatar) has a namespace.
     - Value of `platform` and `identity` are the same as [definition](/proof-service/platforms.md) in ProofService.
-- [Query data](kv-api#query): public, only need to specify `persona`.
+- [Query data](kv-api#query): public, only need to specify `avatar`.
 - [Write data](kv-api#payload): A patch followed [RFC 7396](https://www.rfc-editor.org/rfc/rfc7396) standard.
 
   <details>
@@ -84,7 +84,7 @@ sequenceDiagram
     U ->> A : (Start a modification request)
     A ->> KS : POST /v1/kv/payload
     KS -->> A : sign_payload
-    A ->> U : persona.eth_personalSign(sign_payload)
+    A ->> U : avatar.eth_avatarlSign(sign_payload)
     U -->> A : Signature Sp
     A ->> KS : POST /v1/kv
     note right of A : With uuid and created_at from ③

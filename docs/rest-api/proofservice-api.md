@@ -33,13 +33,19 @@ See [Platform supported](./platforms.md)
 
   + Attributes (object)
 
-    + hello (string, required) - must be `proof server`.
+    + hello (string, required) - must be `proof service`.
+    + built_at (string, required) - UNIX Timestamp of when server is built.
+    + revision (string, required) - On which git commit is this server built.
+    + environment (string, required) - App environment of this server (`staging` / `production`)
     + platforms (array[string], required) - All `platform`s supported by this server.
 
   + Body
 
         {
-          "hello": "proof server",
+          "hello": "proof service",
+          "built_at": "1658210228",
+          "revision": "fffa94639d99c0a707cb7befdb51201ea655896d",
+          "environment": "staging",
           "platforms": [
               "github",
               "twitter",

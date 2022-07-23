@@ -174,8 +174,8 @@ Request failed.
       + current (number, required) - current page number.
       + next (number, required) - Next page. `0` if current page is the last one.
     + ids (array[object], required) - All IDs found. Will be empty array if not found.
-      + persona (string, required) - Persona public key
-      + proofs (array[object], required) - All proofs under this persona
+      + avatar (string, required) - Avatar public key
+      + proofs (array[object], required) - All proofs under this avatar
         + platform (string, required) - Platform
         + identity (string, required) - Identity on that platform
         + created_at (string, required) - Creation time of this proof. (timestamp, unit: second)
@@ -193,7 +193,7 @@ Request failed.
             "next": 2
           },
           "ids": [{
-            "persona": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
+            "avatar": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
             "proofs": [{
               "platform": "twitter",
               "identity": "my_twitter_screen_name",
@@ -210,7 +210,7 @@ Request failed.
               "invalid_reason": ""
             }]
           }, {
-            "persona": "0xANOTHER",
+            "avatar": "0xANOTHER",
             "proofs": [{
               "platform": "ethereum",
               "identity": "0x114514......",

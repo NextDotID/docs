@@ -44,7 +44,7 @@ so no `proof_location` needed.
 |------------|------------------------------|------------------|
 | `ethereum` | Wallet address `0x123AbC...` | N/A              |
 
-Two-way signatures are created from persona sk and wallet sk, so no proof post needed.
+Two-way signatures are created from avatar sk and wallet sk, so no proof post needed.
 
 ## GitHub
 
@@ -69,9 +69,12 @@ Two-way signatures are created from persona sk and wallet sk, so no proof post n
 |------------|-----------------|--------------------------------------------------------------------|
 | `discord`  | `UserName#0000` | message link (`https://discord.com/channels/DIGITS/DIGITS/DIGITS`) |
 
+> More info will be filled here when production is online (e.g. where to send proof post).
+
 ## DotBit
 
-:::caution STAGING
+:::success ONLINE
+- Production
 - Staging
 :::
 
@@ -79,11 +82,12 @@ Two-way signatures are created from persona sk and wallet sk, so no proof post n
 |------------|-----------------|--------------------------------------------------------------------|
 | `dotbit`   | `address.bit`   | N/A                                                                |
 
-Create a Profile record with key `nextid` and value `${COMPRESSED_PERSONA_PUBKEY_IN_HEX}:${SIGNATURE_IN_BASE64}`.
+Create a Profile record with key `nextid` and value `0x${COMPRESSED_PERSONA_PUBKEY_IN_HEX}:${SIGNATURE_IN_BASE64}`.
 
 ## Solana
 
-:::caution STAGING
+:::success ONLINE
+- Production
 - Staging
 :::
 
@@ -91,4 +95,4 @@ Create a Profile record with key `nextid` and value `${COMPRESSED_PERSONA_PUBKEY
 |------------|------------------------------|------------------|
 | `solana`   | Wallet address `AbCdEfG12...`| N/A              |
 
-Two-way signatures are created from persona sk and wallet sk, so no proof post needed.
+Two-way signatures are created from avatar sk and wallet sk, so no proof post needed.

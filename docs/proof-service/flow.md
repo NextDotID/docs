@@ -23,7 +23,7 @@ sequenceDiagram
     U ->>+ A : Start a binding with platform, identity
     A ->>+ PS : POST /v1/proof/payload
     PS -->>- A : sign_payload, post_content
-    A ->>- U : persona.eth_personalSign(sign_payload)
+    A ->>- U : avatar.eth_personalSign(sign_payload)
     U -->> A : Signature Sp
     A -->> A : Inject Sp into post_content
     A -->>+ U : Show to user how to do proof post with post_content
@@ -61,7 +61,7 @@ sequenceDiagram
     U ->>+ A : platform: ethereum, identity: 0xWALLET_ADDRESS
     A ->> PS : POST /v1/proof/payload
     PS -->> A : sign_payload
-    A ->> U : persona.eth_personalSign(sign_payload)
+    A ->> U : avatar.eth_personalSign(sign_payload)
     U -->> A : Signature Sp
     A ->> W : wallet.eth_personalSign(sign_payload)
     W -->> A : Signature Sw
@@ -99,7 +99,7 @@ sequenceDiagram
     A ->>+ PS : POST /v1/proof/payload
     note right of A: action: delete
     PS -->>- A : sign_payload
-    A ->> U : persona.eth_personalSign(sign_payload)
+    A ->> U : avatar.eth_personalSign(sign_payload)
     U -->> A : Signature Sp
     A ->>+ PS : POST /v1/proof
     note right of A: action: delete

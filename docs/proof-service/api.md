@@ -39,13 +39,19 @@ See [Platform supported](ps-platforms-supported)
 
   + Attributes (object)
 
-    + hello (string, required) - must be `proof server`.
+    + hello (string, required) - must be `proof service`.
+    + built_at (string, required) - UNIX Timestamp of when server is built.
+    + revision (string, required) - On which git commit is this server built.
+    + environment (string, required) - App environment of this server (`staging` / `production`)
     + platforms (array[string], required) - All `platform`s supported by this server.
 
   + Body
 
         {
-          "hello": "proof server",
+          "hello": "proof service",
+          "built_at": "1658210228",
+          "revision": "fffa94639d99c0a707cb7befdb51201ea655896d",
+          "environment": "staging",
           "platforms": [
               "github",
               "twitter",
@@ -65,7 +71,7 @@ See [Platform supported](ps-platforms-supported)
     + action (string, required) - Action (`create` / `delete`)
     + platform (string, required) - Target platform. See table above for all available platforms. See table in [Platform supported](ps-platforms-supported) for all available values.
     + identity (string, required) - Identity in target platform to proof. Usually a "username" or "screen name". See [Platform supported](ps-platforms-supported).
-    + public_key (string, required) - Public key of Persona to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`).
+    + public_key (string, required) - Public key of Avatar to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`).
 
   + Body
 
@@ -110,10 +116,10 @@ See [Platform supported](ps-platforms-supported)
     + platform (string, required) - Target platform. See table above for all available platforms. See table above for all available values.
     + identity (string, required) - Identity in target platform to proof. Usually a "username" or "screen name". See [Platform supported](ps-platforms-supported).
     + proof_location (string, optional) - Location where public-accessible proof post is set. See [Platform supported](ps-platforms-supported).
-    + public_key (string, required) - Public key of Next.ID Persona to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`).
+    + public_key (string, required) - Public key of Next.ID Avatar to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`).
     + extra (object, optional) - Extra info for specific platform needed. See [Flow](ps-flow#ethereum) for more info.
       + wallet_signature (string, optional) - (required when `platform: ethereum`) Signature signed by ETH wallet (w/ same sign payload), BASE64-ed.
-      + signature (string, optional) - (required when `platform: ethereum` or `action: delete`) Signature signed by Persona private key (w/ same sign payload), BASE64-ed.
+      + signature (string, optional) - (required when `platform: ethereum` or `action: delete`) Signature signed by Avatar private key (w/ same sign payload), BASE64-ed.
     + uuid (string, required) - UUID of this chain link. Use the exact value from `POST /v1/proof/payload`.
     + created_at (string, required) - Creation time of this chain link (UNIX timestamp, unit: second). Use the exact value from `POST /v1/proof/payload`.
 
@@ -174,8 +180,8 @@ Request failed.
       + current (number, required) - current page number.
       + next (number, required) - Next page. `0` if current page is the last one.
     + ids (array[object], required) - All IDs found. Will be empty array if not found.
-      + persona (string, required) - Persona public key
-      + proofs (array[object], required) - All proofs under this persona
+      + avatar (string, required) - Avatar public key
+      + proofs (array[object], required) - All proofs under this Avatar
         + platform (string, required) - Platform
         + identity (string, required) - Identity on that platform
         + created_at (string, required) - Creation time of this proof. (timestamp, unit: second)
@@ -193,7 +199,7 @@ Request failed.
             "next": 2
           },
           "ids": [{
-            "persona": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
+            "avatar": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
             "proofs": [{
               "platform": "twitter",
               "identity": "my_twitter_screen_name",
@@ -210,7 +216,7 @@ Request failed.
               "invalid_reason": ""
             }]
           }, {
-            "persona": "0xANOTHER",
+            "avatar": "0xANOTHER",
             "proofs": [{
               "platform": "ethereum",
               "identity": "0x114514......",
@@ -230,7 +236,7 @@ Request failed.
 
     + platform (string, required) - Proof platform.
     + identity (string, required) - Identity on target platform.
-    + public_key (string, required) - Public key of Next.ID Persona to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`)
+    + public_key (string, required) - Public key of Next.ID  to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`)
 
   + Example
 

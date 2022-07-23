@@ -44,7 +44,7 @@ so no `proof_location` needed.
 |------------|------------------------------|------------------|
 | `ethereum` | Wallet address `0x123AbC...` | N/A              |
 
-Two-way signatures are created from persona sk and wallet sk, so no proof post needed.
+Two-way signatures are created from avatar sk and wallet sk, so no proof post needed.
 
 ## GitHub
 
@@ -91,4 +91,4 @@ Create a Profile record with key `nextid` and value `${COMPRESSED_PERSONA_PUBKEY
 |------------|------------------------------|------------------|
 | `solana`   | Wallet address `AbCdEfG12...`| N/A              |
 
-Two-way signatures are created from persona sk and wallet sk, so no proof post needed.
+Two-way signatures are created from avatar sk and wallet sk, so no proof post needed.
