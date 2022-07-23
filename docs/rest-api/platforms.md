@@ -83,7 +83,7 @@ Create a Profile record with key `nextid` and value `${COMPRESSED_AVATAR_PUBKEY_
 
 ## Solana
 
-:::caution ONLINE
+:::success ONLINE
 - Production
 - Staging
 :::
