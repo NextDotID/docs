@@ -193,5 +193,5 @@ We will get as below:
 Congrats! You have successfully created an Avatar on-chain. Go explore cyberspace with your new digital identity!
 ## What's Next? 
 
-- View the [architecture] of Next.ID framework(../core-concepts/architecture.md)
+- View the [architecture of Next.ID framework](../core-concepts/architecture.md)
 - Understand [how it works in detail](../core-concepts/how-it-works.md)
