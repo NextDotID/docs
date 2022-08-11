@@ -13,6 +13,27 @@ module.exports = {
       items: ['core-concepts/how-it-works','core-concepts/architecture'],
     },
     {
+      type: "category",
+      label: "Components",
+      collapsed: false,
+      items: [{
+        "type": "category",
+        label: "ProofService",
+        collapsed: true,
+        items: ['proof-service/ps-intro']
+      }, {
+        "type": "category",
+        label: "KVService",
+        collapsed: true,
+        items: ['kv-service/kv-intro']
+      }, {
+        "type": "category",
+        label: "RelationService",
+        collapsed: true,
+        items: ['relation-service/rs-intro']
+      }]
+    },
+    {
       type: 'category',
       label: 'Developer Guide',
       collapsed: false,
