@@ -4,13 +4,13 @@ module.exports = {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: ['getting-started/introduction','getting-started/quick-start'],
+      items: ['getting-started/introduction', 'getting-started/quick-start'],
     },
     {
       type: 'category',
       label: 'Core Concepts',
       collapsed: false,
-      items: ['core-concepts/how-it-works','core-concepts/architecture'],
+      items: ['core-concepts/how-it-works', 'core-concepts/architecture'],
     },
     {
       type: 'category',
@@ -30,21 +30,26 @@ module.exports = {
         type: 'category',
         label: 'RelationService',
         collapsed: true,
-        items: ['relation-service/rs-intro', 'relation-service/rs-system', 'relation-service/rs-graphql']
+        items: [
+          'relation-service/rs-intro',
+          'relation-service/rs-system',
+          'relation-service/rs-graphql',
+          'relation-service/rs-faq',
+        ]
       }]
     },
     {
       type: 'category',
       label: 'Developer Guide',
       collapsed: false,
-      items: ['developer-guide/go','developer-guide/rust','developer-guide/typescript'],
+      items: ['developer-guide/go', 'developer-guide/rust', 'developer-guide/typescript'],
     },
     'glossary',
     'faq',
     {
       type: 'category',
       label: 'Rest API',
-      items: ['rest-api/proofservice-api','rest-api/kvserivce-api','rest-api/platforms'],
+      items: ['rest-api/proofservice-api', 'rest-api/kvserivce-api', 'rest-api/platforms'],
     },
     'roadmap',
   ],

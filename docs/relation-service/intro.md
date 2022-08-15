@@ -39,7 +39,7 @@ Start a query by giving one of the following qeury conditions:
 - `platform` - `identity`, or
 - `blockchain` - `nft_type` - `contract_address` (optional) - `nft_id`
 
-### Stateless
+### Stateless {#stateless}
 
 Every identity / relation data is fetched when first requested.
 
