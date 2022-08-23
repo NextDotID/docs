@@ -175,6 +175,7 @@ Request failed.
       + next (number, required) - Next page. `0` if current page is the last one.
     + ids (array[object], required) - All IDs found. Will be empty array if not found.
       + avatar (string, required) - Avatar public key
+      + last_arweave_id (string, required) - Arweave transaction ID of last proof this avatar signed
       + proofs (array[object], required) - All proofs under this Avatar
         + platform (string, required) - Platform
         + identity (string, required) - Identity on that platform
@@ -194,6 +195,7 @@ Request failed.
           },
           "ids": [{
             "avatar": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
+            "last_arweave_id": "W1-5W8l3EfcSPSlgGJJoRZUObqkXqlXDuQH5cIA53t0",
             "proofs": [{
               "platform": "twitter",
               "identity": "my_twitter_screen_name",
@@ -221,6 +223,8 @@ Request failed.
             }]
           }]
         }
+
+> Note that an empty `last_arweave_id` indicates that the last proof this avatar signed has not been uploaded to Arweave Network yet, please try again later.
 
 ### Check if a proof exists [GET /v1/proof/exists] {#proof-query-exists}
 
@@ -259,6 +263,147 @@ Found.
 + Response 404 (application/json)
 
 Not found.
+
+  + Attributes
+
+    + message (string, required) - Message of which part goes wrong.
+
+### Get one single ProofChain under an Avatar [GET /v1/proofchain]
+
++ Request
+
+  + Parameters
+    + public_key (string, required) - Public key of NextID Avatar to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`)
+    + page (number, optional) - Pagination. First page is number `1`.
+
+  + Example
+
+    `GET /v1/proofchain?public_key=0x028c3cda474361179d653c41a62f6bbb07265d535121e19aedf660da2924d0b1e3&page=1`
+
++ Response 200 (application/json)
+
+Found.
+
+  + Attributes
+
+    + pagination (object, required) - Pagination info
+      + total (number, required) - Total amount of results.
+      + per (number, required) - How many `proof item` results per page.
+      + current (number, required) - current page number.
+      + next (number, required) - Next page. `0` if current page is the last one.
+
+    + proof_chain (array[object], required) - Will be empty array if not found.
+        + action (string, required) - Action(create / delete)
+        + platform (string, required) - Target platform. See table above for all available platforms. See table above for all available values.
+        + identity (string, required) - Identity on that platform
+        + proof_location (string, required) - Location where public-accessible proof post is set. See [Platform supported](platforms).
+        + created_at (string, required) - Creation time of this proof. (timestamp, unit: second)
+        + signature (string, required) - generate signature_payload and avatar_private_key
+        + signature_payload (string, required) - Raw string to be sent to `personal_sign`
+        + extra (string, optional) -  Extra info for specific platform needed.
+        + uuid (string, required) - UUID of this chain link. Use the exact value from `POST /v1/proof/payload`.
+        + arweave_id (string, required) - Arweave transaction ID of this proof
+
+
+  + Body
+
+        {
+            "pagination":{
+                "total":1,
+                "per":20,
+                "current":1,
+                "next":0
+            },
+            "proof_chain":[
+                {
+                    "action":"create",
+                    "platform":"twitter",
+                    "identity":"yeiwb",
+                    "proof_location":"1469221200140574720",
+                    "created_at":"1648023422",
+                    "signature":"gMUJ75eewkdaNrFp7bafzckv9+rlW7rVaxkB7/sYzYgFdFltYG+gn0lYzVNgrAdHWZPmu2giwJniGG7HG9iNigE=",
+                    "signature_payload":"",
+                    "uuid":"",
+                    "arweave_id": "",
+                    "extra":{
+
+                    }
+                }
+            ]
+        }
+
++ Response 400 (application/json)
+
+Params error.
+
++ Response 500 (application/json)
+
+Internal error.
+
+  + Attributes
+
+    + message (string, required) - Message of which part goes wrong.
+
+### Get separated ProofChain link (aka Changelog of whole server) [GET /v1/proofchain/changes]
+
++ Request
+
+  + Parameters
+    + last_id (number, required) - The "cursor" indicates where to start. Usually the maximum `id` from previous request's response. If you want to start a new server iteration, set it to `0`.
+    + count (number, optional) - How meny records to return in a request, should be `10 <= count <= 100`.
+
+  + Example
+
+    `GET /v1/proofchain/changes?id=203&count=20`
+
++ Response 200 (application/json)
+
+Found.
+
+  + Attributes
+
+    + links (array[object], required) - Each link of every ProofChain.
+        + id (number, required) - ProofChain link ID in ProofService's database. Can be used as the "cursor" in query.
+        + avatar (string, required) - Which Avatar this link belongs to.
+        + action (string, required) - Action (`create` / `delete`)
+        + platform (string, required) - Target platform. See [Platform supported](platforms) for all supported platforms.
+        + identity (string, required) - Identity on that platform. See [Platform supported](platforms) for the meaning of this field..
+        + proof_location (string, required) - Location where public-accessible proof post is set. See [Platform supported](platforms).
+        + created_at (string, required) - Creation time of this proof. (timestamp, unit: second)
+        + signature (string, required) - generate signature_payload and avatar_private_key
+        + signature_payload (string, required) - Raw string to be sent to `personal_sign`
+        + extra (string, optional) -  Extra info for specific platform needed.
+        + uuid (string, required) - UUID of this chain link. Use the exact value from `POST /v1/proof/payload`.
+        + arweave_id (string, required) - Arweave transaction ID of this ProofChain link.
+
+  + Body
+
+        {
+            "links":[
+                {
+                    "id": 204,
+                    "avatar": "0x028c3cda474361179d653c41a62f6bbb07265d535121e19aedf660da2924d0b1e3",
+                    "action": "create",
+                    "platform": "twitter",
+                    "identity": "yeiwb",
+                    "proof_location": "1469221200140574720",
+                    "created_at": "1648023422",
+                    "signature": "gMUJ75eewkdaNrFp7bafzckv9+rlW7rVaxkB7/sYzYgFdFltYG+gn0lYzVNgrAdHWZPmu2giwJniGG7HG9iNigE=",
+                    "signature_payload": "",
+                    "uuid": "",
+                    "arweave_id": "",
+                    "extra": {}
+                }
+            ]
+        }
+
++ Response 400 (application/json)
+
+Params error.
+
++ Response 500 (application/json)
+
+Internal error.
 
   + Attributes
 
