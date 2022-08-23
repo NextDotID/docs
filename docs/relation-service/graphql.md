@@ -91,6 +91,35 @@ Then you have the ability to rebuild the whole relation tree with
 `from` - `to` edges and `uuid` of each vertex.
 
 
+### Query an identity (w/ its relations to other identitites and their sources)
+If you don't need to rebuild the relation tree
+just want to know which upstream provides this connection info.
+
+```graphql
+query findOneIdentityWithSource {
+  identity(platform: "twitter", identity: "suji_yan") {
+    status
+    uuid
+    displayName
+    createdAt
+    addedAt
+    updatedAt
+    # Here we perform a 3-depth deep search for this identity's "neighbor".
+    neighbor(depth: 3) {
+      sources # Which upstreams provide these connection infos.
+      identity {
+        uuid
+        platform
+        identity
+        displayName
+      }
+    }
+  }
+}
+
+```
+
+
 ### Query an identity (w/ its relations and potential NFTs)
 
 ```graphql
