@@ -116,7 +116,7 @@ query getTwitterUserNeighbors($id: String!, $depth: Int!) {
 }
 ```
 
-From now on, run `npm run codgen` to generate code from all your GraphQL queries, and then introduce the generated code to your project.
+From now on, run `npm run codegen` to generate code from all your GraphQL queries, and then introduce the generated code to your project.
 
 ```typescript title="index.ts"
 import { GraphQLClient } from 'graphql-request'
