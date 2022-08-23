@@ -44,3 +44,91 @@ async function main() {
 
 main();
 ```
+
+## Relation Service
+
+> You could git clone and run [TypeScript relation service codegen demo](https://github.com/nextdotid/sdk/tree/feat/relation/src/relation) for help.
+
+For typescript projects, we encourage to use [GraphQL Code Generator](https://www.graphql-code-generator.com/) to generate code from your very own GraphQL queries and remote schema.
+
+To install and configure GraphQL Code Generator, you can add following dependencies or check its [official installation guide](https://www.graphql-code-generator.com/docs/getting-started/installation):
+
+```js title="package.json"
+{
+  "scripts": {
+    "codegen": "graphql-codegen --config codegen.yml"
+  },  
+  "dependencies": {
+    "graphql": "^16.5.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.11.6",
+    "@graphql-codegen/introspection": "2.2.1",
+    "@graphql-codegen/typescript": "^2.7.3",
+    "@graphql-codegen/typescript-graphql-request": "^4.5.3",
+    "@graphql-codegen/typescript-operations": "^2.5.3",
+    "@graphql-codegen/typescript-resolvers": "2.7.3",
+  }
+}
+```
+
+Configure `codegen.yml` manually as following:
+
+```yml title="codegen.yml"
+overwrite: true
+schema: 'https://relation-service.next.id/'
+documents: 'graphql/**/*.graphql'
+generates:
+  graphql.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-graphql-request'
+```
+
+> Note that the schema URL for staging server is https://relation-service.nextnext.id/, and for production server is https://relation-service.next.id/.
+
+You can place pre-configured GraphQL queries in the `graphql/` folder as the `documents` field specified in `codegen.yml`.
+
+```graphql title="graphql/getTwitterUserNeighbors.graphql"
+query getTwitterUserNeighbors($id: String!, $depth: Int!) {
+  identity(platform: "twitter", identity: $id) {
+    addedAt
+    neighborWithTraversal(depth: $depth) {
+      fetcher
+      source
+      createdAt
+      uuid
+      from {
+        uuid
+        identity
+        platform
+        displayName
+      }
+      to {
+        uuid
+        platform
+        identity
+        displayName
+      }
+    }
+  }
+}
+```
+
+From now on, run `npm run codgen` to generate code from all your GraphQL queries, and then introduce the generated code to your project.
+
+```typescript title="index.ts"
+import { GraphQLClient } from 'graphql-request'
+import { getSdk, Sdk } from './graphql'
+
+async function main() {
+    const client = new GraphQLClient('https://relation-service.next.id/');
+    const sdk = getSdk(client);
+    const result = await sdk.getTwitterUserNeighbors({
+        id: 'your_twitter_handle',
+        depth: 2
+    });
+    console.log('Twitter user relation query result', result);
+}
+```
