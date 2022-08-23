@@ -175,6 +175,7 @@ Request failed.
       + next (number, required) - Next page. `0` if current page is the last one.
     + ids (array[object], required) - All IDs found. Will be empty array if not found.
       + avatar (string, required) - Avatar public key
+      + last_arweave_id (string, optional) - Arweave transaction ID of last proof this avatar signed
       + proofs (array[object], required) - All proofs under this Avatar
         + platform (string, required) - Platform
         + identity (string, required) - Identity on that platform
@@ -194,6 +195,7 @@ Request failed.
           },
           "ids": [{
             "avatar": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
+            "last_arweave_id": "W1-5W8l3EfcSPSlgGJJoRZUObqkXqlXDuQH5cIA53t0",
             "proofs": [{
               "platform": "twitter",
               "identity": "my_twitter_screen_name",
@@ -221,6 +223,8 @@ Request failed.
             }]
           }]
         }
+
+> Note that an empty `last_arweave_id` indicates that the last proof this avatar signed has not been uploaded to Arweave Network yet, please try again later.
 
 ### Check if a proof exists [GET /v1/proof/exists] {#proof-query-exists}
 
