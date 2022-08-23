@@ -120,7 +120,7 @@ From now on, run `npm run codgen` to generate code from all your GraphQL queries
 
 ```typescript title="index.ts"
 import { GraphQLClient } from 'graphql-request'
-import { getSdk, Sdk } from './graphql'
+import { getSdk } from './graphql'
 
 async function main() {
     const client = new GraphQLClient('https://relation-service.next.id/');
