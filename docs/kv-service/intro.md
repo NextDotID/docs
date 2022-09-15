@@ -75,21 +75,18 @@ verify each changes, and restore the final data status.
 ### Write data
 
 ```mermaid
+
 sequenceDiagram
     autonumber
-    actor User
-    participant A as Application
-    participant KS as KVService
-
-    User ->> A : (Start a modification request)
-    A ->> KS : POST /v1/kv/payload
-    KS -->> A : sign_payload
-    A ->> User : avatar.eth_avatarlSign(sign_payload)
-    User -->> A : Signature Sp
-    A ->> KS : POST /v1/kv
-    note right of A : With uuid and created_at from ③
-    KS -->> A : Success
-    A -->> User : Success
+    User ->> Application : (Start a modification request)
+    Application ->> KVService : POST /v1/kv/payload
+    KVService -->> Application : sign_payload
+    Application ->> User : avatar.eth_avatarlSign(sign_payload)
+    User -->> Application : Signature Sp
+    Application ->> KVService : POST /v1/kv
+    note right of Application : With uuid and created_at from ③
+    KVService -->> Application : Success
+    Application -->> User : Success
 ```
 
 > APIs mentioned:
