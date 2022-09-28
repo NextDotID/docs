@@ -112,9 +112,9 @@ Guide user to send `post_content` as a public post.
 - Staging
 :::
 
-| `platform` | `identity`                | `proof_location`             |
-|------------|---------------------------|------------------------------|
-| `dns`      | Domain name `example.com` | `TXT` field of `example.com` |
+| `platform` | `identity`                | `proof_location` |
+|------------|---------------------------|------------------|
+| `dns`      | Domain name `example.com` | N/A              |
 
 Example: user want to bind `example.com` with his/her [avatar](../proof-service/glossary.md#glossary-avatar).
 
