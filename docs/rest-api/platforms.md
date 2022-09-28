@@ -93,3 +93,35 @@ Create a Profile record with key `nextid` and value `${COMPRESSED_AVATAR_PUBKEY_
 | `solana`   | Wallet address `AbCdEfG12...`| N/A              |
 
 Two-way signatures are created from avatar sk and wallet sk, so no proof post needed.
+
+## Minds
+
+:::caution STAGING
+- Staging
+:::
+
+| `platform` | `identity`                | `proof_location`                                                                                          |
+|------------|---------------------------|-----------------------------------------------------------------------------------------------------------|
+| `minds`    | Minds username `username` | Post ID in permalink (e.g. `1421043369127186449` in `https://www.minds.com/newsfeed/1421043369127186449`) |
+
+Guide user to send `post_content` as a public post.
+
+## DNS
+
+:::caution STAGING
+- Staging
+:::
+
+| `platform` | `identity`                | `proof_location`             |
+|------------|---------------------------|------------------------------|
+| `dns`      | Domain name `example.com` | `TXT` field of `example.com` |
+
+Example: user want to bind `example.com` with his/her [avatar](../proof-service/glossary.md#glossary-avatar).
+
+- Get `post_content` and `sign_payload` from [API](../proof-service/api.md#proof-payload)
+- Guide user to sign `sign_payload` using avatgar secret key.
+- Inject signature into `post_content` in `base64` form.
+- Guide user to add a `TXT` field for `example.com`
+- Continue [Upload proof](../proof-service/api.md#proof-add) procedure.
+
+> Check `dig testcase.nextnext.id TXT` for what this record should be like.
