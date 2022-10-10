@@ -96,3 +96,32 @@ Create a Profile record with key `nextid` and value `0x${COMPRESSED_PERSONA_PUBK
 | `solana`   | Wallet address `AbCdEfG12...`| N/A              |
 
 Two-way signatures are created from avatar sk and wallet sk, so no proof post needed.
+
+## Minds
+
+:::caution STAGING
+- Staging
+:::
+
+| `platform` | `identity`                                     | `proof_location`                                              |
+|------------|------------------------------------------------|---------------------------------------------------------------|
+| `minds`    | `USERNAME` in `https://www.minds.com/USERNAME` | newsfeed ID (in `https://www.minds/com/newsfeed/LONG_DIGITS`) |
+
+Guide user to send a public-visible proof post, and copy post link
+(like `https://www.minds/com/newsfeed/LONG_DIGITS`).
+
+Send `LONG_DIGITS` to ProofService server to validate.
+
+## DNS
+
+:::caution STAGING
+- Staging
+:::
+
+| `platform` | `identity`                     | `proof_location` |
+|------------|--------------------------------|------------------|
+| `dns`      | `domain-to-verify.example.com` | N/A              |
+
+Guide user to set proof post content in `TXT domain-to-verify.example.com`.
+
+ProofService server will use [DoH](https://en.wikipedia.org/wiki/DNS_over_HTTPS) to fetch and verify.
