@@ -105,7 +105,7 @@ Two-way signatures are created from avatar sk and wallet sk, so no proof post ne
 
 | `platform` | `identity`                                     | `proof_location`                                              |
 |------------|------------------------------------------------|---------------------------------------------------------------|
-| `minds`    | `USERNAME` in `https://www.minds.com/USERNAME` | newsfeed ID (in `https://www.minds/com/newsfeed/LONG_DIGITS`) |
+| `minds`    | `USERNAME` in `https://www.minds.com/USERNAME` | newsfeed ID (in `https://www.minds.com/newsfeed/LONG_DIGITS`) |
 
 Guide user to send a public-visible proof post, and copy post link
 (like `https://www.minds/com/newsfeed/LONG_DIGITS`).
