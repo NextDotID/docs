@@ -25,7 +25,7 @@ module.exports = {
         type: 'category',
         label: 'KVService',
         collapsed: true,
-        items: ['kv-service/kv-intro']
+        items: ['kv-service/kv-intro', 'kv-service/kv-faq', 'kv-service/kv-use-cases', 'kv-service/kv-api']
       }, {
         type: 'category',
         label: 'RelationService',

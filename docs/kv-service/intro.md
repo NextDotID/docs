@@ -21,6 +21,15 @@ chain](/proof-service/glossary.md#glossary-proof-chain) to ensure:
 
 - Traceable: all changes are approved by user and cannot be falsified
   by third parties.
+- Revertable: works like `git` patch set.
+
+:::caution WIP
+
+Reversion is not implemented for now, but [should be kinda easy to impl
+](https://github.com/nextdotid/kv_server/issues/7).
+
+:::
+
 - Decentralized: The user has the full right to dispose the data.
 
 :::caution WIP
@@ -67,8 +76,7 @@ verify each changes, and restore the final data status.
 
 ## Use case
 
-- Web3 apps need to save user configurations
-  > e.g. profile (name, avatar link, bio, etc.), NFT showcase (hide/show, order, etc.) or wallet address priority.
+See [use cases](kv-use-cases).
 
 ## Workflow
 
