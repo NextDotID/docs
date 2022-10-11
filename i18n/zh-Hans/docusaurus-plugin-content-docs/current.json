@@ -1,17 +1,22 @@
 {
-    "sidebar.docs.category.Core Concepts": {
-        "message": "Core Concepts"
-    },
-    "sidebar.docs.category.Getting Started": {
-        "message": "Getting Started"
-    },
-    "sidebar.docs.category.Developer Guide": {
-        "message": "Developer Guide"
-    },
-    "sidebar.docs.FAQ": {
-        "message": "FAQ"
-    },
-    "sidebar.docs.Roadmap": {
-        "message": "Roadmap"
-    }
+  "version.label": {
+    "message": "下一篇",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Getting Started": {
+    "message": "快速入门",
+    "description": "The label for category Getting Started in sidebar docs"
+  },
+  "sidebar.docs.category.Core Concepts": {
+    "message": "核心概念",
+    "description": "The label for category Core Concepts in sidebar docs"
+  },
+  "sidebar.docs.category.Developer Guide": {
+    "message": "开发指南",
+    "description": "The label for category Developer Guide in sidebar docs"
+  },
+  "sidebar.docs.category.Rest API": {
+    "message": "Rest API",
+    "description": "The label for category Rest API in sidebar docs"
+  }
 }
