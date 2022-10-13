@@ -17,10 +17,10 @@ You can refer to many existed GraphQL tutorials, e.g.:
 
 ## Entrypoint {#entrypoint}
 
-| Environment | URL                                  | Online?    | Playground                                  |
-|-------------|--------------------------------------|------------|---------------------------------------------|
-| Staging     | https://relation-service.nextnext.id | ✅         | [Yes](https://relation-service.nextnext.id) |
-| Production  | https://relation-service.next.id     | ❌ (SOON™) | [Yes](https://relation-service.next.id)     |
+| Environment | URL                                  | Online? | Playground                                  |
+|-------------|--------------------------------------|---------|---------------------------------------------|
+| Staging     | https://relation-service.nextnext.id | ✅      | [Yes](https://relation-service.nextnext.id) |
+| Production  | https://relation-service.next.id     | ✅      | [Yes](https://relation-service.next.id)     |
 
 ## General
 
