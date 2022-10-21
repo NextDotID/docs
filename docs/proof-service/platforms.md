@@ -125,3 +125,22 @@ Send `LONG_DIGITS` to ProofService server to validate.
 Guide user to set proof post content in `TXT domain-to-verify.example.com`.
 
 ProofService server will use [DoH](https://en.wikipedia.org/wiki/DNS_over_HTTPS) to fetch and verify.
+
+## Steam
+
+:::caution STAGING
+- Staging
+:::
+
+| `platform` | `identity`                                               | `proof_location`        |
+|------------|----------------------------------------------------------|-------------------------|
+| `steam`      | `SteamID64` (very long digits, like `76561198092541763`) | N/A (user profile page) |
+
+Something you need to notice:
+
+1. Both user's `Custom URL` and `SteamID64` can be accepted by ProofService. The final identity to be signed is `SteamID64`.
+2. Guide user to put proof post into anywhere in their "user profile summary" section.
+
+> [Sample proof post](https://steamcommunity.com/id/menyk).
+>
+> For more about `SteamID64`, see [valve developer wiki](https://developer.valvesoftware.com/wiki/SteamID).
