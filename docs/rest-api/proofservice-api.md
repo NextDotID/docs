@@ -157,10 +157,11 @@ Request failed.
       + platform (string, optional) - Proof platform. If not given, all platforms will be searched.
       + identity (string, required) - Identity on target platform. Separate identities with comma (`,`) if you want to query mutipe identity at once.
       + page (number, optional) - Pagination. First page is number `1`.
+      + exact (boolean, optional) - Perform a exact match for `identity`. Ambiguous match if not provided.
 
     + Example
 
-      `GET /proof?platform=twitter&identity=my_twitter_screen_name`
+      `GET /proof?platform=twitter&identity=my_twitter_screen_name&exact=true`
 
       `GET /proof?identity=abc,def&page=3`
 
