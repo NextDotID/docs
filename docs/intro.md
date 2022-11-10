@@ -31,4 +31,4 @@ A simple KV-based data preserve / query service, which uses ProofService binding
 - Authorized before merging modification
 - History
 - Falsify-proof
-- Verifyable
+- Verifiable
