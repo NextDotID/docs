@@ -26,7 +26,7 @@ Then, the Application requests for the user’s Avatar's Private Key to generate
 
 After `ProofService` validates the Proof Post's existence and verifies the Private Key, it will relay the successful binding notification back to Application and User.
 
-**Example of how it will look like to a user:** The user requests for the account (eg: @nextdotid on Twitter) to be bound to their Avatar.  The user signs a transaction to authenticate ownership of the account of the Twitter account. The Avatar then generates a public tweet with a signature. When published by the user, this tweet, along with the signature, indepenently verifies the user's linking of the account to the Avatar.
+**Example of how it will look like to a user:** The user requests for the account (eg: @nextdotid on Twitter) to be bound to their Avatar.  The user signs a transaction to authenticate ownership of the account of the Twitter account. The Avatar then generates a public tweet with a signature. When published by the user, this tweet, along with the signature, independently verifies the user's linking of the account to the Avatar.
 
 ![](../../static/img/how-it-works/platform-binding.png)
 
