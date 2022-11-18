@@ -36,6 +36,14 @@ module.exports = {
           'relation-service/rs-graphql',
           'relation-service/rs-faq',
         ]
+      }, {
+        type: 'category',
+        label: 'AuthService',
+        collapsed: true,
+        items: [
+          'auth-service/as-intro',
+          'auth-service/as-workflow',
+        ]
       }]
     },
     {
