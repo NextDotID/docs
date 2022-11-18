@@ -22,7 +22,7 @@ sequenceDiagram
 
 ### How AuthService authenticate you?
 
-When performing an authorization process, AuthService will send a request to [ProofService](ps-intro) to find if the authenticated identity on a 3rd party platform (e.g. Twitter ID) is bound to a Next.ID Avatar pre-configured on this AuthService.
+When performing an authorization process, AuthService will send a request to [ProofService](../proof-service/ps-intro) to find if the authenticated identity on a 3rd party platform (e.g. Twitter ID) is bound to a Next.ID Avatar pre-configured on this AuthService.
 
 If found, AuthService will generate a signature signed by a subkey derived from the Avatar and then redirect user to the dApp callback URL with the signature.
 
