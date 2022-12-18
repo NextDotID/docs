@@ -125,3 +125,31 @@ Example: user want to bind `example.com` with his/her [avatar](../proof-service/
 - Continue [Upload proof](../proof-service/api.md#proof-add) procedure.
 
 > Check `dig testcase.nextnext.id TXT` for what this record should be like.
+
+## ActivityPub
+
+:::caution STAGING
+- Staging
+:::
+
+| `platform`    | `identity`                             | `proof_location`          |
+|---------------|----------------------------------------|---------------------------|
+| `activitypub` | Full username `username@ap-server.com` | Proof post ID (see below) |
+
+### Supported server implementations
+
+Following ActivityPub servers are supported:
+
+- Misskey
+- Mastodon
+- Pleroma
+
+### About `proof_location`
+
+Proof location should be an ID-ish thing in a "toot"'s detail page URL.
+
+Examples:
+
+- Misskey: `98wr1tkc82` for detail page `https://t.nyk.app/notes/98wr1tkc82`
+- Mastodon: `109364595689133988` for detail page `https://mstdn.jp/web/@nykma/109364595689133988`
+- Pleroma: `AQj3BoAIDiUOXgtVVw` for detail page `https://stereophonic.space/notice/AQj3BoAIDiUOXgtVVw`
