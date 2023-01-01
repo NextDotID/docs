@@ -59,7 +59,6 @@ For `platform: "github"`, a public visible `Gist`.
 Cryptography ID (e.g. blockchain wallet) don't need to put a proof
 post somewhere, since sigature generating itself can already prove
 that user owns its private key.
-
 :::
 
 :::caution If Proof post is deleted by user
@@ -138,10 +137,6 @@ in the chain without Avatar-provided signature.
 > Proof Chain mechanism is not picky of storage media. But we will put
 > it in Arweave / IPFS in the future, anyway.
 
-:::caution TBD
-There will be an API to export the whole Proof Chain of a Avatar.
-:::
-
 <details>
 <summary>Struct of Proof Chain</summary>
 
@@ -170,15 +165,9 @@ interface Chain {
     links: Link[];
 }
 ```
-
 </details>
 
-
 ## Downgrade {#glossary-downgrade}
-
-:::caution WIP
-👷‍♀️👷 Work in progress, will be ready SOON™️.
-:::
 
 ProofService server will periodically check the validity of [Proof post](#glossary-proof-post).
 
@@ -187,15 +176,16 @@ record will be marked as `"is_valid": false` (with reason) in
 [Query API](api#proof-query).
 
 > e.g. User deletes [Proof tweet](#glossary-proof-post) after creating
-> a [Link](#glossary-link), but doesn't [inform](api#proof-add)
+> a [Link](#glossary-link), but doesn't [inform](/rest-api/proofservice-api#proof-add)
 > ProofService to delete this link (aka unbind).
 
-> ProofService still won't (and can't) do anything to [Proof
-> Chain](#glossary-proof-chain) even downgraded.
->
-> All ProofService can do is to return `"is_valid": false` in [Query
-> API](api#proof-query).
+ProofService still won't (and can't) do anything to [Proof
+Chain](#glossary-proof-chain) even downgraded.
 
-How to handle this downgraded relationship is entirely up to applications which use ProofService.
+All ProofService can do is to return `"is_valid": false` in [Query
+API](/rest-api/proofservice-api#proof-query).
 
-> e.g. show a ⚠️ to user, low priority when presenting, or just omit it.
+How to handle this downgraded relationship is entirely up to
+applications using ProofService.
+
+> e.g. showing a ⚠️ to user, setting it low priority when presenting, or just omitting it.

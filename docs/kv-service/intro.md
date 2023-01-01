@@ -32,7 +32,7 @@ verify each changes, and restore the final data status.
 
 ## Brief of design
 
-- Every user has `N + 1` namespaces：
+- Each user has `1 + N` namespaces：
   - [Avatar](/proof-service/glossary.md#glossary-avatar) itself has a namespace (`platform == "nextid" && identity == "0xAVATAR_PUBLIC_KEY"`)
     - There's no limitation that [Avatar](/proof-service/glossary.md#glossary-avatar) should be used in [ProofService](/proof-service/intro.md) once.
   - Each [binding record](/proof-service/glossary.md#glossary-link) (in [ProofService](/proof-service/intro.md)) of each [Avatar](/proof-service/glossary.md#glossary-avatar) has a namespace.
@@ -44,23 +44,25 @@ verify each changes, and restore the final data status.
   <summary>A glimpse of RFC7396</summary>
 
   ```js
-  // Assume data is:
+  // Assume current data is:
   {
     "a": {
       "b": [2, 3, 4, "test"]
     },
     "c": "Hello"
   }
+
   // If this patch is submitted:
   { "a": { "b": null, "new_key": true }, "c": "KVService" }
-  // Then data will become:
+
+  // Then patched data will become:
   {
     "a": {
       "new_key": true
     },
     "c": "KVService"
   }
-  // Notice: nedted modification of Array value is not supported.
+  // Notice: nested modification of Array value is not supported.
   //         Replace the whole Array with new value instead.
   ```
   </details>
@@ -91,19 +93,19 @@ sequenceDiagram
 
 > APIs mentioned:
 >
-> - [POST /v1/kv/payload](kv-api#payload)
-> - [POST /v1/kv](kv-api#patch)
+> - [POST /v1/kv/payload](/rest-api/kvservice-api#payload)
+> - [POST /v1/kv](/rest-api/kvservice-api#patch)
 
 ### Query data
 
-See [GET /v1/kv](kv-api#query).
+See [GET /v1/kv](/rest-api/kvservice-api#query).
 
 ## Conventions
 
 - Each app should use their "package name" as their own namespace, to ensure other apps are not infected by your modification.
-  > For example, my app is `io.mask.web3-profile-plugin`,
+  > For example, I as a developer, identify my app as `io.mask.web3-profile-plugin`,
   >
   > Then I should make all my modification under `{ "io.mask.web3-profile-plugin": .... }` key.
 
 - Theoretically, there is no size limitation for data. FairUse™️, please.
-  > If you want to store data bigger than string, consider [Arweave](https://www.arweave.org).
+  > If you want to store data bigger than a string can handle, consider [Arweave](https://www.arweave.org).

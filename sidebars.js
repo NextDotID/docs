@@ -20,12 +20,21 @@ module.exports = {
         type: 'category',
         label: 'ProofService',
         collapsed: true,
-        items: ['proof-service/ps-intro']
+        items: [
+          'proof-service/ps-intro',
+          'proof-service/ps-glossary',
+          'proof-service/ps-flow',
+          'proof-service/ps-platforms-supported',
+          'proof-service/ps-faq'
+        ],
       }, {
         type: 'category',
         label: 'KVService',
         collapsed: true,
-        items: ['kv-service/kv-intro']
+        items: [
+          'kv-service/kv-intro',
+          'kv-service/kv-faq',
+        ]
       }, {
         type: 'category',
         label: 'RelationService',
@@ -52,12 +61,10 @@ module.exports = {
       collapsed: false,
       items: ['developer-guide/go', 'developer-guide/rust', 'developer-guide/typescript'],
     },
-    'glossary',
-    'faq',
     {
       type: 'category',
       label: 'Rest API',
-      items: ['rest-api/proofservice-api', 'rest-api/kvserivce-api', 'rest-api/platforms'],
+      items: ['rest-api/proofservice-api', 'rest-api/kvservice-api'],
     },
     'roadmap',
   ],

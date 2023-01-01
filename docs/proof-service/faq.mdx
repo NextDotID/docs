@@ -213,3 +213,21 @@ main();
 
   </TabItem>
 </Tabs>
+
+## I want to contribute to ProofService, which platforms do you accept?
+
+Well, basiclly every `platform` can be accepted by us if it meets the following requirement:
+
+- `Identity` (on target `platform`) has the ability to post content specified by user.
+- This content can be read publicly, at anytime, by anyone (human or program), after it is posted.
+- There is a mechanism to "encode" and "extract" signature into / from this content.
+
+  > Depends on the shape this content represents, the mechanism to
+    "extract" sig may vary. For example, assuming a `platform` which
+    only supports posting user-generated pictures, you need to find a
+    way to "encode" the signature into the user-generated pic, and
+    make sure other people / program can "extract" from this pic.
+
+  > The most common case is text-based content, which is the easist to
+    process. But if there is a limitation on posting text content on
+    target platform, you should be prepared.

@@ -1,11 +1,9 @@
 ---
 id: ps-platforms-supported
-title: Platform supported
+title: Platforms supported
 ---
 
-> Check [Glossary](ps-glossary) first.
-
-# `Platforms`
+# `platform`s supported now
 
 ## Twitter
 
@@ -82,7 +80,7 @@ Two-way signatures are created from avatar sk and wallet sk, so no proof post ne
 |------------|-----------------|--------------------------------------------------------------------|
 | `dotbit`   | `address.bit`   | N/A                                                                |
 
-Create a Profile record with key `nextid` and value `0x${COMPRESSED_PERSONA_PUBKEY_IN_HEX}:${SIGNATURE_IN_BASE64}`.
+Create a Profile record with key `nextid` and value `${COMPRESSED_AVATAR_PUBKEY_IN_HEX}:${SIGNATURE_IN_BASE64}`.
 
 ## Solana
 
@@ -99,48 +97,63 @@ Two-way signatures are created from avatar sk and wallet sk, so no proof post ne
 
 ## Minds
 
-:::caution STAGING
+:::success ONLINE
+- Production
 - Staging
 :::
 
-| `platform` | `identity`                                     | `proof_location`                                              |
-|------------|------------------------------------------------|---------------------------------------------------------------|
-| `minds`    | `USERNAME` in `https://www.minds.com/USERNAME` | newsfeed ID (in `https://www.minds.com/newsfeed/LONG_DIGITS`) |
+| `platform` | `identity`                | `proof_location`                                                                                          |
+|------------|---------------------------|-----------------------------------------------------------------------------------------------------------|
+| `minds`    | Minds username `username` | Post ID in permalink (e.g. `1421043369127186449` in `https://www.minds.com/newsfeed/1421043369127186449`) |
 
-Guide user to send a public-visible proof post, and copy post link
-(like `https://www.minds/com/newsfeed/LONG_DIGITS`).
-
-Send `LONG_DIGITS` to ProofService server to validate.
+Guide user to send `post_content` as a public post.
 
 ## DNS
 
-:::caution STAGING
+:::success ONLINE
+- Production
 - Staging
 :::
 
-| `platform` | `identity`                     | `proof_location` |
-|------------|--------------------------------|------------------|
-| `dns`      | `domain-to-verify.example.com` | N/A              |
+| `platform` | `identity`                | `proof_location` |
+|------------|---------------------------|------------------|
+| `dns`      | Domain name `example.com` | N/A              |
 
-Guide user to set proof post content in `TXT domain-to-verify.example.com`.
+Example: user want to bind `example.com` with his/her [avatar](../proof-service/glossary.md#glossary-avatar).
 
-ProofService server will use [DoH](https://en.wikipedia.org/wiki/DNS_over_HTTPS) to fetch and verify.
+- Get `post_content` and `sign_payload` from [API](../proof-service/api.md#proof-payload)
+- Guide user to sign `sign_payload` using avatgar secret key.
+- Inject signature into `post_content` in `base64` form.
+- Guide user to add a `TXT` field for `example.com`
+- Continue [Upload proof](../proof-service/api.md#proof-add) procedure.
 
-## Steam
+> Check `dig testcase.nextnext.id TXT` for what this record should be like.
 
-:::caution STAGING
+## ActivityPub
+
+:::success ONLINE
+- Production
 - Staging
 :::
 
-| `platform` | `identity`                                               | `proof_location`        |
-|------------|----------------------------------------------------------|-------------------------|
-| `steam`      | `SteamID64` (very long digits, like `76561198092541763`) | N/A (user profile page) |
+| `platform`    | `identity`                             | `proof_location`          |
+|---------------|----------------------------------------|---------------------------|
+| `activitypub` | Full username `username@ap-server.com` | Proof post ID (see below) |
 
-Something you need to notice:
+### Supported server implementations
 
-1. Both user's `Custom URL` and `SteamID64` can be accepted by ProofService. The final identity to be signed is `SteamID64`.
-2. Guide user to put proof post into anywhere in their "user profile summary" section.
+Following ActivityPub servers are supported:
 
-> [Sample proof post](https://steamcommunity.com/id/menyk).
->
-> For more about `SteamID64`, see [valve developer wiki](https://developer.valvesoftware.com/wiki/SteamID).
+- [Mastodon](https://joinmastodon.org)
+- [Misskey](https://misskey-hub.net)
+- [Pleroma](https://pleroma.social)
+
+### About `proof_location`
+
+Proof location should be an ID-ish thing in a "toot"'s detail page URL.
+
+Examples:
+
+- Misskey: `98wr1tkc82` for detail page `https://t.nyk.app/notes/98wr1tkc82`
+- Mastodon: `109364595689133988` for detail page `https://mstdn.jp/web/@nykma/109364595689133988`
+- Pleroma: `AQj3BoAIDiUOXgtVVw` for detail page `https://stereophonic.space/notice/AQj3BoAIDiUOXgtVVw`
