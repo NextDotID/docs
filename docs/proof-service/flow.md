@@ -41,8 +41,8 @@ sequenceDiagram
 <details>
 <summary>See also</summary>
 
-- [POST /v1/proof/payload](api#proof-payload)
-- [POST /v1/proof](api#proof-add)
+- [POST /v1/proof/payload](/rest-api/proofservice-api#proof-payload)
+- [POST /v1/proof](/rest-api/proofservice-api#proof-add)
 
 </details>
 
@@ -75,8 +75,8 @@ sequenceDiagram
 
 <details><summary>See also</summary>
 
-- [POST /v1/proof/payload](api#proof-payload)
-- [POST /v1/proof](api#proof-add)
+- [POST /v1/proof/payload](/rest-api/proofservice-api#proof-payload)
+- [POST /v1/proof](/rest-api/proofservice-api#proof-add)
 - `identity` wallet address matches `0x[0-9a-f]{40}`。
 - No need to publish this sigature somewhere, because:
   - The ability of generating this sig is equals to the ownership of secret key.
@@ -118,4 +118,4 @@ sequenceDiagram
 
 ## Query
 
-Check [GET /v1/proof](api#proof-query).
+Check [GET /v1/proof](/rest-api/proofservice-api#proof-query).

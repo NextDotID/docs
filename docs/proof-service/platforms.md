@@ -121,11 +121,11 @@ Guide user to send `post_content` as a public post.
 
 Example: user want to bind `example.com` with his/her [avatar](../proof-service/glossary.md#glossary-avatar).
 
-- Get `post_content` and `sign_payload` from [API](../proof-service/api.md#proof-payload)
+- Get `post_content` and `sign_payload` from [API](/rest-api/proofservice-api#proof-payload)
 - Guide user to sign `sign_payload` using avatgar secret key.
 - Inject signature into `post_content` in `base64` form.
 - Guide user to add a `TXT` field for `example.com`
-- Continue [Upload proof](../proof-service/api.md#proof-add) procedure.
+- Continue [Upload proof](/rest-api/proofservice-api#proof-add) procedure.
 
 > Check `dig testcase.nextnext.id TXT` for what this record should be like.
 

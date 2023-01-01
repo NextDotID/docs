@@ -184,17 +184,17 @@ ProofService server will periodically check the validity of [Proof post](#glossa
 
 If [Proof post](#glossary-proof-post) becomes invalid, this binding
 record will be marked as `"is_valid": false` (with reason) in
-[Query API](api#proof-query).
+[Query API](/rest-api/proofservice-api#proof-query).
 
 > e.g. User deletes [Proof tweet](#glossary-proof-post) after creating
-> a [Link](#glossary-link), but doesn't [inform](api#proof-add)
+> a [Link](#glossary-link), but doesn't [inform](/rest-api/proofservice-api#proof-add)
 > ProofService to delete this link (aka unbind).
 
 > ProofService still won't (and can't) do anything to [Proof
 > Chain](#glossary-proof-chain) even downgraded.
 >
 > All ProofService can do is to return `"is_valid": false` in [Query
-> API](api#proof-query).
+> API](/rest-api/proofservice-api#proof-query).
 
 How to handle this downgraded relationship is entirely up to applications which use ProofService.
 

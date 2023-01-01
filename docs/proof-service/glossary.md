@@ -173,7 +173,7 @@ ProofService server will periodically check the validity of [Proof post](#glossa
 
 If [Proof post](#glossary-proof-post) becomes invalid, this binding
 record will be marked as `"is_valid": false` (with reason) in
-[Query API](api#proof-query).
+[Query API](/rest-api/proofservice-api#proof-query).
 
 > e.g. User deletes [Proof tweet](#glossary-proof-post) after creating
 > a [Link](#glossary-link), but doesn't [inform](/rest-api/proofservice-api#proof-add)
