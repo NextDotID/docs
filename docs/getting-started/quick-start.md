@@ -2,7 +2,7 @@
 title: Liftoff, Hello Space!
 ---
 
-To get started, let's walk through a binding process with the most frequently used platform: Twitter. 
+To get started, let's walk through a binding process with the most frequently used platform: Twitter.
 Hold tight, let's go!
 
 ## Prerequisites
@@ -21,18 +21,18 @@ We're showing it by using Python's [secp256k1-py](https://pypi.org/project/secp2
 
 First, install secp256k1-py lib:
 
-```
-// get PIP installed in advance or use your own way
+```bash
+# get PIP installed in advance or use your own way
 pip install secp256k1
 ```
 
 Then generate your own private and public key pair:
 
-```
+```bash
 python -m secp256k1 privkey -p
 
-// ATTENTION! We intentionally replaced the last three digits of private key to be xxx.
-// Your private key is EVERYTHING. NEVER expose it to others or reveal it anywhere publicly.
+# ATTENTION! We intentionally replaced the last three digits of private key to be xxx.
+# Your private key is EVERYTHING. NEVER expose it to others or reveal it anywhere publicly.
 43c25fecc20e6b2a0d86c81a0202d125c0181deb9975d1170d80378c7e05bxxx
 Public key: 03bce884894fdc4fb45475733be317dd3c289f003bceebb097ac79a6b95e6edc56
 ```
@@ -55,7 +55,7 @@ First, let's get the payload needed to represent us. Calling REST API `/proof/pa
 
 Replace the `identity` and `public_key` fields with your own information, and it will return like:
 
-```
+```json
 {
     "post_content": {
         "default": "🎭 Verifying my Twitter ID @your_twitter_handle for @NextDotID.\nSig: %SIG_BASE64%\n\nInstall Mask.io to enhance your Web3 experience.\n",
@@ -78,7 +78,7 @@ Note: you'll need to set up Node.js and TypeScript before downloading, then go t
 
 Open the `index.ts` file under `/src` and replace the `const message` with the string `sign_payload` in the former step:
 
-```
+```typescript
 import { ecsign, toRpcSig, keccakFromString, BN } from 'ethereumjs-util';
 
 async function personalSign(message: Buffer, privateKey: Buffer): Promise<Buffer> {
@@ -109,14 +109,14 @@ main();
 
 Now we can run it properly. Go to the root directory to compile:
 
-```
-➜  Generating-Signature-TypeScript git:(main) tsc
+```bash
+$ tsc
 ```
 
 Go to the `/disc` directory to get it running:
 
-```
-➜  dist git:(main) ✗ node index.js
+```bash
+$ node index.js
 ```
 
 We will get two console.log outputs. One is the Signature(base64) that we're going to use for proof posting on Twitter.
@@ -164,7 +164,7 @@ https://proof-service.next.id/v1/proof?platform=twitter&identity=your_twitter_ha
 
 We will get as below:
 
-```
+```json
 {
     "pagination": {
         "total": 4,
@@ -191,7 +191,7 @@ We will get as below:
 ```
 
 Congrats! You have successfully created an Avatar on-chain. Go explore cyberspace with your new digital identity!
-## What's Next? 
+## What's Next?
 
 - View the [architecture of Next.ID framework](../core-concepts/architecture.md)
 - Understand [how it works in detail](../core-concepts/how-it-works.md)
