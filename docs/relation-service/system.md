@@ -26,7 +26,7 @@ When performing a data fetching process, RelationService will
 2. Request and collect results from each upstream available
 3. Newly fetched data will be fed into this circulation again, until no new data is yield.
 
-A psuedo code snippet describing this:
+A pseudo code snippet describing this:
 
 ```ruby
 up_next = [{platform: :platform_to_query, identity: "identity_to_query"}]

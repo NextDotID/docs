@@ -47,4 +47,4 @@ After user redirected to the dApp callback URL, dApp needs to verify the signatu
 3. `state` (string, required): State string passed from dApp.
 4. `subkey` (string, required): Subkey public key hex string.
 5. `subkey_cert_sig` (string, required): Subkey certification signature signed by Avatar, encoded in Base58.
-6. `sig` (string, required): Signature of `avatar=${avatar}\nredirect_uri={redirect_uri}\nexpired_at=${expired_at}\nstate=${state}` singed by Subkey, encoded in Base58.
+6. `sig` (string, required): Signature of `avatar=${avatar}\nredirect_uri={redirect_uri}\nexpired_at=${expired_at}\nstate=${state}` signed by Subkey, encoded in Base58.
