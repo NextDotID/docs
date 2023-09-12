@@ -14,47 +14,79 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Components',
+      label: 'Core Concepts V2 (Instead of Components in V1)',
       collapsed: false,
-      items: [{
-        type: 'category',
-        label: 'ProofService',
-        collapsed: true,
-        items: [
-          'proof-service/ps-intro',
-          'proof-service/ps-glossary',
-          'proof-service/ps-flow',
-          'proof-service/ps-platforms-supported',
-          'proof-service/ps-faq'
-        ],
-      }, {
-        type: 'category',
-        label: 'KVService',
-        collapsed: true,
-        items: [
-          'kv-service/kv-intro',
-          'kv-service/kv-faq',
-        ]
-      }, {
-        type: 'category',
-        label: 'RelationService',
-        collapsed: true,
-        items: [
-          'relation-service/rs-intro',
-          'relation-service/rs-system',
-          'relation-service/rs-graphql',
-          'relation-service/rs-faq',
-        ]
-      }, {
-        type: 'category',
-        label: 'AuthService',
-        collapsed: true,
-        items: [
-          'auth-service/as-intro',
-          'auth-service/as-workflow',
-        ]
-      }]
+      items: [
+        {
+              type: 'category',
+              label: 'ProofServiceV2',
+              collapsed: false,
+              items: [
+                'core-concepts-v2/proof-service-v2/ps-intro',
+              ],
+        },
+        {
+          type: 'category',
+          label: 'RelationServiceV2',
+          collapsed: false,
+          items: [
+            'core-concepts-v2/relation-service-v2/rs-intro',
+            'core-concepts-v2/relation-service-v2/rs-graphdb',
+          ],
+        },   
+        {
+          type: 'category',
+          label: 'CoreServiceV2',
+          collapsed: false,
+          items: [
+            'core-concepts-v2/core-service-v2/cs-intro'
+          ],
+        },        
+      ],
     },
+    // {
+    //   type: 'category',
+    //   label: 'Components',
+    //   collapsed: false,
+    //   items: [{
+    //     type: 'category',
+    //     label: 'ProofService',
+    //     collapsed: true,
+    //     items: [
+    //       'proof-service/ps-intro',
+    //       'proof-service/ps-glossary',
+    //       'proof-service/ps-flow',
+    //       'proof-service/ps-platforms-supported',
+    //       'proof-service/ps-faq'
+    //     ],
+    //   }, {
+    //     type: 'category',
+    //     label: 'KVService',
+    //     collapsed: true,
+    //     items: [
+    //       'kv-service/kv-intro',
+    //       'kv-service/kv-faq',
+    //     ]
+    //   }, {
+    //     type: 'category',
+    //     label: 'RelationService',
+    //     collapsed: true,
+    //     items: [
+    //       'relation-service/rs-intro',
+    //       'relation-service/rs-system',
+    //       'relation-service/rs-graphql',
+    //       'relation-service/rs-faq',
+    //     ]
+    //   }, {
+    //     type: 'category',
+    //     label: 'AuthService',
+    //     collapsed: true,
+    //     items: [
+    //       'auth-service/as-intro',
+    //       'auth-service/as-workflow',
+    //     ]
+    //   }]
+    // },
     {
       type: 'category',
       label: 'Developer Guide',
