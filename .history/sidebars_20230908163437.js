@@ -36,11 +36,11 @@ module.exports = {
       collapsed: false,
       items: ['developer-guide/go', 'developer-guide/rust', 'developer-guide/typescript'],
     },
-    // {
-    //   type: 'category',
-    //   label: 'Rest API',
-    //   items: ['rest-api/proofservice-api', 'rest-api/kvservice-api'],
-    // },
+    {
+      type: 'category',
+      label: 'Rest API',
+      items: ['rest-api/proofservice-api', 'rest-api/kvservice-api'],
+    },
     // {
     //   type: 'category',
     //   label: 'API PlayGround',

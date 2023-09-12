@@ -27,8 +27,8 @@ const config = {
       /** @type {import('docusaurus-preset-openapi').Options} */
       ({
         api: {
-          path: "examples/petstore.yaml",
-          routeBasePath: "/api",
+          path: "docs/examples/petstore.yaml",
+          routeBasePath: "petstore",
         },
         docs: {
           remarkPlugins: [require('mdx-mermaid')],
@@ -47,24 +47,24 @@ const config = {
     ],
   ],
 
-  plugins: [
-    [
-      "docusaurus-plugin-openapi",
-      {
-        id: "cos",
-        path: "examples/openapi-cos.json",
-        routeBasePath: "cos",
-      },
-    ],
-    [
-      "docusaurus-plugin-openapi",
-      {
-        id: "multi-spec",
-        path: "examples",
-        routeBasePath: "multi-spec",
-      },
-    ],
-  ],
+  // plugins: [
+  //   [
+  //     "docusaurus-plugin-openapi",
+  //     {
+  //       id: "cos",
+  //       path: "examples/openapi-cos.json",
+  //       routeBasePath: "cos",
+  //     },
+  //   ],
+  //   [
+  //     "docusaurus-plugin-openapi",
+  //     {
+  //       id: "multi-spec",
+  //       path: "examples",
+  //       routeBasePath: "multi-spec",
+  //     },
+  //   ],
+  // ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -89,7 +89,6 @@ const config = {
             label: 'Docs',
           },
           // { to: '/blog', label: 'Blog', position: 'left' },
-          { to: "/api", label: "API", position: "left" },
           {
             href: 'https://github.com/nextdotid',
             label: 'GitHub',

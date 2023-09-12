@@ -27,7 +27,7 @@ const config = {
       /** @type {import('docusaurus-preset-openapi').Options} */
       ({
         api: {
-          path: "examples/petstore.yaml",
+          path: "docs/examples/petstore.yaml",
           routeBasePath: "/api",
         },
         docs: {
@@ -89,7 +89,6 @@ const config = {
             label: 'Docs',
           },
           // { to: '/blog', label: 'Blog', position: 'left' },
-          { to: "/api", label: "API", position: "left" },
           {
             href: 'https://github.com/nextdotid',
             label: 'GitHub',

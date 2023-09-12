@@ -28,7 +28,7 @@ const config = {
       ({
         api: {
           path: "examples/petstore.yaml",
-          routeBasePath: "/api",
+          routeBasePath: "/",
         },
         docs: {
           remarkPlugins: [require('mdx-mermaid')],
@@ -89,7 +89,6 @@ const config = {
             label: 'Docs',
           },
           // { to: '/blog', label: 'Blog', position: 'left' },
-          { to: "/api", label: "API", position: "left" },
           {
             href: 'https://github.com/nextdotid',
             label: 'GitHub',
