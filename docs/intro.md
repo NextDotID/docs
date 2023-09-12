@@ -18,13 +18,13 @@ Next.ID protocol serves as the nerve center of Web2 and Web3 user identities. As
 
 The 3 core Next.ID components are:
 
-## [ProofService](proof-service/intro.md)
+## [ProofService](core-concepts-v2/proof-service/intro.md)
 
 A DID service to connect 2 identity / social network service by
 creating a two-way, public, verifiable, falsify-proof,
 cryptography-based binding.
 
-## [KVService](kv-service/intro.md)
+## [KVService](core-concepts-v2/proof-service/kv-service.md)
 
 A simple KV-based data preserve / query service, which uses ProofService binding record as namespaces
 

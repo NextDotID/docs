@@ -58,4 +58,4 @@ RelationService is an aggregation of existing IDs, ID queries, and IDs bound to 
 ## What next?
 
 - Try it out [for yourself](./quick-start.md)!
-- Understand [how it works in detail](../core-concepts/how-it-works.md)
+- Understand how it works in detail
