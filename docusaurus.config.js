@@ -114,6 +114,15 @@ const config = {
             ],
           },
           {
+            title: 'API',
+            items: [
+              {
+                label: 'API',
+                to: '/api',
+              },
+            ],
+          },
+          {
             title: 'Community',
             items: [
               // {
