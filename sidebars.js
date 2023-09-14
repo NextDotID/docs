@@ -19,24 +19,27 @@ module.exports = {
       items: [
         {
               type: 'category',
-              label: 'ProofServiceV2',
+              label: 'ProofService',
               collapsed: false,
               items: [
                 'core-concepts-v2/proof-service-v2/ps-intro',
+                'core-concepts-v2/proof-service-v2/as-intro',
+                'core-concepts-v2/proof-service-v2/ks-intro',
               ],
         },
         {
           type: 'category',
-          label: 'RelationServiceV2',
+          label: 'RelationService',
           collapsed: false,
           items: [
             'core-concepts-v2/relation-service-v2/rs-intro',
             'core-concepts-v2/relation-service-v2/rs-graphdb',
+            'core-concepts-v2/relation-service-v2/rs-example',
           ],
         },   
         {
           type: 'category',
-          label: 'CoreServiceV2',
+          label: 'Concept Stage: CoreService',
           collapsed: false,
           items: [
             'core-concepts-v2/core-service-v2/cs-intro'

@@ -26,3 +26,5 @@ Anyone can access the identity graph data via GraphQL of `RelationService`
 |-------------|--------------------------------------|---------|---------------------------------------------|
 | Staging     | https://relation-service.nextnext.id | ✅      | [Yes](https://relation-service.nextnext.id) |
 | Production  | https://relation-service.next.id     | ✅      | [Yes](https://relation-service.next.id)     |
+
+[Some common use cases for the reference](rs-example)
