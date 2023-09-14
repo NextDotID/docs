@@ -4,10 +4,10 @@ title: Decentralized Storage, KV Service
 sidebar_position: 3
 ---
 
-While developing the NextID, we found that we still need a place to keep some customized data in some cases. However, placing everything on the blockchain wasn't a reasonable choice. This led us to create the KV service as a user-friendly tool for storing some customized data. Through cryptographic verification, the KVService ensures that only the avatar's owner can manage (create and modify) its content, while allowing others to read it.
+While developing the NextID, we found that we still need a place to keep some customized data in some cases. However, placing everything on the blockchain wasn't a reasonable choice. This led us to create the KV service as a user-friendly tool for storing some customized data. Through cryptographic verification, the `KV Service` ensures that only the avatar's owner can manage (create and modify) its content, while allowing others to read it.
 
 ## How it works 
-KVService can store any valid JSON object data. There are serval APIs for reading and writing the data.
+`KV Service` can store any valid JSON object data. There are serval APIs for reading and writing the data.
 
 ### Work Flow for writing 
 
@@ -78,11 +78,11 @@ After writing the data, everyone can get it via API.See [GET /v1/kv](/rest-api/k
 
 ## Use Case - as a persistence storage
 
-You can use KVService to store the data that needs cross-session persistence.
+You can use `KV Service` to store the data that needs cross-session persistence.
 
 For example, you can store the user's avatar, nick name, bio, show/hide status of NFT list, or order of these contents, under your web3 app's scenarios.
 
-Using KVservices gives you some benefits:
+Using `KV Service` gives you some benefits:
 
 - The change made by the user is verifiable by other user/applications, aka platform-independent. No one (except the user himself) can change the data without a valid signature.
 - The data is stored in a decentralized way, no matter where this data is actually stored. User always has a choice to move their data to other (or self-hosted) platforms.
