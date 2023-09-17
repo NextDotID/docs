@@ -4,9 +4,9 @@ title: Introduction
 slug: /
 ---
 
-Next ID is an decentralized identity (DID) creation and management protocol built for developers. The Next ID protocol is used as the secure connecting fiber between different web2 and web3 **identifiers**, such as **wallets**, **twitter profiles**, **ENS names**, **Lens profiles,** and many more.
+Next.ID is an decentralized identity (DID) creation and management protocol built for developers. The Next.ID protocol is used as the secure connecting fiber between different web2 and web3 **identifiers**, such as **wallets**, **twitter profiles**, **ENS names**, **Lens profiles,** and many more.
 
-By connecting a person’s different identifiers together, they form an **identity graph** - a powerful, portable, sovereign digital identities. Next ID refers to these identities, digital representations of self, as **avatars.**
+By connecting a person’s different identifiers together, they form an **identity graph** - a powerful, portable, sovereign digital identities. Next.ID refers to these identities, digital representations of self, as **avatars.**
 
 We provide services for creating DIDs, querying existing relationships, attaching data payloads to DIDs.
 
@@ -26,7 +26,7 @@ Next.ID’s KVService functions as a data backpack. Fundamentally, it is a way t
 
 DIDs are created and modified using a cryptographically secured private-public key pairing (*Avatar*) system. This ensures every change and its history are only made by users with the right private keys.
 
-Every changes and its history are publicly available and verifiable on Arweave, following Next ID’s commitment to decentralization and transparency.
+Every changes and its history are publicly available and verifiable on Arweave, following Next.ID’s commitment to decentralization and transparency.
 
 ## Current real world use cases
 
