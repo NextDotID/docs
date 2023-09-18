@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Proof Service
 
-## Changelog 2023-09-06 by [@Nyk Ma]([https://github.com/nykma](https://github.com/nykma))
+### Changelog 2023-09-06 by [@Nyk Ma]([https://github.com/nykma](https://github.com/nykma))
 
 ### New Features
 
@@ -30,40 +30,40 @@ sidebar_position: 1
 - Fix some issue with headless browser function
 - Disable auto migration in Lambda environment to boost cold start duration when a new lambda instance starts
 
-# Relation Service
+## Relation Service
 
-## Changelog 2023-09-06 by [@Zella Zhong]([https://github.com/ZhongFuze](https://github.com/ZhongFuze))
+### Changelog 2023-09-06 by [@Zella Zhong]([https://github.com/ZhongFuze](https://github.com/ZhongFuze))
 
-**Switched GraphDB Engine to TigerGraph**
-    ◦ **Why**: To handle rising data volumes and enable advanced analytics capabilities.
-    ◦ **Impact**: Improved query performance by 70%, added new query functionalities, and optimized data fetching.
-    ◦ **Features**:
-        ▪ [GSQL migrations and [tdb] configuration]((https://github.com/NextDotID/relation_server/pull/105/commits/61895f0ccf00d6a595caaaa91a34dab785c3d501)).
-        ▪ New query functionalities like [**`neighbors()`**]((https://github.com/NextDotID/relation_server/pull/105/commits/319d93605457bacb6cac44e44475f35f0dc69359)), [**`neighbors_with_source()`**]((https://github.com/NextDotID/relation_server/pull/105/commits/d166c76ef0b0abb539631daefed2fad29c4a55d9)), [**`domain()`**]((https://github.com/NextDotID/relation_server/pull/105/commits/f4b3fa21d7714524ea9600466e53a69f28d054df)), etc.
+Switched GraphDB Engine to TigerGraph
+    - Why: To handle rising data volumes and enable advanced analytics capabilities.
+    - Impact: Improved query performance by 70%, added new query functionalities, and optimized data fetching.
+    - Features:
+        - [GSQL migrations and [tdb] configuration]((https://github.com/NextDotID/relation_server/pull/105/commits/61895f0ccf00d6a595caaaa91a34dab785c3d501)).
+        - New query functionalities like [`neighbors()`]((https://github.com/NextDotID/relation_server/pull/105/commits/319d93605457bacb6cac44e44475f35f0dc69359)), [`neighbors_with_source()`]((https://github.com/NextDotID/relation_server/pull/105/commits/d166c76ef0b0abb539631daefed2fad29c4a55d9)), [`domain()`]((https://github.com/NextDotID/relation_server/pull/105/commits/f4b3fa21d7714524ea9600466e53a69f28d054df)), etc.
 
- ◦ **Action Required**: Users may need to update configurations and be aware of deprecated ArangoDB-related code.
+    - Action Required: Users may need to update configurations and be aware of deprecated ArangoDB-related code.
 
-**New Features**
+### New Features
 • **GSQL Client Tweaks**: [Optimized GSQL interactions for faster migrations and queries](https://github.com/NextDotID/relation_server/pull/105/commits/f99e5a26a360811a2cc16a296d0d84656f88f178). 
 • **Delete Vertex and Edge Method**: [Added for handling outdated data](https://github.com/NextDotID/relation_server/pull/105/commits/a5ce35a05ab402d0a2bfa3023135ce8008a69d74). 
 
 
 
-**Improvements**
-• **Fetch All Procedure**: [Enhanced to support parallel querying and timeout settings](https://github.com/NextDotID/relation_server/pull/105/commits/e7282c9c068f7aa192985439e5554ec880a343c5).
-• **Access Management**: [Improved security for graph and tokens](https://github.com/NextDotID/relation_server/pull/105/commits/cabd96d91945c810f1757d2b1141224e8870acfc).
-• **Data Sources**: Expanded and updated DataSource enum.
-- [Farcaster](https://github.com/NextDotID/relation_server/pull/91) 
-- [UnstoppableDomains](https://github.com/NextDotID/relation_server/pull/86)
-- [SpaceID](https://github.com/NextDotID/relation_server/pull/93) 
-- [Dotbit](https://github.com/NextDotID/relation_server/pull/89) 
+### Improvements
+- Fetch All Procedure: [Enhanced to support parallel querying and timeout settings](https://github.com/NextDotID/relation_server/pull/105/commits/e7282c9c068f7aa192985439e5554ec880a343c5).
+- Access Management: [Improved security for graph and tokens](https://github.com/NextDotID/relation_server/pull/105/commits/cabd96d91945c810f1757d2b1141224e8870acfc).
+- Data Sources: Expanded and updated DataSource enum.
+  - [Farcaster](https://github.com/NextDotID/relation_server/pull/91) 
+  - [UnstoppableDomains](https://github.com/NextDotID/relation_server/pull/86)
+  - [SpaceID](https://github.com/NextDotID/relation_server/pull/93) 
+  - [Dotbit](https://github.com/NextDotID/relation_server/pull/89) 
 
-**Bug Fixes**
-• [Fixed issues with **`naive_datetime`** serialization](https://github.com/NextDotID/relation_server/pull/105/commits/e435a5839b6014598ffd9ebf22b0e2708879060b) and [URL encoding]((https://github.com/NextDotID/relation_server/pull/105/commits/bca19bc042c98a712c814f23ed230a2c5868f1df)).
+### Bug Fixes
+- [Fixed issues with **`naive_datetime`** serialization](https://github.com/NextDotID/relation_server/pull/105/commits/e435a5839b6014598ffd9ebf22b0e2708879060b) and [URL encoding]((https://github.com/NextDotID/relation_server/pull/105/commits/bca19bc042c98a712c814f23ed230a2c5868f1df)).
 
-**Removals**
-• [Deprecated all ArangoDB-related code]((https://github.com/NextDotID/relation_server/pull/105/commits/4bd6c534f9513d672d6f87f90096e5b7a468ec6d)). 
+### Removals
+- [Deprecated all ArangoDB-related code]((https://github.com/NextDotID/relation_server/pull/105/commits/4bd6c534f9513d672d6f87f90096e5b7a468ec6d)). 
 
-**Infrastructure & Maintenance**
-• Updated dependencies and configurations.
-• Merged changes into the **`graphdb/tigergraph`** branch and set up CI.
+## Infrastructure & Maintenance
+- Updated dependencies and configurations.
+- Merged changes into the `graphdb/tigergraph` branch and set up CI.
