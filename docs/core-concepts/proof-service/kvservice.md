@@ -4,7 +4,7 @@ title: Decentralized Storage, KV Service
 sidebar_position: 3
 ---
 
-While developing the NextID, we found that we still need a place to keep some customized data in some cases. However, placing everything on the blockchain wasn't a reasonable choice. This led us to create the KV service as a user-friendly tool for storing some customized data. Through cryptographic verification, the `KV Service` ensures that only the avatar's owner can manage (create and modify) its content, while allowing others to read it.
+While developing the Next.ID, we found that we still need a place to keep some customized data in some cases. However, placing everything on the blockchain wasn't a reasonable choice. This led us to create the KV service as a user-friendly tool for storing some customized data. Through cryptographic verification, the `KV Service` ensures that only the avatar's owner can manage (create and modify) its content, while allowing others to read it.
 
 ## How it works 
 `KV Service` can store any valid JSON object data. There are serval APIs for reading and writing the data.
@@ -33,10 +33,10 @@ After writing the data, everyone can get it via API.See [GET /v1/kv](/rest-api/k
 
 ### Design
 - Each user has `1 + N` namespaces：
-  - [Avatar](/proof-service/glossary.md#glossary-avatar) itself has a namespace (`platform == "nextid" && identity == "0xAVATAR_PUBLIC_KEY"`)
-    - There's no limitation that [Avatar](/proof-service/glossary.md#glossary-avatar) should be used in [ProofService](/proof-service/intro.md) once.
-  - Each [binding record](/proof-service/glossary.md#glossary-link) (in [ProofService](/proof-service/intro.md)) of each [Avatar](/proof-service/glossary.md#glossary-avatar) has a namespace.
-    - Value of `platform` and `identity` are the same as [definition](/proof-service/platforms.md) in ProofService.
+  - [Avatar](/introduction/how-it-works#avatars-in-nextid) itself has a namespace (`platform == "nextid" && identity == "0xAVATAR_PUBLIC_KEY"`)
+    - There's no limitation that [Avatar](introduction/how-it-works#avatars-in-nextid) should be used in [ProofService](ps-intro) once.
+  - Each [binding record](/proof-service/ps-intro#data-structure) (in [ProofService](ps-intro)) of each [Avatar](/introduction/how-it-works#avatars-in-nextid) has a namespace.
+    - Value of `platform` and `identity` are the same as [supported platforms](/proof-service/ps-intro#supported-platform) in ProofService.
 - [Query data](/rest-api/kvservice-api#query): public, only need to specify `avatar`.
 - [Write data](/rest-api/kvservice-api#payload): A patch followed [RFC 7396](https://www.rfc-editor.org/rfc/rfc7396) standard.
 
