@@ -35,17 +35,16 @@ sidebar_position: 1
 ### Changelog 2023-09-06 by [@Zella Zhong]([https://github.com/ZhongFuze](https://github.com/ZhongFuze))
 
 Switched GraphDB Engine to TigerGraph
-    - Why: To handle rising data volumes and enable advanced analytics capabilities.
-    - Impact: Improved query performance by 70%, added new query functionalities, and optimized data fetching.
-    - Features:
-        - [GSQL migrations and [tdb] configuration]((https://github.com/NextDotID/relation_server/pull/105/commits/61895f0ccf00d6a595caaaa91a34dab785c3d501)).
-        - New query functionalities like [`neighbors()`]((https://github.com/NextDotID/relation_server/pull/105/commits/319d93605457bacb6cac44e44475f35f0dc69359)), [`neighbors_with_source()`]((https://github.com/NextDotID/relation_server/pull/105/commits/d166c76ef0b0abb539631daefed2fad29c4a55d9)), [`domain()`]((https://github.com/NextDotID/relation_server/pull/105/commits/f4b3fa21d7714524ea9600466e53a69f28d054df)), etc.
-
+- Why: To handle rising data volumes and enable advanced analytics capabilities.
+- Impact: Improved query performance by 70%, added new query functionalities, and optimized data fetching.
+- Features:
+    - [GSQL migrations and [tdb] configuration]((https://github.com/NextDotID/relation_server/pull/105/commits/61895f0ccf00d6a595caaaa91a34dab785c3d501)).
+    - New query functionalities like [`neighbors()`]((https://github.com/NextDotID/relation_server/pull/105/commits/319d93605457bacb6cac44e44475f35f0dc69359)), [`neighbors_with_source()`]((https://github.com/NextDotID/relation_server/pull/105/commits/d166c76ef0b0abb539631daefed2fad29c4a55d9)), [`domain()`]((https://github.com/NextDotID/relation_server/pull/105/commits/f4b3fa21d7714524ea9600466e53a69f28d054df)), etc.
     - Action Required: Users may need to update configurations and be aware of deprecated ArangoDB-related code.
 
 ### New Features
-• **GSQL Client Tweaks**: [Optimized GSQL interactions for faster migrations and queries](https://github.com/NextDotID/relation_server/pull/105/commits/f99e5a26a360811a2cc16a296d0d84656f88f178). 
-• **Delete Vertex and Edge Method**: [Added for handling outdated data](https://github.com/NextDotID/relation_server/pull/105/commits/a5ce35a05ab402d0a2bfa3023135ce8008a69d74). 
+- GSQL Client Tweaks: [Optimized GSQL interactions for faster migrations and queries](https://github.com/NextDotID/relation_server/pull/105/commits/f99e5a26a360811a2cc16a296d0d84656f88f178). 
+- Delete Vertex and Edge Method: [Added for handling outdated data](https://github.com/NextDotID/relation_server/pull/105/commits/a5ce35a05ab402d0a2bfa3023135ce8008a69d74). 
 
 
 
