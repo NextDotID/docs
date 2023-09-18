@@ -1,5 +1,7 @@
 ---
-title: Liftoff, Hello Space!
+id: twitter-wallet-binding
+title: Twitter-Wallet Binding
+sidebar_position: 1
 ---
 
 To get started, let's walk through a binding process with the most frequently used platform: Twitter.

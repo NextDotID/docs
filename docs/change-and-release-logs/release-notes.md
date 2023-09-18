@@ -1,4 +1,8 @@
-# Release Notes
+---
+id: release-note
+title: Release Note
+sidebar_position: 1
+---
 
 In addition to the changelogs available on the previous page, we also offer SDK release notes to keep you informed about updates to each SDK we support. Our goal is to provide you with a seamless experience when upgrading your SDK, and we want to ensure you have a comprehensive understanding of how our SDKs are evolving.
 

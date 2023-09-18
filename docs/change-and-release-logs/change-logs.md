@@ -1,7 +1,10 @@
+---
+id: change-log
+title: Changelog
+sidebar_position: 1
+---
 
-# Changelog
-
-# Proof Service
+## Proof Service
 
 ## Changelog 2023-09-06 by [@Nyk Ma]([https://github.com/nykma](https://github.com/nykma))
 

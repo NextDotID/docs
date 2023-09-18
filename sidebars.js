@@ -2,19 +2,13 @@ module.exports = {
   docs: [
     {
       type: 'category',
-      label: 'Getting Started',
+      label: 'Introduction',
       collapsed: false,
-      items: ['getting-started/introduction', 'getting-started/quick-start'],
+      items: ['introduction/overall-intro', 'introduction/how-it-works'],
     },
     {
       type: 'category',
       label: 'Core Concepts',
-      collapsed: false,
-      items: ['core-concepts/how-it-works', 'core-concepts/architecture'],
-    },
-    {
-      type: 'category',
-      label: 'Core Concepts V2 (Instead of Components in V1)',
       collapsed: false,
       items: [
         {
@@ -22,9 +16,9 @@ module.exports = {
               label: 'ProofService',
               collapsed: false,
               items: [
-                'core-concepts-v2/proof-service-v2/ps-intro',
-                'core-concepts-v2/proof-service-v2/as-intro',
-                'core-concepts-v2/proof-service-v2/ks-intro',
+                'core-concepts/proof-service/ps-intro',
+                'core-concepts/proof-service/as-intro',
+                'core-concepts/proof-service/ks-intro',
               ],
         },
         {
@@ -32,9 +26,9 @@ module.exports = {
           label: 'RelationService',
           collapsed: false,
           items: [
-            'core-concepts-v2/relation-service-v2/rs-intro',
-            'core-concepts-v2/relation-service-v2/rs-graphdb',
-            'core-concepts-v2/relation-service-v2/rs-example',
+            'core-concepts/relation-service/rs-intro',
+            'core-concepts/relation-service/rs-graphdb',
+            'core-concepts/relation-service/rs-example',
           ],
         },   
         {
@@ -42,65 +36,35 @@ module.exports = {
           label: 'Concept Stage: CoreService',
           collapsed: false,
           items: [
-            'core-concepts-v2/core-service-v2/cs-intro'
+            'core-concepts/core-service/cs-intro'
           ],
         },        
       ],
     },
-    // {
-    //   type: 'category',
-    //   label: 'Components',
-    //   collapsed: false,
-    //   items: [{
-    //     type: 'category',
-    //     label: 'ProofService',
-    //     collapsed: true,
-    //     items: [
-    //       'proof-service/ps-intro',
-    //       'proof-service/ps-glossary',
-    //       'proof-service/ps-flow',
-    //       'proof-service/ps-platforms-supported',
-    //       'proof-service/ps-faq'
-    //     ],
-    //   }, {
-    //     type: 'category',
-    //     label: 'KVService',
-    //     collapsed: true,
-    //     items: [
-    //       'kv-service/kv-intro',
-    //       'kv-service/kv-faq',
-    //     ]
-    //   }, {
-    //     type: 'category',
-    //     label: 'RelationService',
-    //     collapsed: true,
-    //     items: [
-    //       'relation-service/rs-intro',
-    //       'relation-service/rs-system',
-    //       'relation-service/rs-graphql',
-    //       'relation-service/rs-faq',
-    //     ]
-    //   }, {
-    //     type: 'category',
-    //     label: 'AuthService',
-    //     collapsed: true,
-    //     items: [
-    //       'auth-service/as-intro',
-    //       'auth-service/as-workflow',
-    //     ]
-    //   }]
-    // },
     {
       type: 'category',
-      label: 'Developer Guide',
+      label: 'Getting Started',
       collapsed: false,
-      items: ['developer-guide/go', 'developer-guide/rust', 'developer-guide/typescript'],
+      items: ['getting-started/twitter-wallet-binding', 'getting-started/importing-universal-profiles'],
     },
     {
       type: 'category',
-      label: 'Rest API',
+      label: 'Project Showcase',
+      collapsed: false,
+      items: ['project-showcase/show-case'],
+    },
+    {
+      type: 'category',
+      label: 'API Reference',
       items: ['rest-api/proofservice-api', 'rest-api/kvservice-api'],
     },
+    'faq',
+    {
+      type: 'category',
+      label: 'Change and Release Notes',
+      items: ['change-and-release-logs/change-log', 'change-and-release-logs/release-note'],
+    },
+    'community-governance',
     'roadmap',
   ],
 };
