@@ -14,7 +14,7 @@ module.exports = {
         {
               type: 'category',
               label: 'ProofService',
-              collapsed: false,
+              collapsed: true,
               items: [
                 'core-concepts/proof-service/ps-intro',
                 'core-concepts/proof-service/as-intro',
@@ -24,7 +24,7 @@ module.exports = {
         {
           type: 'category',
           label: 'RelationService',
-          collapsed: false,
+          collapsed: true,
           items: [
             'core-concepts/relation-service/rs-intro',
             'core-concepts/relation-service/rs-graphdb',
@@ -34,7 +34,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Concept Stage: CoreService',
-          collapsed: false,
+          collapsed: true,
           items: [
             'core-concepts/core-service/cs-intro'
           ],
@@ -44,7 +44,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Getting Started',
-      collapsed: false,
+      collapsed: true,
       items: ['getting-started/twitter-wallet-binding', 'getting-started/importing-universal-profiles'],
     },
     // {
