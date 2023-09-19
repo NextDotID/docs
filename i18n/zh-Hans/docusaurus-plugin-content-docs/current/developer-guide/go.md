@@ -4,7 +4,7 @@ title: Go
 
 ## Proof Service
 
-> You could git clone and run this [Go open demo](https://github.com/nextdotid/Signature-Generating-Sample/tree/main/go) as a help
+> You can git clone and run [Go open demo](https://github.com/nextdotid/Signature-Generating-Sample/tree/main/go) for help.
 
 The core example of codes:
 
