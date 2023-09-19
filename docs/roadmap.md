@@ -1,4 +1,6 @@
-# Roadmap
+---
+title: Roadmap
+---
 
 ***Phase 1 (April 2022-Dec 2022)***
 • Integrate more Web2 platforms, starting with Twitter, Discord, Keybase, and Steam. Debut a user-facing demo dApp protocol (Web3.bio) that showcases the full suite of [Next.ID](http://next.id/)’s capabilities

@@ -34,9 +34,9 @@ After writing the data, everyone can get it via API.See [GET /v1/kv](/rest-api/k
 ### Design
 - Each user has `1 + N` namespaces：
   - [Avatar](/introduction/how-it-works#avatars-in-nextid) itself has a namespace (`platform == "nextid" && identity == "0xAVATAR_PUBLIC_KEY"`)
-    - There's no limitation that [Avatar](introduction/how-it-works#avatars-in-nextid) should be used in [ProofService](ps-intro) once.
-  - Each [binding record](/proof-service/ps-intro#data-structure) (in [ProofService](ps-intro)) of each [Avatar](/introduction/how-it-works#avatars-in-nextid) has a namespace.
-    - Value of `platform` and `identity` are the same as [supported platforms](/proof-service/ps-intro#supported-platform) in ProofService.
+    - There's no limitation that [Avatar](/introduction/how-it-works#avatars-in-nextid) should be used in [ProofService](ps-intro) once.
+  - Each [binding record](./ps-intro#data-structure) (in [ProofService](ps-intro)) of each [Avatar](/introduction/how-it-works#avatars-in-nextid) has a namespace.
+    - Value of `platform` and `identity` are the same as [supported platforms](./ps-intro#supported-platform) in ProofService.
 - [Query data](/rest-api/kvservice-api#query): public, only need to specify `avatar`.
 - [Write data](/rest-api/kvservice-api#payload): A patch followed [RFC 7396](https://www.rfc-editor.org/rfc/rfc7396) standard.
 

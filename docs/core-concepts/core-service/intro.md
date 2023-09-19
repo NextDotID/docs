@@ -26,4 +26,6 @@ After running the CoreService, there will be a dashboard to help deploy the othe
 ![](../../../static/img/coreservice-board.png)
 
 ## Code Reference
+
 [Core Service](https://github.com/NextDotID/core_service_sharp)
+
