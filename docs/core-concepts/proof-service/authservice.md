@@ -3,7 +3,7 @@ id: as-intro
 title: Web3 Auth, Auth Service
 sidebar_position: 2
 ---
-As we already built up the connection between avatar and [other identities](link to support platforms). The idea of letting DApps have its own version of "Sign-in with Google/Twitter" came out naturally. Auth Service is designed to help DApps realize this capability.
+As we already built up the connection between avatar and [other identities](core-concepts/proof-service/ps-intro#supported-platform). The idea of letting DApps have its own version of "Sign-in with Google/Twitter" came out naturally. Auth Service is designed to help DApps realize this capability.
 
 ## How it works
 
@@ -57,8 +57,7 @@ Subkey is randomly generated so that you can regenerate and use a new subkey at 
 In order to use the Oauth Service of Twitter/Discord/..., configurations like the following are necessary to be pre-configured in the AuthService (the platform depends on you, only need to put the configurations that you want to support).
 
 #### ProofService Endpoint
-There is configured the  endpoint of `Proof Service` so that AuthService 
-can get to know the connections between the avatar and other identities.
+The endpoint of `ProofService` is configured to allow AuthService to retrieve the connections between the avatar and other identities.
 
 The example of the whole configuration:
 

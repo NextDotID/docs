@@ -5,7 +5,7 @@ sidebar_position: 2
 ---
 Here, we'll go through the core system design concepts of Next.ID and DIDs.
 ## Avatars in Next.ID
-Avatar key pairs are created, and will be used to perform actions via Next.ID (eg. sign a follow action) for both on-chain & off-chain activities. Next.ID's relation aggregation can map all these actions:
+Using the secp256k1 curve with the ECDSA algorithm, avatar key pairs are generated for actions on Next.ID (e.g., signing a follow action) applicable to both on-chain and off-chain activities. Next.ID's relation aggregation can map all these actions:
 ![](../../static/img/avatar-diagram.png)
 
 ## [ProofService](../core-concepts/proof-service/intro.md)
