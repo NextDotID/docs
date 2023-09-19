@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknext_id_doc=self.webpackChunknext_id_doc||[]).push([[6431],{8142:s=>{s.exports=JSON.parse('{"label":"proof_service","permalink":"/zh-Hans/tags/proof-service","allTagsPath":"/zh-Hans/tags","count":1,"items":[{"id":"proof-service/ps-flow","title":"Flow","description":"Use this with Glossary","permalink":"/zh-Hans/proof-service/ps-flow"}]}')}}]);
