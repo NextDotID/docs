@@ -63,8 +63,8 @@ See [Platform supported](https://github.com/NextDotID/proof_server#supported)
   + Attributes (object)
 
     + action (string, required) - Action (`create` / `delete`)
-    + platform (string, required) - Target platform. See table above for all available platforms. See table in [Platform supported](/proof-service/ps-platforms-supported) for all available values.
-    + identity (string, required) - Identity in target platform to proof. Usually a "username" or "screen name". See [Platform supported](/proof-service/ps-platforms-supported).
+    + platform (string, required) - Target platform. See table above for all available platforms. See table in [Platform supported](https://github.com/NextDotID/proof_server#supported) for all available values.
+    + identity (string, required) - Identity in target platform to proof. Usually a "username" or "screen name". See [Platform supported](https://github.com/NextDotID/proof_server#supported).
     + public_key (string, required) - Public key of Avatar to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`).
 
   + Body
@@ -108,10 +108,10 @@ See [Platform supported](https://github.com/NextDotID/proof_server#supported)
 
     + action (string, required) - Action (`create` / `delete`)
     + platform (string, required) - Target platform. See table above for all available platforms. See table above for all available values.
-    + identity (string, required) - Identity in target platform to proof. Usually a "username" or "screen name". See [Platform supported](/proof-service/ps-platforms-supported).
-    + proof_location (string, optional) - Location where public-accessible proof post is set. See [Platform supported](/proof-service/ps-platforms-supported).
+    + identity (string, required) - Identity in target platform to proof. Usually a "username" or "screen name". See [Platform supported](https://github.com/NextDotID/proof_server#supported).
+    + proof_location (string, optional) - Location where public-accessible proof post is set. See [Platform supported](https://github.com/NextDotID/proof_server#supported).
     + public_key (string, required) - Public key of Next.ID Avatar to connect to. Should be secp256k1 curve (for now), 65-bytes or 33-bytes long (uncompressed / compressed) and stringified into hex form (`/^0x[0-9a-f]{65,130}$/`).
-    + extra (object, optional) - Extra info for specific platform needed. See [Flow](../core-concepts/how-it-works#ethereum-binding) for more info.
+    + extra (object, optional) - Extra info for specific platform needed. See [Flow](/introduction/how-it-works#binding-an-avatar-to-an-application-via-ethereum-wallet) for more info.
       + wallet_signature (string, optional) - (required when `platform: ethereum`) Signature signed by ETH wallet (w/ same sign payload), BASE64-ed.
       + signature (string, optional) - (required when `platform: ethereum` or `action: delete`) Signature signed by Avatar private key (w/ same sign payload), BASE64-ed.
     + uuid (string, required) - UUID of this chain link. Use the exact value from `POST /v1/proof/payload`.
@@ -297,7 +297,7 @@ Found.
         + action (string, required) - Action(create / delete)
         + platform (string, required) - Target platform. See table above for all available platforms. See table above for all available values.
         + identity (string, required) - Identity on that platform
-        + proof_location (string, required) - Location where public-accessible proof post is set. See [Platform supported](/proof-service/ps-platforms-supported).
+        + proof_location (string, required) - Location where public-accessible proof post is set. See [Platform supported](https://github.com/NextDotID/proof_server#supported).
         + created_at (string, required) - Creation time of this proof. (timestamp, unit: second)
         + signature (string, required) - generate signature_payload and avatar_private_key
         + signature_payload (string, required) - Raw string to be sent to `personal_sign`
@@ -367,9 +367,9 @@ Found.
         + id (number, required) - ProofChain link ID in ProofService's database. Can be used as the "cursor" in query.
         + avatar (string, required) - Which Avatar this link belongs to.
         + action (string, required) - Action (`create` / `delete`)
-        + platform (string, required) - Target platform. See [Platform supported](/proof-service/ps-platforms-supported) for all supported platforms.
-        + identity (string, required) - Identity on that platform. See [Platform supported](/proof-service/ps-platforms-supported) for the meaning of this field..
-        + proof_location (string, required) - Location where public-accessible proof post is set. See [Platform supported](/proof-service/ps-platforms-supported).
+        + platform (string, required) - Target platform. See [Platform supported](https://github.com/NextDotID/proof_server#supported) for all supported platforms.
+        + identity (string, required) - Identity on that platform. See [Platform supported](https://github.com/NextDotID/proof_server#supported) for the meaning of this field..
+        + proof_location (string, required) - Location where public-accessible proof post is set. See [Platform supported](https://github.com/NextDotID/proof_server#supported).
         + created_at (string, required) - Creation time of this proof. (timestamp, unit: second)
         + signature (string, required) - generate signature_payload and avatar_private_key
         + signature_payload (string, required) - Raw string to be sent to `personal_sign`
