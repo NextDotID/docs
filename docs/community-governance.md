@@ -1,4 +1,7 @@
-# Community Governance
+---
+title: Community Governance
+---
+
 
 Welcome to the **[Next.ID](http://next.id/)** community! Our goal is to become a universal DID infrastructure accessible to everyone. To achieve this, a robust governance structure is essential.
 

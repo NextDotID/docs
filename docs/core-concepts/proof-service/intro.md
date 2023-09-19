@@ -100,14 +100,14 @@ There is an API provided by `ProofSerive` to get the ProofChain of an avatar:
 
 ### Data Location
 From day one, the connection data in Proof Service to public so that everyone can access it via API or Arweave.
-[API docs](link-to-api-reference-page)
+[API docs](../../rest-api/kvservice-api.md)
 [An example of data in Arweave](https://viewblock.io/arweave/tx/wvzDhXgcglrUWob9CUjTfJ6tj322eCWDKI2bVtU_cx4)
 
 Noted that the APIs in the docs contain the API to help bind "Avatar <-> Identity", like `POST /v1/proof/payload` or `POST /v1/proof`, but also serval APIs to query the state of the [proofs](https://github.com/NextDotID/proof_server/blob/develop/docs/api.apib#L160) and [the proofchain under an avatar](https://github.com/NextDotID/proof_server/blob/develop/docs/api.apib#L285).
 The Arweave example contains the single Proof record and based on the mechanism of Arweave, can keep getting the previous record until Genesis one.
 
 ## Supported Platform 
-[supported Platform](https://github.com/NextDotID/proof_server#supported)
+[Supported Platform](https://github.com/NextDotID/proof_server#supported)
 
 ## How to contribute
 As an open-source project, we welcome all interested developers to contribute and build with us, especially integrating more platform identity. What you need to do is:

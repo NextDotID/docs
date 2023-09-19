@@ -1,8 +1,10 @@
-# FAQs
+---
+title: FAQs
+---
 
-## **How Do I Generate an [Avatar](https://docs.next.id/proof-service/ps-glossary#glossary-avatar)?**
+## **How Do I Generate an Avatar?**
 
-As explained in our **[glossary](https://docs.next.id/proof-service/ps-glossary#glossary-avatar)**, an Avatar is technically equivalent to an Ethereum wallet. Both use the **`secp256k1`** elliptic curve for their asymmetric key pairs.
+An Avatar is technically equivalent to an Ethereum wallet. Both use the **`secp256k1`** elliptic curve for their asymmetric key pairs.
 
 To generate and manage an Avatar, you can follow the same procedures as you would for generating and managing Ethereum wallets. Look for an **`secp256k1`** SDK compatible with your project's programming language.
 
