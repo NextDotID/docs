@@ -1,7 +1,7 @@
 ---
 id: overall-intro
 title: Introduction
-sidebar_position: 1
+slug: /
 ---
 
 Next.ID is an decentralized identity (DID) creation and management protocol built for developers. The Next ID protocol is used as the secure connecting fiber between different web2 and web3 identifiers, such as wallets, twitter profiles, ENS names, Lens profiles, and many more.
