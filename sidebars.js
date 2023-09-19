@@ -47,12 +47,12 @@ module.exports = {
       collapsed: false,
       items: ['getting-started/twitter-wallet-binding', 'getting-started/importing-universal-profiles'],
     },
-    {
-      type: 'category',
-      label: 'Project Showcase',
-      collapsed: false,
-      items: ['project-showcase/show-case'],
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Project Showcase',
+    //   collapsed: false,
+    //   items: ['project-showcase/show-case'],
+    // },
     {
       type: 'category',
       label: 'API Reference',
