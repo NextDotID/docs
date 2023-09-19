@@ -23,8 +23,8 @@ In the preceding chapter, we discussed how to construct an identity graph using 
 Anyone can access the identity graph data via GraphQL of `RelationService`
 
 | Environment | URL                                  | Online? | Playground                                  |
-|-------------|--------------------------------------|---------|---------------------------------------------|
-| Staging     | https://relation-service.nextnext.id | ✅      | [Yes](https://relation-service.nextnext.id) |
-| Production  | https://relation-service.next.id     | ✅      | [Yes](https://relation-service.next.id)     |
+| ----------- | ------------------------------------ | ------- | ------------------------------------------- |
+| Staging     | https://relation-service.nextnext.id | ✅       | [Yes](https://relation-service.nextnext.id) |
+| Production  | https://relation-service.next.id     | ✅       | [Yes](https://relation-service.next.id)     |
 
-[Some common use cases for the reference](rs-example)
+Some common use cases for the reference, [Query from Graph Database.](rs-example)
