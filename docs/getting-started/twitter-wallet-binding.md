@@ -1,23 +1,23 @@
 ---
-title: Liftoff, Hello Space!
+id: twitter-wallet-binding
+title: Twitter-Wallet Binding
+sidebar_position: 1
 ---
 
-To get started, let's walk through a binding process with the most frequently used platform: Twitter.
-Hold tight, let's go!
+To get started, let's walk through a binding process with the most frequently used platform: Twitter - let's go!
 
 ## Prerequisites
-- Basics in Cryptography
-- Basics in Python, TypeScript and Node.js
-- Basics in Postman or cURL
-- Basics in any other programming languages
+- [Next.ID](http://next.id/) offers support for a standard REST API format across all services.
+- Familiarity with any programming language is sufficient for getting started.
+- For demonstration purposes, we primarily use Python, TypeScript, and Node.js, as these are among the most commonly used programming languages.
+- A basic understanding of cryptography will be beneficial.
 
 New to this but keen on learning? Don't panic, you can learn it all in just a few hours!
 
 ## Step-by-step: Setting up your first Avatar
-
 In the Crypto world, a cryptographic key pair is what stands as one of your Avatars. Next.ID uses by far the most secure algorithm to protect your sovereignty: curve secp256k1.
 
-We're showing it by using Python's [secp256k1-py](https://pypi.org/project/secp256k1/).
+We're showing it by using Python's [secp256k1-py](https://pypi.org/project/secp256k1/).
 
 First, install secp256k1-py lib:
 
@@ -40,7 +40,6 @@ Public key: 03bce884894fdc4fb45475733be317dd3c289f003bceebb097ac79a6b95e6edc56
 With this one key pair, you now create an Avatar secured by unbreakable cryptography.
 
 ## Binding your Twitter account
-
 From here, we're demonstrating the whole process by using a Twitter handle and key-pair as generated above. Replace all fields with your own information -- you'll be prompted to do so accordingly.
 
 Please take note especially to replace `your_twitter_handle`.
@@ -190,8 +189,6 @@ We will get as below:
 }
 ```
 
-Congrats! You have successfully created an Avatar on-chain. Go explore cyberspace with your new digital identity!
-## What's Next?
+Congrats! You have successfully created an Avatar on-chain and bound it to your Twitter account.
 
-- View the [architecture of Next.ID framework](../core-concepts/architecture.md)
-- Understand [how it works in detail](../core-concepts/how-it-works.md)
+

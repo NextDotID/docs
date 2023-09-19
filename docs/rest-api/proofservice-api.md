@@ -5,9 +5,9 @@ title: ProofService API
 ### Entrypoint {#entrypoint}
 
 | Online | Environment | Entrypoint                        | Healthcheck                               |
-|--------|-------------|-----------------------------------|-------------------------------------------|
-| ✅     | Staging     | https://proof-service.nextnext.id | https://proof-service.nextnext.id/healthz |
-| ✅     | Production  | https://proof-service.next.id     | https://proof-service.next.id/healthz     |
+| ------ | ----------- | --------------------------------- | ----------------------------------------- |
+| ✅      | Staging     | https://proof-service.nextnext.id | https://proof-service.nextnext.id/healthz |
+| ✅      | Production  | https://proof-service.next.id     | https://proof-service.next.id/healthz     |
 
 ### Structure
 
@@ -15,12 +15,12 @@ All requests and responses should be `Content-Type: application/json`.
 
 ### Supported platforms for proofing
 
-See [Platform supported](/proof-service/ps-platforms-supported)
+See [Platform supported](https://github.com/NextDotID/proof_server#supported)
 
 ### Post struct placeholders
 
 | placeholders   | Should be replaced to    | Sample                                                                                     |
-|----------------|--------------------------|--------------------------------------------------------------------------------------------|
+| -------------- | ------------------------ | ------------------------------------------------------------------------------------------ |
 | `%SIG_BASE64%` | Base64-encoded signature | `1uZDzxZ6wae+IaF4BgJXWAWC9e/nxbkdC0xp+xRLz1FqeghynyW+SQnGQygdgQYLTLfXqq03nyFQJU0GidQ/3QA=` |
 
 ## Group Common
