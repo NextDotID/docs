@@ -21,9 +21,9 @@ We will package all the services to docker images, and provide the docker-compos
 
 An example of [docker-compose.yaml](https://github.com/NextDotID/core_service_sharp/blob/develop/build/docker-compose.yml)
 
-After running the CoreService, there will be a dashboard to help deploy the other services you might need to self-host, e.g., ProofService and RelationService via the docker-compose file and the necessary configurations.
+After running the CoreService, there will be a dashboard to help deploy the other services you might need to self-host, e.g. ProofService and RelationService via the docker-compose file and the necessary configurations.
 
-![](../../../static/img/coreservice-board.png)
+![](../../../static/img/coreservice-dashboard.png)
 
 ## Code Reference
 
