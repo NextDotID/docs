@@ -32,8 +32,8 @@ four type of `Edges`
 - **Proof**: represent a bi-directional relation (e.g.a Twitter account and an Ethereum account that bonded in `ProofService`)
 - **Hold**: usually represent Identity "hold" an asset (eg: an account hold a NFT)
 - **Resolve**: refer to the relation between the domain service and account (eg: ENS)
-- **Relation**: recorded static info between two identities
+- **Relation**: record static info between two identities
 
 With Graph Databases, accessing related nodes becomes intuitive. Based on the data structure defined above, one can retrieve an individual identity graph, 她the accounts holding the same NFT collection, or those interacting with a particular smart contract by traversing the graph. Data can be extracted from the specified Edges and Vertices, tailored to your specific conditions.
 
-[The following page contains some query examples that can take a reference](./exampleQuery.md)
+[some query examples for reference](./exampleQuery.md)
