@@ -9,17 +9,7 @@ As we already built up the connection between avatar and [other identities](core
 
 ### Workflow of Auth with 3rd party platform 
 
-```mermaid
-sequenceDiagram
-    User->>dApp: 1. Click login with Next.ID
-    dApp->>Self-hosted AuthService: 2. Specify an AuthService URL to authenticate
-    Self-hosted AuthService->>+User: 3. Redirect to Authenticate prompt
-    User->>-Self-hosted AuthService: 4. Authenticate by supported platforms (incl. Twitter OAuth, ETH wallet sign)
-    Self-hosted AuthService->>User: 5. Redirect to Authorize prompt w/ scopes required
-    User->>Self-hosted AuthService: 6. Authorize and Consent
-    Self-hosted AuthService->>+User: 7. Redirect User to dApp page with signature signed by Avatar's Subkey
-    User->>-dApp: 8. Access dApp callback URL with signature
-```
+![](../../../static/img/core-concept/authservice-workflow.png)
 
 When a DApp initiates an authorization process, it must specify an `AuthService` instance (We strongly recommend to self-host one) to carry out the authentication. (step 2)
 

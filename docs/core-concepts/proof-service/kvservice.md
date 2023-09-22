@@ -11,20 +11,8 @@ While developing the Next.ID, we found that we still need a place to keep some c
 
 ### Work Flow for writing 
 
-```mermaid
+![](../../../static/img/core-concept/kvservice-workflow.png)
 
-sequenceDiagram
-    autonumber
-    User ->> Application : (Start a modification request)
-    Application ->> KVService : POST /v1/kv/payload
-    KVService -->> Application : sign_payload
-    Application ->> User : avatar.eth_avatarlSign(sign_payload)
-    User -->> Application : Signature Sp
-    Application ->> KVService : POST /v1/kv
-    note right of Application : With uuid and created_at from ③
-    KVService -->> Application : Success
-    Application -->> User : Success
-```
 The generation signature and verification steps to guarantee the modification request is from the owner of Avatar.
 
 ### Query data

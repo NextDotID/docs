@@ -127,14 +127,14 @@ const config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-Hans'],
+    locales: ['en'],
     localeConfigs: {
       en: {
         htmlLang: 'en-US',
       },
-      'zh-Hans': {
-        htmlLang: 'zh-Hans',
-      },
+      // 'zh-Hans': {
+      //   htmlLang: 'zh-Hans',
+      // },
     },
   },
 };

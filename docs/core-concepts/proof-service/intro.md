@@ -5,7 +5,8 @@ sidebar_position: 1
 ---
 
 `ProofService` offers a DID service that establishes a bridge between the Avatar and identity providers from both web2 platforms (like Twitter, Discord, etc.) and web3 identities (such as Ethereum and Bitcoin wallet addresses). This aims to provide users with a holistic, publicly verifiable identity graph. Simultaneously, users maintain the autonomy to manage their digital identities. In the end, the avatar and these identities combine to form an identity graph as below:
-![](../../../static/img/avatar-diagram.png)
+
+![](../../../static/img/proofservice-graph.png)
 
 ## How to build the connection 
 
