@@ -30,7 +30,7 @@ module.exports = {
             'core-concepts/relation-service/rs-graphdb',
             'core-concepts/relation-service/rs-example',
           ],
-        },   
+        },
         {
           type: 'category',
           label: 'Concept Stage: CoreService',
@@ -38,7 +38,7 @@ module.exports = {
           items: [
             'core-concepts/core-service/cs-intro'
           ],
-        },        
+        },
       ],
     },
     {
@@ -56,7 +56,11 @@ module.exports = {
     {
       type: 'category',
       label: 'API Reference',
-      items: ['rest-api/proofservice-api', 'rest-api/kvservice-api'],
+      items: [
+        'rest-api/proofservice-api',
+        'rest-api/proofservice-platforms-supported',
+        'rest-api/kvservice-api',
+      ],
     },
     'faq',
     {

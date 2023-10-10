@@ -2,6 +2,14 @@
 title: KVService API
 ---
 
+### Entrypoint {#entrypoint}
+
+| Online | Environment | Entrypoint                        | Healthcheck                               |
+| ------ | ----------- | --------------------------------- | ----------------------------------------- |
+| ✅      | Staging     | https://kv-service.nextnext.id | https://kv-service.nextnext.id/healthz |
+| ✅      | Production  | https://kv-service.next.id     | https://kv-service.next.id/healthz     |
+
+
 ### Structure
 
 All requests and responses should be `Content-Type: application/json`.
