@@ -15,6 +15,12 @@ We provide services for creating DIDs, querying existing relationships, attachin
 An identity graph is the network of a user’s identifiers (addresses, social profiles, etc.). Using secure key pair (Avatar) signatures, entities are bonded to an address.
 ![](../../static/img/avatar-diagram.png)
 
+How two users' Avatars may interact:
+![](../../static/img/avatar-Interaction.png)
+
+Next.ID creates an identity infrastructure that securely aggregates users’ identities into Avatars, making it the primary touch point for interfacing with any app or dApp. For example, this is how it can look like on a decentralized social network:
+![](../../static/img/hyper-multi-graph.png)
+
 ## Universal Profile API - One API for all web3 profiles
 Identity graphs consist of identifiers, like twitter, reddit, or github handles. These are used to build Universal Profiles for users. Developers, using the the Universal Profile SDK import information-rich user profiles, decreasing onboarding time and enabling instant personalization.
 ![](../../static/img/universal-profile.png)
