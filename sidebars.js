@@ -8,6 +8,12 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Getting Started',
+      collapsed: true,
+      items: ['getting-started/twitter-wallet-binding', 'getting-started/importing-universal-profiles'],
+    },
+    {
+      type: 'category',
       label: 'Core Concepts',
       collapsed: false,
       items: [
@@ -41,12 +47,7 @@ module.exports = {
         },
       ],
     },
-    {
-      type: 'category',
-      label: 'Getting Started',
-      collapsed: true,
-      items: ['getting-started/twitter-wallet-binding', 'getting-started/importing-universal-profiles'],
-    },
+    
     // {
     //   type: 'category',
     //   label: 'Project Showcase',
