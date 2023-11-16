@@ -34,6 +34,6 @@ four type of `Edges`
 - **Resolve**: refer to the relation between the domain service and account (eg: ENS)
 - **Relation**: record static info between two identities
 
-With Graph Databases, accessing related nodes becomes intuitive. Based on the data structure defined above, one can retrieve an individual identity graph, 她the accounts holding the same NFT collection, or those interacting with a particular smart contract by traversing the graph. Data can be extracted from the specified Edges and Vertices, tailored to your specific conditions.
+With Graph Databases, accessing related nodes becomes intuitive. Based on the data structure defined above, one can retrieve an individual identity graph, the accounts holding the same NFT collection, or those interacting with a particular smart contract by traversing the graph. Data can be extracted from the specified Edges and Vertices, tailored to your specific conditions.
 
 [some query examples for reference](./exampleQuery.md)
