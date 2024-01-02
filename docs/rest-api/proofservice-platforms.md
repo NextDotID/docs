@@ -162,3 +162,28 @@ Examples:
 - Misskey: `98wr1tkc82` for detail page `https://t.nyk.app/notes/98wr1tkc82`
 - Mastodon: `109364595689133988` for detail page `https://mstdn.jp/web/@nykma/109364595689133988`
 - Pleroma: `AQj3BoAIDiUOXgtVVw` for detail page `https://stereophonic.space/notice/AQj3BoAIDiUOXgtVVw`
+
+## TikTok
+
+:::caution STAGING
+- Staging
+:::
+
+| `platform` | `identity`                 | `proof_location` |
+|------------|----------------------------|------------------|
+| `tiktok`   | `username` in user profile | (see below)      |
+
+### Where to put proof post
+
+Guide your user to upload any video content, with proof post as the **"Caption"** and with visibility "Public".
+
+### About `identity`
+
+`identity` should be the `@username` (without `@`) set by user.
+
+### About `proof_location`
+
+We support the following 2 types of `proof_location` URL:
+
+- `https://www.tiktok.com/@username/video/DIGITS`, a typical URL of a video in TikTok web version.
+- `https://www.tiktok.com/t/AbCDEf123` , a share link copied from share button in TikTok app.
