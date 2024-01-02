@@ -158,7 +158,7 @@ All set! Let's go to have a look at our newly created Avatar.
 Call REST API `/proof`with `GET` method and with two fields of `platform` and `identity`:
 
 ```
-https://proof-service.next.id/v1/proof?platform=twitter&identity=your_twitter_handle
+https://proof-service.nextnext.id/v1/proof?platform=twitter&identity=your_twitter_handle
 ```
 
 We will get as below:
@@ -190,5 +190,3 @@ We will get as below:
 ```
 
 Congrats! You have successfully created an Avatar on-chain and bound it to your Twitter account.
-
-
