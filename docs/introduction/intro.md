@@ -4,7 +4,7 @@ title: Introduction
 slug: /
 ---
 
-Next.ID is an decentralized identity (DID) creation and management protocol built for developers. The Next ID protocol is used as the secure connecting fiber between different web2 and web3 identifiers, such as wallets, twitter profiles, ENS names, Lens profiles, and many more.
+Next.ID is a decentralized identity (DID) creation and management protocol built for developers. The Next ID protocol is used as the secure connecting fiber between different web2 and web3 identifiers, such as wallets, twitter profiles, ENS names, Lens profiles, and many more.
 By connecting a person’s different identifiers together, they form an identity graph - a powerful, portable, sovereign (self-owned) digital identities. Next ID refers to these identities, digital representations of self, as avatars.
 
 We provide services for creating DIDs, querying existing relationships, attaching data payloads to DIDs.
@@ -22,7 +22,7 @@ Next.ID creates an identity infrastructure that securely aggregates users’ ide
 ![](../../static/img/hyper-multi-graph.png)
 
 ## Universal Profile API - One API for all web3 profiles
-Identity graphs consist of identifiers, like twitter, reddit, or github handles. These are used to build Universal Profiles for users. Developers, using the the Universal Profile SDK import information-rich user profiles, decreasing onboarding time and enabling instant personalization.
+Identity graphs consist of identifiers, like twitter, reddit, or github handles. These are used to build Universal Profiles for users. Developers, using the Universal Profile SDK import information-rich user profiles, decreasing onboarding time and enabling instant personalization.
 ![](../../static/img/universal-profile.png)
 [Universal Profile](https://api.web3.bio)
 
