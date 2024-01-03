@@ -73,7 +73,7 @@ However, we recommend specifying the platform and identity for more precise stor
 
 ### **Role Clarification**
 
-RelationService serves as a relation aggregator and does not create new relationships. Consequently, we do no need to issue any "token-like" entities.
+RelationService serves as a relation aggregator and does not create new relationships. Consequently, we do not need to issue any "token-like" entities.
 
 ## **Should I Use the "Official" Instance of RelationService in My Production Environment?**
 
