@@ -4,7 +4,7 @@ title: GraphDB
 sidebar_position: 2
 ---
 
-As `RelationService` aims to build comprehensive personal identity graphs, incorporating both on-chain and off-chain data to provide a holistic view of an individual’s digital presence.The Graph Database is the most important technology behind, aiming to supporting a full range of identity queries and social use cases. 
+As `RelationService` aims to build comprehensive personal identity graphs, incorporating both on-chain and off-chain data to provide a holistic view of an individual’s digital presence. The Graph Database is the most important technology behind, aiming to support a full range of identity queries and social use cases. 
 Graph Databases focus on relationships between data, making them a better option when dealing with complex relationships between intertwined data stored in multiple tables.
 
 ## What is a graph database?
@@ -29,7 +29,7 @@ In `RelationService`, we defined two type of `Vertices`
 - **Contract**: a contract object on a specific chain
   
 four type of `Edges`
-- **Proof**: represent a bi-directional relation (e.g.a Twitter account and an Ethereum account that bonded in `ProofService`)
+- **Proof**: represent a bi-directional relation (e.g. a Twitter account and an Ethereum account that bonded in `ProofService`)
 - **Hold**: usually represent Identity "hold" an asset (eg: an account hold a NFT)
 - **Resolve**: refer to the relation between the domain service and account (eg: ENS)
 - **Relation**: record static info between two identities
