@@ -29,10 +29,10 @@ The process concludes by redirecting to the DApp with the following parameters(s
 6. `sig` (string, required): Signature of `avatar=${avatar}\nredirect_uri={redirect_uri}\nexpired_at=${expired_at}\nstate=${state}` singed by Subkey, encoded in Base58.
 
 ### Configuration 
-Understanding how it operates, the preliminary step before launching an instance of `Auth Service` is to prepare a configuration file.There are three parts. 
+Understanding how it operates, the preliminary step before launching an instance of `Auth Service` is to prepare a configuration file. There are three parts. 
 
 #### The Avatar and a subkey that is signed by the avatar:
-In the configuration, the list of avatars represents the identity that can be authenticated by this instance of `AuthService`. The private key is used to sign ta message, proving the ownership of the avatar. We strongly recommend using a subkey that is signed by the avatar instead of the avatar itself in the configuration. For enhanced security, it's advisable to generate a unique subkey for specific cases. This not only tailors the security to the situation but also minimizes the risk of exposing the avatar's private key.
+In the configuration, the list of avatars represents the identity that can be authenticated by this instance of `AuthService`. The private key is used to sign a message, proving the ownership of the avatar. We strongly recommend using a subkey that is signed by the avatar instead of the avatar itself in the configuration. For enhanced security, it's advisable to generate a unique subkey for specific cases. This not only tailors the security to the situation but also minimizes the risk of exposing the avatar's private key.
 
 Run the following command with [generate_subkey.py](https://github.com/nextdotid/auth_server/blob/develop/build/generate_subkey.py) to generate a new subkey and sign it with your Avatar private key:
 
