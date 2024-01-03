@@ -16,7 +16,7 @@ While developing the Next.ID, we found that we still need a place to keep some c
 The generation signature and verification steps to guarantee the modification request is from the owner of Avatar.
 
 ### Query data
-After writing the data, everyone can get it via API.See [GET /v1/kv](/rest-api/kvservice-api#query).
+After writing the data, everyone can get it via API. See [GET /v1/kv](/rest-api/kvservice-api#query).
 
 
 ### Design

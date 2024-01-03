@@ -5,7 +5,7 @@ sidebar_position: 3
 ---
 Here are some query use cases for reference.
 
-### Query an identity (w/ its relations to other identitites)
+### Query an identity (w/ its relations to other identities)
 ```graphql
 query findOneIdentity {
   identity(platform: "twitter", identity: "suji_yan") {
@@ -18,7 +18,7 @@ query findOneIdentity {
     updatedAt
     # Here we perform a 3-depth deep search for this identity's "neighbor".
     neighborWithTraversal(depth: 5) {
-      # neighbor returns is EdgeUnion, your should define every type of EdgeUnion's fields
+      # neighbor returns is EdgeUnion, you should define every type of EdgeUnion's fields
       ... on ProofRecord {
         __typename
         source # Which upstream provides this connection info.
@@ -56,7 +56,7 @@ query findOneIdentity {
 }
 ```
 
-### Query a list of identities (w/ its relations to other identitites and their sources)
+### Query a list of identities (w/ its relations to other identities and their sources)
 If you don't need to rebuild the relation graph, just want to get a list of nodes, or just want to know which upstream (sources) provides this connection info.
 
 ```graphql
@@ -82,7 +82,7 @@ query findOneIdentityWithSource {
   }
 }
 ```
-### Query an NFT (w/ its owner, owner's other NFTs, and owner's related identites)
+### Query an NFT (w/ its owner, owner's other NFTs, and owner's related identities)
 :::info
 `nft` field will possibly have value only when its parent identity is `platform: ethereum`.
 :::

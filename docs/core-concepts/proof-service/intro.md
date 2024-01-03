@@ -39,7 +39,7 @@ After the binding, ProofService will use a blockchain-like model called ProofCha
 #### Proof
 
 The definition of the proof contains all the necessary information between the connection of "Avatar <-> Identity", contains the operation type that is binding or dismiss, which platform and identity, timestamp, signature by the avatar...
-The structure is definied as:
+The structure is defined as:
 
 ```
 type Signature = string;
