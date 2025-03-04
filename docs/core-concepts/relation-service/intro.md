@@ -6,7 +6,7 @@ sidebar_position: 1
 
 In the preceding chapter, we discussed how to construct an identity graph using `ProofService`. Besides ProofService, there are several other data sources both on-chain and off-chain offering similar connections.`RelationService` aggregates the existing identities from ProofService and the other protocol whose identities are bound to and in parallel to Next.ID, structure the identities with the graph database and finally provide to the public via GraphQL. Hope to open up a range of possibilities for integration with external protocols and build a more comprehensive identity graph.
 
-`RelationService` aggregates and indexes the other third-party "identity <-> identity" connections from the data source to enrich the identity graph:
+`RelationService` aggregates and indexes the other third-party `identity <-> identity` connections from the data source to enrich the identity graph:
 
 - [ENS]
 - [Farcaster]

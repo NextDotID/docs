@@ -8,7 +8,7 @@ sidebar_position: 1
 
 ![](../../../static/img/avatar-diagram.png)
 
-## How to build the connection 
+## How to build the connection
 
 ### Work Flow
 Use Twitter platform as an example to explain how to use `ProofService` to build a bi-directional binding between a Twitter account and an avatar:
@@ -18,7 +18,7 @@ Use Twitter platform as an example to explain how to use `ProofService` to build
 ```
 Struct SignaturePayload {
     action: Action,  // create/delete, refer to bind/unbind
-    created_at: number, // timestamp 
+    created_at: number, // timestamp
     platform: Platform;
     identity: string;
     prev :null | string, //the previous create/delete operation signature related to this avatar
@@ -34,11 +34,11 @@ Basically, the generic idea is to prove that the Avatar and another identity bel
 
 ### Data Structure
 
-After the binding, ProofService will use a blockchain-like model called ProofChain to record of "Avatar <-> Identity" connection(we called Proof) and save it in both the ProofService side and upload it to Arweave. The definitions of the proof and proofchain are as the followings.
+After the binding, ProofService will use a blockchain-like model called ProofChain to record of `Avatar <-> Identity` connection(we called Proof) and save it in both the ProofService side and upload it to Arweave. The definitions of the proof and proofchain are as the followings.
 
 #### Proof
 
-The definition of the proof contains all the necessary information between the connection of "Avatar <-> Identity", contains the operation type that is binding or dismiss, which platform and identity, timestamp, signature by the avatar...
+The definition of the proof contains all the necessary information between the connection of `Avatar <-> Identity`, contains the operation type that is binding or dismiss, which platform and identity, timestamp, signature by the avatar...
 The structure is definied as:
 
 ```
@@ -62,24 +62,24 @@ interface Proof {
     // If this is genesis link, leave it null; else, it equals
     // previous link's signature. Worked as a pointer.
     prev: Signature | null;
-    
+
     avatar: String;
     action: Action;
     platform: Platform;
     identity: string;
-    
+
     // if action === Action.create, it shouldn't be empty(except ethereum); else, left null
     proof_location: string | null;
-    
+
     // UNIX timestamp (unit: second)
     created_at: number;
-    
+
     // An UUID of this link, works as a global identifier.
     uuid: string;
-    
+
     // See the definition above
     signature_payload: SignaturePayload;
-    
+
     // Signature of this link made by avatar.
     signature: Signature;
 }
@@ -104,10 +104,11 @@ From day one, the connection data in Proof Service to public so that everyone ca
 [API docs](../../rest-api/kvservice-api.md)
 [An example of data in Arweave](https://viewblock.io/arweave/tx/wvzDhXgcglrUWob9CUjTfJ6tj322eCWDKI2bVtU_cx4)
 
-Noted that the APIs in the docs contain the API to help bind "Avatar <-> Identity", like `POST /v1/proof/payload` or `POST /v1/proof`, but also serval APIs to query the state of the [proofs](https://github.com/NextDotID/proof_server/blob/develop/docs/api.apib#L160) and [the proofchain under an avatar](https://github.com/NextDotID/proof_server/blob/develop/docs/api.apib#L285).
+Noted that the APIs in the docs contain the API to help bind `Avatar <-> Identity`, like `POST /v1/proof/payload` or `POST /v1/proof`, but also serval APIs to query the state of the [proofs](https://github.com/NextDotID/proof_server/blob/develop/docs/api.apib#L160) and [the proofchain under an avatar](https://github.com/NextDotID/proof_server/blob/develop/docs/api.apib#L285).
 The Arweave example contains the single Proof record and based on the mechanism of Arweave, can keep getting the previous record until Genesis one.
 
-## Supported Platform 
+## Supported Platform
+
 [Supported Platform](https://github.com/NextDotID/proof_server#supported)
 
 ## How to contribute

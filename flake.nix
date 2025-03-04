@@ -8,7 +8,7 @@
       overlays = [
         (final: prev: rec {
           nodejs = prev.nodejs-18_x;
-          pnpm = prev.nodePackages.pnpm;
+          # pnpm = prev.nodePackages.pnpm;
           yarn = (prev.yarn.override { inherit nodejs; });
         })
       ];

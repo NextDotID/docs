@@ -51,7 +51,7 @@ for Rust.
           + content (object, required) - KV-pair of this entry.
 
   + Body
-
+    ```json
         {
           "avatar": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
           "proofs": [{
@@ -70,6 +70,7 @@ for Rust.
             }
           }]
         }
+    ```
 
 + Response 404 (application/json)
 
@@ -90,7 +91,8 @@ Persona not found (no KV was ever created).
 
   + Body
 
-        {
+    ```json
+    {
           "avatar": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
           "platform": "nextid",
           "identity": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
@@ -105,6 +107,7 @@ Persona not found (no KV was ever created).
               }
             }
         }
+    ```
 
 + Response 200 (application/json)
 
@@ -116,11 +119,13 @@ Persona not found (no KV was ever created).
 
   + Body
 
+    ```json
         {
           "uuid": "40c13c92-31e5-40d1-aebb-143d8e5b9c5e",
           "created_at": 1646983606,
           "sign_payload": "{\"action\":\"kv\",\"created_at\":1646983606,\"patch\":{\"a\":\"sample\",\"key_to_delete\":null,\"structure\":[\"it\",\"could\",\"be\",\"anything\"],\"this\":\"is\"},\"prev\":null,\"uuid\":\"40c13c92-31e5-40d1-aebb-143d8e5b9c5e\"}"
         }
+    ```
 
 ### Apply a patch [POST /v1/kv] {#patch}
 
@@ -137,7 +142,7 @@ Persona not found (no KV was ever created).
     + patch (object, required) - Patch content
 
   + Body
-
+    ```json
         {
           "avatar": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575",
           "platform": "nextid",
@@ -156,7 +161,7 @@ Persona not found (no KV was ever created).
               }
             }
         }
-
+    ```
 + Response 201 (application/json)
 
-Created successfully. Response is same as `GET /v1/kv`.
+  Created successfully. Response is same as `GET /v1/kv`.

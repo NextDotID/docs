@@ -39,7 +39,7 @@ After `ProofService`validates the signature with `uuid` and `created_at` fr
 
 ## [KVService](../core-concepts/proof-service/kvservice.md)
 
-### [Write Data](core-concepts/proof-service/ks-intro#write-data)
+### [Write Data](../core-concepts/proof-service/ks-intro#work-flow-for-writing)
 
 In this scenario, User requests for a modification on an Application. `KVService` will return the `sign_payload` based on the Application’s `POST /v1/KV/payload`.
 

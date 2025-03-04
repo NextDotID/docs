@@ -41,6 +41,7 @@ See [Platform supported](proofservice-platforms-supported)
 
   + Body
 
+    ```json
         {
           "hello": "proof service",
           "built_at": "1658210228",
@@ -53,6 +54,7 @@ See [Platform supported](proofservice-platforms-supported)
               "keybase"
           ]
         }
+    ```
 
 ## Group Proof
 
@@ -69,12 +71,14 @@ See [Platform supported](proofservice-platforms-supported)
 
   + Body
 
+    ```json
         {
           "action": "create",
           "platform": "twitter",
           "identity": "my_twitter_screen_name",
           "public_key": "0x04c7cacde73af939c35d527b34e0556ea84bab27e6c0ed7c6c59be70f6d2db59c206b23529977117dc8a5d61fa848f94950422b79d1c142bcf623862e49f9e6575"
         }
+    ```
 
 + Response 200 (application/json)
 
@@ -89,7 +93,7 @@ See [Platform supported](proofservice-platforms-supported)
     + created_at (string, required) - Creation time of this chain link (UNIX timestamp, unit: second). Send this to `POST /v1/proof` as-is.
 
   + Body
-
+    ```json
         {
           "post_content": {
             "default": "Prove myself: I'm 0x028c3cda474361179d653c41a62f6bbb07265d535121e19aedf660da2924d0b1e3 on Next.ID. Signature: %SIG_BASE64%"
@@ -99,6 +103,7 @@ See [Platform supported](proofservice-platforms-supported)
           "uuid": "ed9f421d-92e1-4c80-9bff-8516ef46ff43",
           "created_at": "1647332405"
         }
+    ```
 
 ### Add a proof modification into Proof chain [POST /v1/proof] {#proof-add}
 
@@ -118,7 +123,7 @@ See [Platform supported](proofservice-platforms-supported)
     + created_at (string, required) - Creation time of this chain link (UNIX timestamp, unit: second). Use the exact value from `POST /v1/proof/payload`.
 
   + Body
-
+    ```json
         {
           "action": "create",
           "platform": "twitter",
@@ -129,14 +134,15 @@ See [Platform supported](proofservice-platforms-supported)
           "uuid": "ed9f421d-92e1-4c80-9bff-8516ef46ff43",
           "created_at": "1647332405"
         }
+    ```
 
 + Response 201 (application/json)
 
-Request submitted successfully.
+  Request submitted successfully.
 
 + Response 400 (application/json)
 
-Request failed.
+  Request failed.
 
     + Attributes
 
@@ -144,9 +150,11 @@ Request failed.
 
     + Body
 
+    ```json
         {
            "message": "Tweet author is not the same as given identity."
         }
+    ```
 
 ### Query an existed binding [GET /v1/proof] {#proof-query}
 
@@ -186,7 +194,7 @@ Request failed.
         + invalid_reason (string, required) - If not valid, reason will appears here.
 
   + Body
-
+    ```json
         {
           "pagination": {
             "total": 27,
@@ -224,8 +232,9 @@ Request failed.
             }]
           }]
         }
+    ```
 
-> Note that an empty `last_arweave_id` indicates that the last proof this avatar signed has not been uploaded to Arweave Network yet, please try again later.
+    > Note that an empty `last_arweave_id` indicates that the last proof this avatar signed has not been uploaded to Arweave Network yet, please try again later.
 
 ### Check if a proof exists [GET /v1/proof/exists] {#proof-query-exists}
 
@@ -243,7 +252,7 @@ Request failed.
 
 + Response 200 (application/json)
 
-Found.
+  Found.
 
   + Attributes
 
@@ -254,16 +263,18 @@ Found.
 
   + Body
 
-        {
-          "created_at": "1643099438",
-          "last_checked_at": "1643099438",
-          "is_valid": true,
-          "invalid_reason": ""
-        }
+    ```json
+    {
+      "created_at": "1643099438",
+      "last_checked_at": "1643099438",
+      "is_valid": true,
+      "invalid_reason": ""
+    }
+    ```
 
 + Response 404 (application/json)
 
-Not found.
+  Not found.
 
   + Attributes
 
@@ -283,7 +294,7 @@ Not found.
 
 + Response 200 (application/json)
 
-Found.
+  Found.
 
   + Attributes
 
@@ -308,6 +319,7 @@ Found.
 
   + Body
 
+    ```json
         {
             "pagination":{
                 "total":1,
@@ -332,14 +344,15 @@ Found.
                 }
             ]
         }
+    ```
 
 + Response 400 (application/json)
 
-Params error.
+  Params error.
 
 + Response 500 (application/json)
 
-Internal error.
+  Internal error.
 
   + Attributes
 
@@ -359,7 +372,7 @@ Internal error.
 
 + Response 200 (application/json)
 
-Found.
+  Found.
 
   + Attributes
 
@@ -379,6 +392,7 @@ Found.
 
   + Body
 
+    ```json
         {
             "links":[
                 {
@@ -397,14 +411,15 @@ Found.
                 }
             ]
         }
+    ```
 
 + Response 400 (application/json)
 
-Params error.
+  Params error.
 
 + Response 500 (application/json)
 
-Internal error.
+  Internal error.
 
   + Attributes
 

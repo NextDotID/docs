@@ -3,17 +3,17 @@ id: as-intro
 title: Web3 Auth, Auth Service
 sidebar_position: 2
 ---
-As we already built up the connection between avatar and [other identities](core-concepts/proof-service/ps-intro#supported-platform). The idea of letting DApps have its own version of "Sign-in with Google/Twitter" came out naturally. Auth Service is designed to help DApps realize this capability.
+As we already built up the connection between avatar and [other identities](https://github.com/NextDotID/proof_server#supported). The idea of letting DApps have its own version of "Sign-in with Google/Twitter" came out naturally. Auth Service is designed to help DApps realize this capability.
 
 ## How it works
 
-### Workflow of Auth with 3rd party platform 
+### Workflow of Auth with 3rd party platform
 
 ![](../../../static/img/core-concept/authservice-workflow.png)
 
 When a DApp initiates an authorization process, it must specify an `AuthService` instance (We strongly recommend to self-host one) to carry out the authentication. (step 2)
 
-`AuthService` begins by authenticating the identity using third-party platforms (e.g., Twitter ID). 
+`AuthService` begins by authenticating the identity using third-party platforms (e.g., Twitter ID).
 Once authenticated, `AuthService` queries the [ProofService](./ps-intro) to check the binding avatar result of this identity. (step 3-4)
 
 If the authenticated identity is associated with an Avatar, and this Avatar aligns with one of the pre-configured Avatars in `AuthService`, then `AuthService` grants the DApp permission to use the Avatar as its identity for a set experimental duration. (step 5-6)
@@ -28,8 +28,8 @@ The process concludes by redirecting to the DApp with the following parameters(s
 5. `subkey_cert_sig` (string, required): Subkey certification signature signed by Avatar, encoded in Base58.
 6. `sig` (string, required): Signature of `avatar=${avatar}\nredirect_uri={redirect_uri}\nexpired_at=${expired_at}\nstate=${state}` singed by Subkey, encoded in Base58.
 
-### Configuration 
-Understanding how it operates, the preliminary step before launching an instance of `Auth Service` is to prepare a configuration file.There are three parts. 
+### Configuration
+Understanding how it operates, the preliminary step before launching an instance of `Auth Service` is to prepare a configuration file.There are three parts.
 
 #### The Avatar and a subkey that is signed by the avatar:
 In the configuration, the list of avatars represents the identity that can be authenticated by this instance of `AuthService`. The private key is used to sign ta message, proving the ownership of the avatar. We strongly recommend using a subkey that is signed by the avatar instead of the avatar itself in the configuration. For enhanced security, it's advisable to generate a unique subkey for specific cases. This not only tailors the security to the situation but also minimizes the risk of exposing the avatar's private key.
