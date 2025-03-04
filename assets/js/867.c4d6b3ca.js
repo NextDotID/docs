@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknext_id_doc=self.webpackChunknext_id_doc||[]).push([[867],{867:(e,c,s)=>{s.d(c,{createPieServices:()=>d.f});var d=s(8693);s(5409)}}]);

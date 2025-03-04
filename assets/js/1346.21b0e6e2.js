@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknext_id_doc=self.webpackChunknext_id_doc||[]).push([[1346],{1346:(e,c,s)=>{s.d(c,{createInfoServices:()=>d.v});var d=s(8469);s(5409)}}]);
